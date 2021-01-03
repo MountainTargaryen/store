@@ -1,0 +1,38 @@
+#diagram {
+	width: 1280px;
+	height: 795px;
+	background-color: #CCE8CF;
+}
+
+#line-title1 {
+	position: relative;
+	left: 620px;
+	top: 40px;
+	font-size: 23px;
+	font-weight: bold;
+	font-family: "宋体";
+}
+
+#flot-placeholder1 {
+	position: relative;
+	width: 1000px;
+	height: 300px;
+	top: 50px;
+	left: 140px;
+}
+#line-title2 {
+	position: relative;
+	left: 600px;
+	top: 110px;
+	font-size: 23px;
+	font-weight: bold;
+	font-family: "宋体";
+}
+
+#flot-placeholder2 {
+	position: relative;
+	width: 1000px;
+	height: 300px;
+	top: 120px;
+	left: 140px;
+}
