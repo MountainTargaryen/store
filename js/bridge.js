@@ -69,198 +69,13 @@ btelegraph1lever.onmousedown = function (ev) {
 				}
 
 				brmp = a;
-
-				if (t >= -45 && t < -25) {
-					if (schematicX == 2) {
-						schematicX = 1; //空气启动结束
-					}
-					btext1.innerHTML = 'Nav.Full';
-					LED(); //LED为led初始化函数
-					ttled1[0].style.background = '#00FF00';
-					ttled2[0].style.background = '#00FF00';
-					btled1[0].style.background = '#00FF00';
-					btled2[0].style.background = '#00FF00';
-					sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 678, 726, 10, 20); //方向车钟astern阀门关闭
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
-					sdctx.drawImage(picMap, 605, 721, 231, 14, 490, 754, 295, 16);
-					//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
-				}
-				if (t >= -25 && t < 5) {
-					if (schematicX == 2) {
-						schematicX = 1; //空气启动结束
-					}
-					btext1.innerHTML = 'Full';
-					LED();
-					ttled1[1].style.background = '#00FF00';
-					ttled2[1].style.background = '#00FF00';
-					btled1[1].style.background = '#00FF00';
-					btled2[1].style.background = '#00FF00';
-					sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 678, 726, 10, 20); //方向车钟astern阀门关闭
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
-					sdctx.drawImage(picMap, 605, 721, 231, 14, 490, 754, 295, 16);
-					//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
-				}
-				if (t >= 5 && t < 35) {
-					btext1.innerHTML = 'Half';
-					LED();
-					ttled1[2].style.background = '#00FF00';
-					ttled2[2].style.background = '#00FF00';
-					btled1[2].style.background = '#00FF00';
-					btled2[2].style.background = '#00FF00';
-					sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 678, 726, 10, 20); //方向车钟astern阀门关闭
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
-					sdctx.drawImage(picMap, 605, 721, 231, 14, 490, 754, 295, 16);
-					//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
-				}
-				if (t >= 35 && t < 65) {
-					if (schematicX == 2) {
-						schematicX = 1; //空气启动结束
-					}
-					btext1.innerHTML = 'Slow';
-					LED();
-					ttled1[3].style.background = '#00FF00';
-					ttled2[3].style.background = '#00FF00';
-					btled1[3].style.background = '#00FF00';
-					btled2[3].style.background = '#00FF00';
-					sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 678, 726, 10, 20); //方向车钟astern阀门关闭
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
-					sdctx.drawImage(picMap, 605, 721, 231, 14, 490, 754, 295, 16);
-					//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
-				}
-				if (t >= 65 && t < 95) {
-					if (schematicX >= 1) {
-						schematicX = 2; //空气启动
-					}
-					btext1.innerHTML = 'Dead Slow';
-					LED();
-					ttled1[4].style.background = '#00FF00';
-					ttled2[4].style.background = '#00FF00';
-					btled1[4].style.background = '#00FF00';
-					btled2[4].style.background = '#00FF00';
-					sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 678, 726, 10, 20); //方向车钟astern阀门关闭
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
-					sdctx.drawImage(picMap, 605, 721, 231, 14, 490, 754, 295, 16);
-					//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
-
-				}
-				if (t >= 95 && t < 125) {
-					btext1.innerHTML = 'Stop';
-					LED();
-					sdctx.drawImage(picMap, 60, 520, 57, 62, 320, 524, 72, 70); //方向车钟stop位置
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 537, 726, 10, 20); //方向车钟stop阀门通路
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 678, 726, 10, 20); //方向车钟astern阀门关闭
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
-
-					sdctx.drawImage(picMap, 605, 738, 220, 14, 490, 754, 280, 16);
-					//方向车钟stop两位三通阀门通路，方向车钟ahead两位三通阀门关闭，方向车钟start两位三通阀门关闭，方向车钟astern两位三通阀门关闭	
-				}
-				if (t >= 125 && t < 155) {
-					if (schematicX >= 1) {
-						schematicX = 2; //空气启动
-					}
-					btext1.innerHTML = 'D.Slow AST';
-					LED();
-					ttled1[6].style.background = '#E40000';
-					ttled2[6].style.background = '#E40000';
-					btled1[6].style.background = '#E40000';
-					btled2[6].style.background = '#E40000';
-					sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 678, 726, 10, 20); //方向车钟astern阀门通路
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
-
-					sdctx.drawImage(picMap, 826, 721, 231, 14, 490, 754, 295, 16);
-					//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
-				}
-				if (t >= 155 && t < 185) {
-					if (schematicX == 2) {
-						schematicX = 1; //空气启动结束
-					}
-					btext1.innerHTML = 'Slow AST';
-					LED();
-					ttled1[7].style.background = '#E40000';
-					ttled2[7].style.background = '#E40000';
-					btled1[7].style.background = '#E40000';
-					btled2[7].style.background = '#E40000';
-					sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 678, 726, 10, 20); //方向车钟astern阀门通路
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
-					sdctx.drawImage(picMap, 826, 721, 231, 14, 490, 754, 295, 16);
-					//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
-				}
-				if (t >= 185 && t < 215) {
-					if (schematicX == 2) {
-						schematicX = 1; //空气启动结束
-					}
-					btext1.innerHTML = 'Half AST';
-					LED();
-					ttled1[8].style.background = '#E40000';
-					ttled2[8].style.background = '#E40000';
-					btled1[8].style.background = '#E40000';
-					btled2[8].style.background = '#E40000';
-					sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 678, 726, 10, 20); //方向车钟astern阀门通路
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
-					sdctx.drawImage(picMap, 826, 721, 231, 14, 490, 754, 295, 16);
-					//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
-				}
-				if (t >= 215 && t < 245) {
-					if (schematicX == 2) {
-						schematicX = 1; //空气启动结束
-					}
-					btext1.innerHTML = 'Full AST';
-					LED();
-					ttled1[9].style.background = '#E40000';
-					ttled2[9].style.background = '#E40000';
-					btled1[9].style.background = '#E40000';
-					btled2[9].style.background = '#E40000';
-					sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 678, 726, 10, 20); //方向车钟astern阀门通路
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
-					sdctx.drawImage(picMap, 826, 721, 231, 14, 490, 754, 295, 16);
-					//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
-				}
-				if (t >= 245 && t < 275) {
-					if (schematicX == 2) {
-						schematicX = 1; //空气启动结束
-					}
-					btext1.innerHTML = 'Nav.Full AST';
-					LED();
-					ttled1[10].style.background = '#E40000';
-					ttled2[10].style.background = '#E40000';
-					btled1[10].style.background = '#E40000';
-					btled2[10].style.background = '#E40000';
-					sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
-					sdctx.drawImage(picMap, 610, 145, 10, 18, 678, 726, 10, 20); //方向车钟astern阀门通路
-					sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
-					sdctx.drawImage(picMap, 826, 721, 231, 14, 490, 754, 295, 16);
-					//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
-				}
+				subTelegraph(t);
+				
+			}else{
+				subTelegraph(t);
 			}
+		}else{
+			subTelegraph(t);
 		}
 
 	};
@@ -511,3 +326,206 @@ bcpctx.fillText("BRIDGE", 560, 300);
 bcpctx.fillText("ECR", 380, 370);
 bcpctx.fillText("ECR Manual Control", 700, 370);
 bcpctx.fillText("Local Manual Control", 560, 450);
+
+function subTelegraph(t){
+	if (t >= -45 && t < -25) {
+		if (schematicX == 2) {
+			schematicX = 1; //空气启动结束
+		}
+		btext1.innerHTML = 'Nav.Full';
+		LED(); //LED为led初始化函数
+		ttled1[0].style.background = '#00FF00';
+		ttled2[0].style.background = '#00FF00';
+		btled1[0].style.background = '#00FF00';
+		btled2[0].style.background = '#00FF00';
+		lspeedsLed[0].style.background = '#00FF00';
+		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 678, 726, 10, 20); //方向车钟astern阀门关闭
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
+		sdctx.drawImage(picMap, 605, 721, 231, 14, 490, 754, 295, 16);
+		//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
+	}
+	if (t >= -25 && t < 5) {
+		if (schematicX == 2) {
+			schematicX = 1; //空气启动结束
+		}
+		btext1.innerHTML = 'Full';
+		LED();
+		ttled1[1].style.background = '#00FF00';
+		ttled2[1].style.background = '#00FF00';
+		btled1[1].style.background = '#00FF00';
+		btled2[1].style.background = '#00FF00';
+		lspeedsLed[1].style.background = '#00FF00';
+		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 678, 726, 10, 20); //方向车钟astern阀门关闭
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
+		sdctx.drawImage(picMap, 605, 721, 231, 14, 490, 754, 295, 16);
+		//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
+	}
+	if (t >= 5 && t < 35) {
+		btext1.innerHTML = 'Half';
+		LED();
+		ttled1[2].style.background = '#00FF00';
+		ttled2[2].style.background = '#00FF00';
+		btled1[2].style.background = '#00FF00';
+		btled2[2].style.background = '#00FF00';
+		lspeedsLed[2].style.background = '#00FF00';
+		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 678, 726, 10, 20); //方向车钟astern阀门关闭
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
+		sdctx.drawImage(picMap, 605, 721, 231, 14, 490, 754, 295, 16);
+		//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
+	}
+	if (t >= 35 && t < 65) {
+		if (schematicX == 2) {
+			schematicX = 1; //空气启动结束
+		}
+		btext1.innerHTML = 'Slow';
+		LED();
+		ttled1[3].style.background = '#00FF00';
+		ttled2[3].style.background = '#00FF00';
+		btled1[3].style.background = '#00FF00';
+		btled2[3].style.background = '#00FF00';
+		lspeedsLed[3].style.background = '#00FF00';
+		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 678, 726, 10, 20); //方向车钟astern阀门关闭
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
+		sdctx.drawImage(picMap, 605, 721, 231, 14, 490, 754, 295, 16);
+		//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
+	}
+	if (t >= 65 && t < 95) {
+		if (schematicX >= 1) {
+			schematicX = 2; //空气启动
+		}
+		btext1.innerHTML = 'Dead Slow';
+		LED();
+		ttled1[4].style.background = '#00FF00';
+		ttled2[4].style.background = '#00FF00';
+		btled1[4].style.background = '#00FF00';
+		btled2[4].style.background = '#00FF00';
+		lspeedsLed[4].style.background = '#00FF00';
+		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 678, 726, 10, 20); //方向车钟astern阀门关闭
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
+		sdctx.drawImage(picMap, 605, 721, 231, 14, 490, 754, 295, 16);
+		//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
+
+	}
+	if (t >= 95 && t < 125) {
+		btext1.innerHTML = 'Stop';
+		LED();
+		sdctx.drawImage(picMap, 60, 520, 57, 62, 320, 524, 72, 70); //方向车钟stop位置
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 537, 726, 10, 20); //方向车钟stop阀门通路
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 678, 726, 10, 20); //方向车钟astern阀门关闭
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
+
+		sdctx.drawImage(picMap, 605, 738, 220, 14, 490, 754, 280, 16);
+		//方向车钟stop两位三通阀门通路，方向车钟ahead两位三通阀门关闭，方向车钟start两位三通阀门关闭，方向车钟astern两位三通阀门关闭	
+	}
+	if (t >= 125 && t < 155) {
+		if (schematicX >= 1) {
+			schematicX = 2; //空气启动
+		}
+		btext1.innerHTML = 'D.Slow AST';
+		LED();
+		ttled1[6].style.background = '#E40000';
+		ttled2[6].style.background = '#E40000';
+		btled1[6].style.background = '#E40000';
+		btled2[6].style.background = '#E40000';
+		lspeedsLed[6].style.background = '#00FF00';
+		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 678, 726, 10, 20); //方向车钟astern阀门通路
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
+
+		sdctx.drawImage(picMap, 826, 721, 231, 14, 490, 754, 295, 16);
+		//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
+	}
+	if (t >= 155 && t < 185) {
+		if (schematicX == 2) {
+			schematicX = 1; //空气启动结束
+		}
+		btext1.innerHTML = 'Slow AST';
+		LED();
+		ttled1[7].style.background = '#E40000';
+		ttled2[7].style.background = '#E40000';
+		btled1[7].style.background = '#E40000';
+		btled2[7].style.background = '#E40000';
+		lspeedsLed[7].style.background = '#00FF00';
+		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 678, 726, 10, 20); //方向车钟astern阀门通路
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
+		sdctx.drawImage(picMap, 826, 721, 231, 14, 490, 754, 295, 16);
+		//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
+	}
+	if (t >= 185 && t < 215) {
+		if (schematicX == 2) {
+			schematicX = 1; //空气启动结束
+		}
+		btext1.innerHTML = 'Half AST';
+		LED();
+		ttled1[8].style.background = '#E40000';
+		ttled2[8].style.background = '#E40000';
+		btled1[8].style.background = '#E40000';
+		btled2[8].style.background = '#E40000';
+		lspeedsLed[8].style.background = '#00FF00';
+		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 678, 726, 10, 20); //方向车钟astern阀门通路
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
+		sdctx.drawImage(picMap, 826, 721, 231, 14, 490, 754, 295, 16);
+		//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
+	}
+	if (t >= 215 && t < 245) {
+		if (schematicX == 2) {
+			schematicX = 1; //空气启动结束
+		}
+		btext1.innerHTML = 'Full AST';
+		LED();
+		ttled1[9].style.background = '#E40000';
+		ttled2[9].style.background = '#E40000';
+		btled1[9].style.background = '#E40000';
+		btled2[9].style.background = '#E40000';
+		lspeedsLed[9].style.background = '#00FF00';
+		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 678, 726, 10, 20); //方向车钟astern阀门通路
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
+		sdctx.drawImage(picMap, 826, 721, 231, 14, 490, 754, 295, 16);
+		//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
+	}
+	if (t >= 245 && t < 275) {
+		if (schematicX == 2) {
+			schematicX = 1; //空气启动结束
+		}
+		btext1.innerHTML = 'Nav.Full AST';
+		LED();
+		ttled1[10].style.background = '#E40000';
+		ttled2[10].style.background = '#E40000';
+		btled1[10].style.background = '#E40000';
+		btled2[10].style.background = '#E40000';
+		lspeedsLed[10].style.background = '#00FF00';
+		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
+		sdctx.drawImage(picMap, 610, 145, 10, 18, 678, 726, 10, 20); //方向车钟astern阀门通路
+		sdctx.drawImage(picMap, 600, 145, 9, 18, 537, 726, 10, 20); //方向车钟stop阀门关闭
+		sdctx.drawImage(picMap, 826, 721, 231, 14, 490, 754, 295, 16);
+		//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
+	}
+}

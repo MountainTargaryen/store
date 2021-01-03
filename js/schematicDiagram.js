@@ -507,7 +507,7 @@ function qidongbian() {
 //检查是否启动准备就绪
 function checkStart() {
 	//起动条件完成   0为关闭状态1位开启状态
-	if (value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && value118x % 2 == 1&& valueMainx%2==1 && lwheelx1x<=2) {
+	if (value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && value118x % 2 == 1&& valueMainx%2==1) {
 		document.getElementById('bEngReady').innerHTML = 'Eng Ready';
 		document.getElementById('bEngReady').style.backgroundColor = '#01D867';
 		document.getElementById('cEngReady').innerHTML = 'Eng Ready';

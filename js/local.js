@@ -116,13 +116,13 @@ var lbuttonStop = document.getElementById('lbuttonStop');
 lbuttonStart.onmousedown = function () {
 	lbuttonStart.style.backgroundColor = "green";
 	lbuttonStop.style.backgroundColor = "grey";
-	// if(value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && value118x % 2 == 1&& valueMainx%2==1 && lwheelx1x>=3){
+	 if(value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx%2==1 && lwheelx1x>=3 && lhandle1x % 2 == 1){
 		LED()
 		schematicX = 1;
 		lrmpx=lrmp;
 		lrmp=30;
 		console.log('ok',lrmp)
-		
+	 }	
 }
 lbuttonStart.onmouseup = function () {
 	lbuttonStart.style.backgroundColor = "grey";

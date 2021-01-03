@@ -200,4 +200,5 @@ function LED()
 	btled2[5].style.background = 'yellow';
 	ttled1[5].style.background = 'yellow';
 	ttled2[5].style.background = 'yellow';
+	lclearSpeedLed();
 }
