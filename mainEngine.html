@@ -66,7 +66,7 @@
 					<img id="bMERPMPointer" src="img/pointer.png" height="130px" />
 					<img id="bStartAirPressPointer" src="img/pointer.png" height="100px" />
 					<img id="bActuatorPosFeedbackPointer" src="img/pointer.png" height="100px" />
-					<div id="bMERPM">0 RMP</div>
+					<div id="bMERPM">0 RPM</div>
 					<div id="bStartAirPress">0 bar</div>
 					<div id="bActuatorPosFeedback">0 %</div>
 					<div id="bState">Stopping</div>
@@ -240,7 +240,7 @@
 					<div id="bECRstate">
 						<div style="color: yellow;font-size: 33px;text-align: center;">STATE</div>
 						<li><a href="#" style="font-size: 30px;" id="bm1StartBlocked">Start Blocked</a></li>
-						<li id="bm1ReadyForStart">Ready For Start</li>
+						<li id="bm1ReadyForStart" ><span class="circle"></span>Ready For Start</li>
 						<li id="bm1SlowTurning">Slow Turning</li>
 						<li id="bm1Starting">Starting</li>
 						<li id="bm1RepeatedStart">Repeated Start</li>
@@ -250,7 +250,7 @@
 						<li id="bm1EngineTripped">Engine Tripped</li>
 					</div>
 					<!--start框  bm2-->
-					<div id="cECRstart">
+					<div id="bECRstart">
 						<div style="color: yellow;font-size: 33px;text-align: center;">START FAIL/BLOCK</div>
 						<li id="bm23StartsFailed">3 Starts failed</li>
 						<li id="bm2StartTooLong">Start too long</li>
@@ -385,7 +385,7 @@
 					<img id="cStartAirPressPointer" src="img/pointer.png" height="100px" />
 					<img id="cActuatorPosFeedbackPointer" src="img/pointer.png" height="100px" />
 
-					<div id="cMERPM">0 RMP</div>
+					<div id="cMERPM">0 RPM</div>
 					<div id="cStartAirPress">0 bar</div>
 					<div id="cActuatorPosFeedback">0 %</div>
 					<div id="cState">Stopping</div>
@@ -870,15 +870,15 @@
 				<!--阀门盒子-->
 				<div id="values">
 					<div id="value16"></div>
-					<div id="value16txt">点击启动</div>
+					<div id="value16txt">点击起动</div>
 					<div id="value122"></div>
-					<div id="value122txt">点击启动</div>
+					<div id="value122txt">点击起动</div>
 					<div id="value3"></div>
-					<div id="value3txt">点击启动</div>
+					<div id="value3txt">点击起动</div>
 					<div id="value116"></div>
 					<div id="value116txt">点击脱开盘车机</div>
 					<div id="valueMain"></div>
-					<div id="valueMaintxt">点击开启主起动阀</div>
+					<div id="valueMaintxt">点击起动主起动阀</div>
 					<div id="cock2513"></div>
 					<div id="cock2513txt">点击关闭</div>
 					<div id="cock2511"></div>
@@ -894,28 +894,28 @@
 					<div id="value728"></div>
 					<div id="value728txt">点击关闭</div>
 					<div id="value118"></div>
-					<div id="value118txt">点击启动</div>
+					<div id="value118txt">点击起动</div>
 					<div class="confirmBox" id="value16confirmBox">
 						<h2>气动操作</h2><br /> 
-						<p id="valve16ComfirmTxt"> 是否打开安全阀</p>
+						<p id="valve16ComfirmTxt"> 是否起动空气控制阀</p>
 						<div class="confirm" id="valve16Comfirm">确定</div>
 						<div class="cancel" id="valve16Cancel">取消</div>
 					</div>
 					<div class="confirmBox" id="value3confirmBox">
 						<h2>气动操作</h2><br /> 
-						<p id="valve3ComfirmTxt"> 是否打开进排气空气阀</p>
+						<p id="valve3ComfirmTxt"> 是否起动进排气空气阀</p>
 						<div class="confirm" id="valve3Comfirm">确定</div>
 						<div class="cancel" id="valve3Cancel">取消</div>
 					</div>
 					<div class="confirmBox" id="value122confirmBox">
 						<h2>气动操作</h2><br /> 
-						<p id="valve122ComfirmTxt"> 是否打开空气控制阀</p>
+						<p id="valve122ComfirmTxt"> 是否起动安全阀</p>
 						<div class="confirm" id="valve122Comfirm">确定</div>
 						<div class="cancel" id="valve122Cancel">取消</div>
 					</div>
 					<div class="confirmBox" id="valveMainconfirmBox">
 						<h2>气动操作</h2><br /> 
-						<p id="valveMainComfirmTxt"> 是否打开主起动阀</p>
+						<p id="valveMainComfirmTxt"> 是否起动主起动阀</p>
 						<div class="confirm" id="valveMainComfirm">确定</div>
 						<div class="cancel" id="valveMainCancel">取消</div>
 					</div>
@@ -924,6 +924,12 @@
 						<p id="valve116ComfirmTxt"> 是否脱开盘车机</p>
 						<div class="confirm" id="valve116Comfirm">确定</div>
 						<div class="cancel" id="valve116Cancel">取消</div>
+					</div>
+					<div class="confirmBox" id="value118confirmBox">
+						<h2>气动操作</h2><br /> 
+						<p id="valve118ComfirmTxt"> 是否起动空气分配器控制阀</p>
+						<div class="confirm" id="valve118Comfirm">确定</div>
+						<div class="cancel" id="valve118Cancel">取消</div>
 					</div>
 				</div>
 			</div>
@@ -945,7 +951,7 @@
 			<div id="condition">
 				<li id="conBefore">原始工况</li>
 				<li id="conReadyC">备车完毕</li>
-				<li id="conOnSea">航行状态</li>
+				<li id="conOnSea">主机运行</li>
 			</div>
 		</div>
 		<div id="footer">
@@ -1018,8 +1024,8 @@
 				pointerRotate(rmpx * 1.4 * 0.75, 'cMERPMPointer');
 				pointerRotate(rmpx * 1.4 * 0.75, 'bMERPMPointer');
 				pointerRotate(rmpx * 1.4 * 0.75, 'lpointer');
-				innerChange(parseInt(rmpx * 1.4), 'RMP', 'cMERPM');
-				innerChange(parseInt(rmpx * 1.4), 'RMP', 'bMERPM');
+				innerChange(parseInt(rmpx * 1.4), 'RPM', 'cMERPM');
+				innerChange(parseInt(rmpx * 1.4), 'RPM', 'bMERPM');
 				setTimeout(update, 2000);
 	
 			}

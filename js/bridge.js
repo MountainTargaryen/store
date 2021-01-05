@@ -16,9 +16,9 @@ bctx.fillText("START AIR PRESS", 600, 50);
 bctx.fillText("Actuator pos feedback", 580, 300);
 
 /***********************临时*************/
-pointerRotate(-90, 'bStartAirPressPointer');
+
 pointerRotate(-90, 'bActuatorPosFeedbackPointer');
-pointerRotate(-90, 'cStartAirPressPointer');
+
 pointerRotate(-90, 'cActuatorPosFeedbackPointer');
 
 /**********************驾驶台电报系统加车钟**************/
@@ -126,7 +126,7 @@ var setManualRpmLimit = document.getElementById('setManualRpmLimit');
 var ManualRpmLimiClose = document.getElementById('ManualRpmLimiClose');
 
 var setLoadProgram = document.getElementById('setLoadProgram');
-var loadProgramX = 0; //负荷限制计数器 0为未开启 1位开启
+var loadProgramX = 0; //负荷限制计数器 0为未起动 1位起动
 
 var setCriticalRPM = document.getElementById('setCriticalRPM');
 
@@ -153,7 +153,7 @@ var CriticalRPMSure = document.getElementById('CriticalRPMSure');
 var CriticalRPMClose = document.getElementById('CriticalRPMClose');
 var CriticalRPMmax = document.getElementById('CriticalRPMmax');
 var CriticalRPMmin = document.getElementById('CriticalRPMmin');
-var CriticalRPMX = 0 //临界转速计数器0为关闭 1为开启
+var CriticalRPMX = 0 //临界转速计数器0为关闭 1为起动
 CriticalRPMSure.onclick = function () {
 	if (CriticalRPMmax.value <= CriticalRPMmin.value || CriticalRPMmin.value <= 0) {
 		alert('输入错误，请重新输入')
@@ -168,7 +168,7 @@ CriticalRPMClose.onclick = function () {
 
 /** 最大转速手动设置*/
 var ManualRpmLimit = document.getElementById('ManualRpmLimit');
-var ManualRpmLimitX = 0; //最大转速手动限制计数器 0为关闭 1为开启
+var ManualRpmLimitX = 0; //最大转速手动限制计数器 0为关闭 1为起动
 var ManualRpmLimitSure = document.getElementById('ManualRpmLimitSure');
 var ManualRpmLimiClose = document.getElementById('ManualRpmLimiClose');
 ManualRpmLimitSure.onclick = function () {
@@ -181,7 +181,7 @@ ManualRpmLimiClose.onclick = function () {
 
 /** 最小转速手动设置*/
 var MinimunlRpmLimit = document.getElementById('MinimunlRpmLimit');
-var MinimunlRpmLimitX = 0; //最小转速手动限制计数器 0为关闭 1为开启
+var MinimunlRpmLimitX = 0; //最小转速手动限制计数器 0为关闭 1为起动
 var MinimumRpmLimitSure = document.getElementById('MinimumRpmLimitSure');
 var MinimumRpmLimitClose = document.getElementById('MinimumRpmLimitClose');
 MinimumRpmLimitSure.onclick = function () {
@@ -197,7 +197,7 @@ var setLoadProgramSure = document.getElementById('setLoadProgramSure');
 var setLoadProgramClose = document.getElementById('setLoadProgramClose');
 setLoadProgramSure.onclick = function () {
 	loadProgramX = 1;
-	alert("负荷限制启动成功");
+	alert("负荷限制起动成功");
 }
 setLoadProgramClose.onclick = function () {
 	setLoadProgram.style.display = "none";
@@ -330,7 +330,7 @@ bcpctx.fillText("Local Manual Control", 560, 450);
 function subTelegraph(t){
 	if (t >= -45 && t < -25) {
 		if (schematicX == 2) {
-			schematicX = 1; //空气启动结束
+			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Nav.Full';
 		LED(); //LED为led初始化函数
@@ -349,7 +349,7 @@ function subTelegraph(t){
 	}
 	if (t >= -25 && t < 5) {
 		if (schematicX == 2) {
-			schematicX = 1; //空气启动结束
+			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Full';
 		LED();
@@ -384,7 +384,7 @@ function subTelegraph(t){
 	}
 	if (t >= 35 && t < 65) {
 		if (schematicX == 2) {
-			schematicX = 1; //空气启动结束
+			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Slow';
 		LED();
@@ -403,7 +403,7 @@ function subTelegraph(t){
 	}
 	if (t >= 65 && t < 95) {
 		if (schematicX >= 1) {
-			schematicX = 2; //空气启动
+			schematicX = 2; //空气起动
 		}
 		btext1.innerHTML = 'Dead Slow';
 		LED();
@@ -434,7 +434,7 @@ function subTelegraph(t){
 	}
 	if (t >= 125 && t < 155) {
 		if (schematicX >= 1) {
-			schematicX = 2; //空气启动
+			schematicX = 2; //空气起动
 		}
 		btext1.innerHTML = 'D.Slow AST';
 		LED();
@@ -454,7 +454,7 @@ function subTelegraph(t){
 	}
 	if (t >= 155 && t < 185) {
 		if (schematicX == 2) {
-			schematicX = 1; //空气启动结束
+			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Slow AST';
 		LED();
@@ -473,7 +473,7 @@ function subTelegraph(t){
 	}
 	if (t >= 185 && t < 215) {
 		if (schematicX == 2) {
-			schematicX = 1; //空气启动结束
+			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Half AST';
 		LED();
@@ -492,7 +492,7 @@ function subTelegraph(t){
 	}
 	if (t >= 215 && t < 245) {
 		if (schematicX == 2) {
-			schematicX = 1; //空气启动结束
+			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Full AST';
 		LED();
@@ -511,7 +511,7 @@ function subTelegraph(t){
 	}
 	if (t >= 245 && t < 275) {
 		if (schematicX == 2) {
-			schematicX = 1; //空气启动结束
+			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Nav.Full AST';
 		LED();

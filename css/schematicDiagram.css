@@ -139,14 +139,13 @@
 
 #value118txt {
 	position: absolute;
-	left: 745px;
+	left: 690px;
 	top: 150px;
-	width: 80px;
-	height: 30px;
 	border: 2px solid black;
 	background-color: #FFFFD7;
 	text-align: center;
 	display: none;
+	padding:2px 5px;
 }
 
 #valueMain{

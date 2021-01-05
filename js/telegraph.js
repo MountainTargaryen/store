@@ -192,7 +192,7 @@ ttelegraph2lever.onmousedown = function (ev) {
 				};
 				if (t >= -40 && t < -20) {
 					ttelegraph2watch.innerHTML = 'START';
-					schematicX = 2; //气动逻辑为状态2：开始空气启动
+					schematicX = 2; //气动逻辑为状态2：开始空气起动
 					sdc2tx.drawImage(picMap, 306, 521, 123, 89, 72, 488, 155, 100); //速度车钟start位置
 
 				};

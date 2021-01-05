@@ -3,7 +3,7 @@ pic10.src = "img/01.png";
 var pic00 = new Image();
 pic00.src = "img/00.png";
 var pic20 = new Image();
-pic20.src = "img/02.png"; //启动后，方向阀门有气
+pic20.src = "img/02.png"; //起动后，方向阀门有气
 var picMap = new Image();
 picMap.src = "img/pictureMap.BMP";
 var picxx1 = new Image();
@@ -28,10 +28,10 @@ var schematicDiagramPicture = document.getElementById("schematicDiagramPicture")
 value16.onclick=function(){
 	if(value16x%2==1){
 		value16confirmBox.style.display='block'
-		valve16ComfirmTxt.innerHTML="是否关闭安全阀"
+		valve16ComfirmTxt.innerHTML="是否关闭空气控制阀"
 	}else{
 		value16confirmBox.style.display='block'
-		valve16ComfirmTxt.innerHTML="是否打开安全阀"
+		valve16ComfirmTxt.innerHTML="是否起动空气控制阀"
 	}
 }
 valve16Comfirm.onclick=function(){
@@ -43,27 +43,27 @@ valve16Cancel.onclick=function(){
 }
 
 
-let schematicX=0;//0代表初始状态，为完成；1代表起动逻辑完成但是没有启动；2代表空气启动状态；
+let schematicX=0;//0代表初始状态，为完成；1代表起动逻辑完成但是没有起动；2代表空气起动状态；
 
 function valueCheck() {
 	if (value16x % 2 == 1) {
-		value16txt.innerHTML = "点击关闭安全阀";
+		value16txt.innerHTML = "点击关闭空气控制阀";
 		schematicDiagramPicture.src = "img/01.png";
 	} else {
 		schematicDiagramPicture.src = "img/00.png";
-		value16txt.innerHTML = "点击开启安全阀";
+		value16txt.innerHTML = "点击起动空气控制阀";
 	}
 	// sdc2tx.drawImage(picblock2,0,0,91,51,904,68,92,46)
 	if(valueMainx%2==1 ){
 		valueMaintxt.innerHTML="点击关闭主起动阀"
 		sdc2tx.drawImage(picblock2,0,0,91,51,904,68,92,46)
 	}else{
-		valueMaintxt.innerHTML="点击开启主起动阀"
+		valueMaintxt.innerHTML="点击起动主起动阀"
 		sdc2tx.clearRect(904,68,92,46)
 	}
 
 	if (value122x % 2 == 1) {
-		value122txt.innerHTML = "点击关闭空气控制阀";
+		value122txt.innerHTML = "点击关闭安全阀";
 		sdc2tx.drawImage(picMap, 615, 106, 14, 38, 970, 23, 19, 45);
 		sdc2tx.drawImage(picMap, 655, 204, 40, 1, 663, 48, 309, 2); //紫线
 		sdc2tx.drawImage(picMap, 655, 204, 40, 1, 662, 48, 2, 99); //紫线
@@ -89,7 +89,7 @@ function valueCheck() {
 		sdc2tx.drawImage(picMap, 587, 53, 2, 20, 807, 39, 3, 13); //黑线
 		sdc2tx.drawImage(picMap, 650, 168, 53, 29, 591, 131, 67, 33); //125
 		sdc2tx.drawImage(picMap, 514, 336, 14, 14, 845, 25, 17, 16); //121方框黄
-		value122txt.innerHTML = "点击打开空气控制阀";
+		value122txt.innerHTML = "点击起动安全阀";
 	}
 	if (value3x % 2 == 1) {
 		value3txt.innerHTML = "点击关闭进排气空气阀";
@@ -109,7 +109,7 @@ function valueCheck() {
 		sdc2tx.drawImage(picMap, 649, 263, 30, 1, 1234, 519, 17, 3); //绿线
 		sdc2tx.drawImage(picMap, 649, 263, 30, 1, 1248, 519, 3, 15); //绿线
 	} else {
-		value3txt.innerHTML = "点击启动进排气空气阀";
+		value3txt.innerHTML = "点击起动进排气空气阀";
 		sdc2tx.drawImage(picMap, 0, 168, 39, 14, 1224, 535, 48, 16); //阀门3黄关
 		sdc2tx.drawImage(picMap, 587, 53, 2, 20, 1235, 80, 3, 440); //黑线
 		sdc2tx.drawImage(picMap, 587, 53, 2, 20, 1185, 80, 10, 3); //黑线
@@ -147,56 +147,56 @@ function valueCheck() {
 		sdc2tx.drawImage(picMap, 587, 53, 2, 20, 779, 668, 12, 3); //黑线
 	}
 	if (value118x % 2 == 1) {
-		value118txt.innerHTML = "点击关闭";
+		value118txt.innerHTML = "点击关闭空气分配器控制阀";
 		sdc2tx.drawImage(picMap, 243, 168, 58, 14, 751, 120, 75, 17); //118开
 	} else {
-		value118txt.innerHTML = "点击启动";
+		value118txt.innerHTML = "点击起动空气分配器控制阀";
 		sdc2tx.drawImage(picMap, 243, 198, 58, 14, 751, 120, 75, 17); //118关	
 	}
 	if (value728x % 2 == 1) {
-		value728txt.innerHTML = "点击开启";
+		value728txt.innerHTML = "点击起动";
 		sdc2tx.drawImage(picMap, 0, 168, 39, 14, 24, 405, 50, 16); //728关
 	} else {
 		value728txt.innerHTML = "点击关闭";
 		sdc2tx.drawImage(picMap, 0, 183, 39, 14, 24, 405, 50, 16); //728开
 	}
 	if (cock2511x % 2 == 1) {
-		cock2511txt.innerHTML = "点击开启";
+		cock2511txt.innerHTML = "点击起动";
 		sdc2tx.drawImage(picMap, 601, 342, 12, 11, 1053, 592, 15, 14); //2511关
 	} else {
 		cock2511txt.innerHTML = "点击关闭";
 		sdc2tx.drawImage(picMap, 614, 342, 12, 11, 1053, 592, 15, 14); //2511开
 	}
 	if (cock2512x % 2 == 1) {
-		cock2512txt.innerHTML = "点击开启";
+		cock2512txt.innerHTML = "点击起动";
 		sdc2tx.drawImage(picMap, 601, 342, 12, 11, 1058, 542, 15, 14); //2512关
 	} else {
 		cock2512txt.innerHTML = "点击关闭";
 		sdc2tx.drawImage(picMap, 614, 342, 12, 11, 1058, 542, 15, 14); //2512开
 	}
 	if (cock2513x % 2 == 1) {
-		cock2513txt.innerHTML = "点击开启";
+		cock2513txt.innerHTML = "点击起动";
 		sdc2tx.drawImage(picMap, 601, 342, 12, 11, 1215, 370, 15, 14); //2513关
 	} else {
 		cock2531txt.innerHTML = "点击关闭";
 		sdc2tx.drawImage(picMap, 614, 342, 12, 11, 1215, 370, 15, 14); //2513开
 	}
 	if (cock2514x % 2 == 1) {
-		cock2514txt.innerHTML = "点击开启";
+		cock2514txt.innerHTML = "点击起动";
 		sdc2tx.drawImage(picMap, 601, 342, 12, 11, 868, 26, 15, 14); //2514关
 	} else {
 		cock2514txt.innerHTML = "点击关闭";
 		sdc2tx.drawImage(picMap, 614, 342, 12, 11, 868, 26, 15, 14); //2514开
 	}
 	if (cock2681x % 2 == 1) {
-		cock2681txt.innerHTML = "点击开启";
+		cock2681txt.innerHTML = "点击起动";
 		sdc2tx.drawImage(picMap, 601, 342, 12, 11, 108, 124, 16, 14); //2681关
 	} else {
 		cock2681txt.innerHTML = "点击关闭";
 		sdc2tx.drawImage(picMap, 614, 342, 12, 11, 108, 124, 16, 14); //2681开
 	}
 	if (cock2682x % 2 == 1) {
-		cock2682txt.innerHTML = "点击开启";
+		cock2682txt.innerHTML = "点击起动";
 		sdc2tx.drawImage(picMap, 601, 342, 12, 11, 131, 332, 16, 14); //2682关
 	} else {
 		cock2682txt.innerHTML = "点击关闭";
@@ -228,10 +228,10 @@ var valve122Cancel=document.getElementById('valve122Cancel')
 value122.onclick=function(){
 	if(value122x%2==1){
 		value122confirmBox.style.display='block'
-		valve122ComfirmTxt.innerHTML="是否关闭空气控制阀"
+		valve122ComfirmTxt.innerHTML="是否关闭安全阀"
 	}else{
 		value122confirmBox.style.display='block'
-		valve122ComfirmTxt.innerHTML="是否打开空气控制阀"
+		valve122ComfirmTxt.innerHTML="是否起动安全阀"
 	}
 }
 valve122Comfirm.onclick=function(){
@@ -263,7 +263,7 @@ value3.onclick=function(){
 		valve3ComfirmTxt.innerHTML="是否关闭进排气空气阀"
 	}else{
 		value3confirmBox.style.display='block'
-		valve3ComfirmTxt.innerHTML="是否打开进排气空气阀"
+		valve3ComfirmTxt.innerHTML="是否起动进排气空气阀"
 	}
 }
 valve3Comfirm.onclick=function(){
@@ -293,7 +293,7 @@ valueMain.onclick=function(){
 		valveMainComfirmTxt.innerHTML="是否关闭主起动阀"
 	}else{
 		valveMainconfirmBox.style.display='block'
-		valveMainComfirmTxt.innerHTML="是否开启主起动阀"
+		valveMainComfirmTxt.innerHTML="是否起动主起动阀"
 	}
 }
 valveMainComfirm.onclick=function(){
@@ -342,22 +342,30 @@ value116.onmouseout = function () {
 	value116txt.style.display = 'none';
 }
 
-var value118 = document.getElementById('value118'); //阀门118
+var value118 = document.getElementById('value118'); //阀门118 空气分配器控制阀
 var value118txt = document.getElementById('value118txt'); //阀门118介绍框
-var value118x = 1; //阀门118的计数器，用于判断显示哪张底图
-value118.onclick = function () {
-	if (value118x % 2 == 1) {
-		var value118c1 = confirm("是否关闭阀门");
-		if (value118c1 == true) {
-			value118x += 1;
-		}
-	} else {
-		var value118c2 = confirm("是否打开阀门");
-		if (value118c2 == true) {
-			value118x += 1;
-		}
+var value118x = 0; //阀门118的计数器，用于判断显示哪张底图
+var value118confirmBox=document.getElementById('value118confirmBox')
+var valve118ComfirmTxt=document.getElementById('valve118ComfirmTxt')
+var valve118Comfirm=document.getElementById('valve118Comfirm')
+var valve118Cancel=document.getElementById('valve118Cancel')
+value118.onclick=function(){
+	if(value118x%2==1){
+		value118confirmBox.style.display='block'
+		valve118ComfirmTxt.innerHTML="是否关闭空气分配器控制阀"
+	}else{
+		value118confirmBox.style.display='block'
+		valve118ComfirmTxt.innerHTML="是否起动空气分配器控制阀"
 	}
 }
+valve118Comfirm.onclick=function(){
+	value118x += 1;
+	value118confirmBox.style.display='none'
+}
+valve118Cancel.onclick=function(){
+	value118confirmBox.style.display='none'
+}
+
 
 value118.onmouseover = function () {
 	value118txt.style.display = 'block';
@@ -382,7 +390,7 @@ value728.onclick = function () {
 			value728x += 1;
 		}
 	} else {
-		var value728c2 = confirm("是否打开阀门");
+		var value728c2 = confirm("是否起动阀门");
 		if (value728c2 == true) {
 			value728x += 1;
 		}
@@ -504,9 +512,9 @@ function qidongbian() {
 	}
 }
 
-//检查是否启动准备就绪
+//检查是否起动准备就绪
 function checkStart() {
-	//起动条件完成   0为关闭状态1位开启状态
+	//起动条件完成   0为关闭状态1位起动状态
 	if (value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && value118x % 2 == 1&& valueMainx%2==1) {
 		document.getElementById('bEngReady').innerHTML = 'Eng Ready';
 		document.getElementById('bEngReady').style.backgroundColor = '#01D867';
@@ -516,7 +524,10 @@ function checkStart() {
 		document.getElementById('bSystemReady').style.backgroundColor = '#01D867';
 		document.getElementById('cSystemReady').innerHTML = 'System Ready';
 		document.getElementById('cSystemReady').style.backgroundColor = '#01D867';
-		pointerRotate(27, 'bStartAirPressPointer');
+		pointerRotate(31, 'bStartAirPressPointer');
+		document.getElementById('bStartAirPress').innerHTML = '27 bar';
+		pointerRotate(31, 'cStartAirPressPointer');
+		document.getElementById('cStartAirPress').innerHTML = '27 bar';
 
 		if(schematicX==0){
 			schematicX=1
@@ -548,6 +559,10 @@ function checkStart() {
 		document.getElementById('bSystemReady').style.backgroundColor = 'red';
 		document.getElementById('cSystemReady').innerHTML = 'System N.Ready';
 		document.getElementById('cSystemReady').style.backgroundColor = 'red';
+		pointerRotate(-90, 'bStartAirPressPointer');
+		document.getElementById('bStartAirPress').innerHTML = '0 bar';
+		pointerRotate(-90, 'cStartAirPressPointer');
+		document.getElementById('cStartAirPress').innerHTML = '0 bar';
 
 		bstate.innerHTML = 'Stopping';
 		cState.innerHTML = 'Stopping';

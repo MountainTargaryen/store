@@ -341,7 +341,7 @@
 	top: 44px;
 	background-color: #000000;
 	display: none;
-	list-style-type: none;
+	/* list-style-type: disc; */
 }
 
 #bECRstate {
@@ -831,7 +831,9 @@ input {
 	background-color: white;
 }
 
-
+#bECRstate li::before{
+	content: "·";
+}
 
 #binComLed{
 

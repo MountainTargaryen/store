@@ -49,8 +49,8 @@ a {
 #meau li {
 	height: 38px;
 	float: left;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
 	padding-top: 2px;
 	padding-bottom: 5px;
 	text-align: center;
@@ -77,7 +77,7 @@ a {
 	left: 0px;
 	top: 0px;
 	background-color: rgb(0, 103, 153);
-	width: 120px;
+	/* width: 120px; */
 	list-style-type: none;
 	display: none;
 	font-size: 25px;
@@ -89,6 +89,8 @@ a {
 
 #condition li{
 	border-bottom: 1px solid white;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 #meau li:hover{
