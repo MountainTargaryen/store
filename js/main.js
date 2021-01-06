@@ -385,6 +385,31 @@ document.getElementById('conBefore').onclick=function(){//原始状况
 	condition.style.display='none';
 	// conditionX+=1;
 	btelegraph1lever.style.top = '-330px';
+	ttelegraph1lever.style.top = '0px';
+	ttelegraph2lever.style.top = '0px';
+	ttelegraph2watch.innerHTML = 'STOP';
+
+	lhandle1x = 1;  //机旁页面扳手 指向LOCAL
+	lhandle1.style.transformOrigin = '31% 31%';
+	lhandle1.style.transform = 'rotate(' + 90 + 'deg)';
+	lhandle2x = 1; //标识位 1为AHEAD 0为ASTERN
+	lhandle2.style.transformOrigin = '31% 31%';
+	lhandle2.style.transform = 'rotate(' + 90 + 'deg)';
+	lhandle3x = 0; //标识位 0为LOCK 1为UNLOCK
+	lhandle3.style.transformOrigin = '31% 31%';
+	lhandle3.style.transform = 'rotate(' + 0 + 'deg)';
+	thandlex = 0;  //集控车钟页面扳手 指向BRIDGE
+	thandle.style.transformOrigin = '31% 31%';
+	thandle.style.transform = 'rotate(' + 90 + 'deg)';
+	controlLocation();
+    //机旁的手轮
+	lwheelx1x = 0;//
+	lprintPancel1(lwheelx1x);
+	lwheelx2x = 0;//
+	lprintPancel2(lwheelx2x);
+
+	bStandBy.style.backgroundColor='yellow';
+	bStandBy.innerHTML='Stand By'
 	yd=0;
 	ydx=0;
 	rmp=0;
@@ -394,8 +419,6 @@ document.getElementById('conBefore').onclick=function(){//原始状况
 	lrmp=0;
 	LED()
 	schematicX=0;
-	lwheelx1x=0;
-	lprintPancel1(lwheelx1x);
 }
 document.getElementById('conReadyC').onclick=function(){//备车完毕
 	value16x = 1;
@@ -405,7 +428,33 @@ document.getElementById('conReadyC').onclick=function(){//备车完毕
 	value118x  = 1;
 	valueMainx = 1;
 	condition.style.display='none';
-	// conditionX+=1;
+	btelegraph1lever.style.top = '-330px';
+	ttelegraph1lever.style.top = '0px';
+	ttelegraph2lever.style.top = '0px';
+	ttelegraph2watch.innerHTML = 'STOP';
+
+	lhandle1x = 0;  //机旁页面扳手 指向LOCAL
+	lhandle1.style.transformOrigin = '31% 31%';
+	lhandle1.style.transform = 'rotate(' + 0 + 'deg)';
+	lhandle2x = 1; //标识位 1为AHEAD 0为ASTERN
+	lhandle2.style.transformOrigin = '31% 31%';
+	lhandle2.style.transform = 'rotate(' + 90 + 'deg)';
+	lhandle3x = 0; //标识位 0为LOCK 1为UNLOCK
+	lhandle3.style.transformOrigin = '31% 31%';
+	lhandle3.style.transform = 'rotate(' + 0 + 'deg)';
+	thandlex = 0;  //集控车钟页面扳手 指向BRIDGE
+	thandle.style.transformOrigin = '31% 31%';
+	thandle.style.transform = 'rotate(' + 90 + 'deg)';
+	controlLocation();
+    //机旁的手轮
+	lwheelx1x = 0;//
+	lprintPancel1(lwheelx1x);
+	lwheelx2x = 0;//
+	lprintPancel2(lwheelx2x);
+
+	bStandBy.style.backgroundColor='yellow';
+	bStandBy.innerHTML='Stand By'
+	
 	LED()
 	controlLocation();
 	schematicX=1;

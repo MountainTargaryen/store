@@ -48,7 +48,7 @@ lhandle1.onclick = function () {
 }
 
 var lhandle2 = document.getElementById('lhandle2');
-var lhandle2x = 1; //标识位 0为REMOTE 1为LOCAL
+var lhandle2x = 1; //标识位 1为AHEAD 0为ASTERN
 lhandle2.onclick = function () {
 	if (lhandle2x % 2 == 0) {
 		this.style.transformOrigin = '31% 31%';

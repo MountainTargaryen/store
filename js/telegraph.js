@@ -255,7 +255,7 @@ ttelegraph2lever.onmousedown = function (ev) {
 
 //驾控台与集控室 切换手柄
 var thandle = document.getElementById('thandle');
-var thandlex = 0; //杠杆手柄左右标志位，默认集控室
+var thandlex = 0; //杠杆手柄左右标志位，0为bridge
 thandle.onclick = function () {
 	if (thandlex % 2 == 1) { //由集控室改到驾控台
 		this.style.transformOrigin = '31% 31%';

@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>基于web的船舶主机遥控实训仿真系统</title>
+	<title>船舶柴油主机遥控系统虚拟仿真实验</title>
 	<link rel="icon" type="image/png" href="img/dlmutou.png" />
 	<link rel="stylesheet" href="css/common.css" type="text/css" />
 	<link rel="stylesheet" href="css/bridge.css" type="text/css" />
@@ -35,7 +35,8 @@
 				<li id="alocal">机旁控制</li>
 				<li id="aschematicDiagram">气动操纵</li>				
 				<li id="adiagram">状态曲线</li>				
-				<li id="athreeD">主机3D模型</li>
+				<li id="athreeD">主机模型</li>
+				<li id="aexam">参考试题</li>
 				<!-- <li id="acontrolPanel">控制面板</li> -->
 			</ul>
 		</div>
@@ -177,7 +178,7 @@
 						<li>Manual Fuel Limiter</li>
 					</div>
 					<!--pid窗口-->
-					<div id="pidParameter">
+					<div id="bpidParameter">
 						Kp<input type="text" id="Kpx" value="8"
 							onkeyup="this.value=this.value.replace(/[^0-9\.]/g,'')" /><br /> Ki
 						<input type="text" id="Kix" value="0"
@@ -411,7 +412,7 @@
 						<li>Manual Fuel Limiter</li>
 					</div>
 					<!--pid窗口-->
-					<div id="pidParameter">
+					<div id="cpidParameter">
 						<!-- Kp<input type="text" id="Kpx" value="8"
 							onkeyup="this.value=this.value.replace(/[^0-9\.]/g,'')" /><br /> Ki
 						<input type="text" id="Kix" value="0"
@@ -940,7 +941,7 @@
 					<canvas id="threeDC1">你的浏览器不支持canvas</canvas>
 					<canvas id="threeDC2">你的浏览器不支持canvas</canvas> -->
 				<img id="threeDgif" src="">
-				<div id="threeSpeedBox">当前转速为：<span id="threeSpeed"></span>  </div>
+				<div id="threeSpeedBox">转速：<span id="threeSpeed"></span> RPM </div>
 			</div>
 			<!--            调速器                 -->
 			<div id="governor">

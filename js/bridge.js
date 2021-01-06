@@ -1,3 +1,4 @@
+var bStandBy=document.getElementById('bStandBy')
 //*************驾驶台画表盘
 printPanel(250, 280, 150, 130, 'bCanvas');
 printPanel(680, 225, 120, 100, 'bCanvas');
