@@ -139,6 +139,15 @@ function calculate() {
 	pep = pep + (0.005629 * yd * yd * yd - 1.015 * yd * yd + 36.51 * yd - 533.5);
 
 	rmp = parseInt(n);
+
+	//yd为实际燃油齿条刻度 ydx为车钟位置
+	//燃油齿条刻度范围0-80
+	if(ydx==0){
+		yd=0
+	}
+	if(yd>=100){
+		yd=100
+	}
 }
 
 /*

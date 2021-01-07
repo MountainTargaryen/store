@@ -20,7 +20,7 @@ cctx.fillText("FUEL INDEX", 620, 300);
 //r为传入的rmp
 //x为canvas的横坐标
 //y为canvas的横坐标
-bpointerLever1(0, 110, 230, 'cCanvas1');
+// bpointerLever1(0, 110, 230, 'cCanvas1');
 
 //limiter
 var cLimitersMenu = document.getElementById('cLimitersMenu');

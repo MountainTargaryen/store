@@ -409,7 +409,9 @@ document.getElementById('conBefore').onclick=function(){//原始状况
 	lprintPancel2(lwheelx2x);
 
 	bStandBy.style.backgroundColor='yellow';
-	bStandBy.innerHTML='Stand By'
+	bStandBy.innerHTML='Stand By';
+	cStandBy.style.backgroundColor='yellow';
+	cStandBy.innerHTML='Stand By';
 	yd=0;
 	ydx=0;
 	rmp=0;
@@ -452,8 +454,10 @@ document.getElementById('conReadyC').onclick=function(){//备车完毕
 	lwheelx2x = 0;//
 	lprintPancel2(lwheelx2x);
 
-	bStandBy.style.backgroundColor='yellow';
-	bStandBy.innerHTML='Stand By'
+	bStandBy.style.backgroundColor='#01D867';
+	bStandBy.innerHTML='FWE';
+	cStandBy.style.backgroundColor='#01D867';
+	cStandBy.innerHTML='FWE';
 	
 	LED()
 	controlLocation();
@@ -469,11 +473,26 @@ document.getElementById('conOnSea').onclick=function(){//航行状态
 	value118x  = 1;
 	valueMainx = 1;
 	condition.style.display='none';
-	// conditionX+=1;
-	btelegraph1lever.style.top = '-440px';
+	//车钟杠杆位置
+	btelegraph1lever.style.top = '-495px';
+	//车令位置
 	LED()
+	subTelegraph(-30);
+	ttled1[0].style.background = '#00FF00';
+	ttled2[0].style.background = '#00FF00';	
+	btled1[0].style.background = '#00FF00';
+	btled2[0].style.background = '#00FF00';
+
+	bStandBy.style.backgroundColor='#01D867';
+	bStandBy.innerHTML='At Sea';
+	cStandBy.style.backgroundColor='#01D867';
+	cStandBy.innerHTML='At Sea';
+
+	
 	//rmpx=61;
-	brmp=48 ;
+	brmp= 80;
+	rmp=80;
+	rmpx=80;
 	schematicX=1;
 	lwheelx1x=0;
 	lprintPancel1(lwheelx1x);

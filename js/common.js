@@ -107,25 +107,29 @@ function printScale(x, y, r1, min, max, id) {
 }
 
 /*驾控台画杠杆*/
-//r为传入的rmp
-//x为canvas的横坐标
-//y为canvas的横坐标
-function bpointerLever1(r, x, y, id) {
+//ydx车钟位置
+//yd为实际燃油齿条刻度
+function bpointerLever1(ydx,yd,id) {
 	var c = document.getElementById(id);
 	var ctx = c.getContext("2d");
-	var a = r * 1.25;
-	r=parseInt(r)
+	if(yd>=120){
+		yd=120
+	}
+	var a =ydx*1.3;
+	var b =yd*1.3;
+	ydx=parseInt(ydx)
+	yd=parseInt(yd)
 	ctx.clearRect(0, 0, 300, 600);
 	ctx.beginPath();
-	ctx.moveTo(x, 257 - a);
-	ctx.lineTo(x + 50, 237 - a);
-	ctx.lineTo(x, 217 - a);
-	ctx.lineTo(x, 257 - a);
+	ctx.moveTo(110, 257 - a);
+	ctx.lineTo(160, 237 - a);
+	ctx.lineTo(110, 217 - a);
+	ctx.lineTo(110, 257 - a);
 	ctx.stroke();
-	ctx.moveTo(y, 257 - a);
-	ctx.lineTo(y + 50, 237 - a);
-	ctx.lineTo(y, 217 - a);
-	ctx.lineTo(y, 257 - a);
+	ctx.moveTo(230, 257 - b);
+	ctx.lineTo(280, 237 - b);
+	ctx.lineTo(230, 217 - b);
+	ctx.lineTo(230, 257 - b);
 	ctx.stroke();
 
 	ctx.fillStyle = "yellow";
@@ -133,8 +137,8 @@ function bpointerLever1(r, x, y, id) {
 	ctx.strokeStyle = "yellow";
 	ctx.font = "22px Arial ";
 	ctx.fontWeight = 300;
-	ctx.fillText(r + " rmp", 100, 420);
-	ctx.fillText(r + " rmp", 220, 420);
+	ctx.fillText(ydx , 100, 420);
+	ctx.fillText(yd , 220, 420);
 }
 
 //旋转指针的角度
@@ -196,9 +200,9 @@ function LED()
 	btled1[i].style.background = '#640000';
 	btled2[i].style.background = '#640000';
 	}
-	btled1[5].style.background = 'yellow';
-	btled2[5].style.background = 'yellow';
-	ttled1[5].style.background = 'yellow';
-	ttled2[5].style.background = 'yellow';
+	btled1[5].style.background = ' #99af1c';
+	btled2[5].style.background = ' #99af1c';
+	ttled1[5].style.background = ' #99af1c';
+	ttled2[5].style.background = ' #99af1c';
 	lclearSpeedLed();
 }

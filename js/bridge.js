@@ -425,6 +425,10 @@ function subTelegraph(t){
 	if (t >= 95 && t < 125) {
 		btext1.innerHTML = 'Stop';
 		LED();
+		btled1[5].style.background = 'yellow';
+		btled2[5].style.background = 'yellow';
+		ttled1[5].style.background = 'yellow';
+		ttled2[5].style.background = 'yellow';
 		sdctx.drawImage(picMap, 60, 520, 57, 62, 320, 524, 72, 70); //方向车钟stop位置
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 537, 726, 10, 20); //方向车钟stop阀门通路
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 678, 726, 10, 20); //方向车钟astern阀门关闭

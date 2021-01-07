@@ -1008,7 +1008,7 @@
 				GetData2();
 				$.plot($("#flot-placeholder1"), dataset1, options1);
 				$.plot($("#flot-placeholder2"), dataset2, options2);
-				
+
 				if(rmpx==0){
 					document.getElementById('threeDgif').src="img/gif-0.gif"
 				}else if(rmpx<=30 && rmpx>0){
@@ -1020,13 +1020,17 @@
 				}
 				document.getElementById('threeSpeed').innerHTML=rmpx
 				//集控室杠杆随着集控室车钟的变化而变化
-				bpointerLever1( rmpx * 1.4, 110, 230, 'cCanvas1');
+				bpointerLever1( ydx ,yd, 'cCanvas1');
 				//集控室和驾控台表盘指针及示数随着集控室车钟的变化而变化
 				pointerRotate(rmpx * 1.4 * 0.75, 'cMERPMPointer');
 				pointerRotate(rmpx * 1.4 * 0.75, 'bMERPMPointer');
 				pointerRotate(rmpx * 1.4 * 0.75, 'lpointer');
+				pointerRotate(yd*1.8-90, 'bActuatorPosFeedbackPointer');
+				pointerRotate(yd*1.8-90, 'cActuatorPosFeedbackPointer');
 				innerChange(parseInt(rmpx * 1.4), 'RPM', 'cMERPM');
 				innerChange(parseInt(rmpx * 1.4), 'RPM', 'bMERPM');
+				innerChange(parseInt(yd), '', 'bActuatorPosFeedback');
+				innerChange(parseInt(yd), '', 'cActuatorPosFeedback');
 				setTimeout(update, 2000);
 	
 			}
