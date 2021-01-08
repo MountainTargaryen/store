@@ -464,6 +464,16 @@ document.getElementById('conReadyC').onclick=function(){//备车完毕
 	schematicX=1;
 	lwheelx1x=0;
 	lprintPancel1(lwheelx1x);
+
+	yd=0;
+	ydx=0;
+	rmp=0;
+	rmpx=0;
+	brmp=0;
+	trmp=0;
+	lrmp=0;
+	LED()
+	schematicX=1;
 }
 document.getElementById('conOnSea').onclick=function(){//航行状态
 	value16x = 1;

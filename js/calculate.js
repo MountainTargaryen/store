@@ -22,6 +22,7 @@ var dt = 0.2;
 var index = 0;
 var yd = 0;
 var ydx = 0; //pid中代替yd
+var ydp=0;//表盘指针所需展现出来的燃油齿条刻度值
 
 var rmpMaxli=120;//最大转速手动限制
 var rmpMinli=20;//最低转速限制
@@ -109,13 +110,19 @@ function calculate() {
 		}
 	} else {
 		//机旁控制，没有调速器
-		console.log('当前为机旁控制，ydx为：',ydx)
-		if(lrmpx>0){
-			ydx = lrmp;
-		}else{
-			ydx=0
+		if(airstart==2 && ydx==0){
+			airstart=3
 		}
-		// ydx = lrmp;
+		console.log('当前为机旁控制，airstart为：',airstart)
+		if(airstart==1){
+			console.log('当前为空气启动')
+			ydx=30;
+		}else if(airstart==2 && lwheelx1x >= 3){
+			ydx=lrmp;
+			yd=lrmp;
+		}else{
+			ydx = 0;
+		}
 	}
 
 	//
@@ -140,13 +147,14 @@ function calculate() {
 
 	rmp = parseInt(n);
 
-	//yd为实际燃油齿条刻度 ydx为车钟位置
+	//yd为实际燃油齿条刻度 ydx为车钟位置 ydp为指针所展现的燃油齿条刻度值
 	//燃油齿条刻度范围0-80
-	if(ydx==0){
-		yd=0
+	ydp=yd;
+	if(ydx==0 ){
+		ydp=0;
 	}
 	if(yd>=100){
-		yd=100
+		ydp=100;
 	}
 }
 

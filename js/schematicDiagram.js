@@ -43,7 +43,7 @@ valve16Cancel.onclick=function(){
 }
 
 
-let schematicX=0;//0代表初始状态，为完成；1代表起动逻辑完成但是没有起动；2代表空气起动状态；
+let schematicX=0;//0代表初始状态，未完成；1代表起动逻辑完成但是没有起动；2代表空气起动状态；
 
 function valueCheck() {
 	if (value16x % 2 == 1) {

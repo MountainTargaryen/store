@@ -2,6 +2,8 @@ var lrmp = 0; //机旁控制转速
 var lrmpx=0;//暂存机旁控制转速
 var lbox1c = document.getElementById('lbox1canvas');
 var lbox1ctx = lbox1c.getContext("2d");
+var airstart=0;//机旁空气启动变量，1为空气启动状态，0为非空气启动状态
+var airstarting=0;//1表示处于空气启动后到转速为0的这一过程中，0表示在空气启动之前或转速为0 后
 lbox1ctx.font = '18px Arial';
 lbox1ctx.fillStyle = '#FFFF00';
 lbox1ctx.fillText('AHEAD', 78, 33);
@@ -116,18 +118,17 @@ var lbuttonStop = document.getElementById('lbuttonStop');
 lbuttonStart.onmousedown = function () {
 	lbuttonStart.style.backgroundColor = "green";
 	lbuttonStop.style.backgroundColor = "grey";
-	 if(value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx%2==1 && lwheelx1x>=3 && lhandle1x % 2 == 1){
+	 if(value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx%2==1 && lhandle1x % 2 == 1){
+		airstart=1;
 		LED()
 		schematicX = 1;
-		lrmpx=lrmp;
-		lrmp=30;
-		console.log('ok',lrmp)
+		console.log('airstart',lrmp)
 	 }	
 }
 lbuttonStart.onmouseup = function () {
 	lbuttonStart.style.backgroundColor = "grey";
-	lrmp=lrmpx;
-	console.log('lrmp',lrmpx);
+	airstart=2;
+	console.log('airstop',lrmpx);
 }
 
 lbuttonStop.onclick = function () {
