@@ -117,7 +117,6 @@ var lbuttonStart = document.getElementById('lbuttonStart');
 var lbuttonStop = document.getElementById('lbuttonStop');
 lbuttonStart.onmousedown = function () {
 	lbuttonStart.style.backgroundColor = "green";
-	lbuttonStop.style.backgroundColor = "grey";
 	 if(value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx%2==1 && lhandle1x % 2 == 1){
 		airstart=1;
 		LED()
@@ -131,8 +130,18 @@ lbuttonStart.onmouseup = function () {
 	console.log('airstop',lrmpx);
 }
 
-lbuttonStop.onclick = function () {
+lbuttonStop.onmousedown = function () {
 	lbuttonStop.style.backgroundColor = "#B40404";
+	yd = 0;
+	ydx = 0;
+	rmp = 0;
+	rmpx = 0;
+	brmp = 0;
+	trmp = 0;
+	lrmp = 0;
+}
+lbuttonStop.onmouseup = function () {
+	lbuttonStop.style.backgroundColor = "#grey";
 }
 
 var lwheel1Left = document.getElementById('lwheel1Left');
@@ -197,7 +206,8 @@ lwheel2Right.onclick = function () {
 			lwheelx2x = 11;
 		}
 		lprintPancel2(lwheelx2x);
-		lrmp += 10;
+		lrmp += 7.5;
+		lrmp=parseInt(lrmp);
 		if (lrmp >= 110) {
 			lrmp = 110;
 		}
@@ -212,7 +222,8 @@ lwheel2Left.onclick = function () {
 			lwheelx2x = 0;
 		}
 		lprintPancel2(lwheelx2x);
-		lrmp -= 10;
+		lrmp -= 7.5;
+		lrmp=parseInt(lrmp);
 		if (lrmp <= 0) {
 			lrmp = 0;
 		}

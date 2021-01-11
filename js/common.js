@@ -137,7 +137,7 @@ function bpointerLever1(ydx,yd,id) {
 	ctx.strokeStyle = "yellow";
 	ctx.font = "22px Arial ";
 	ctx.fontWeight = 300;
-	ctx.fillText(ydx , 100, 420);
+	ctx.fillText(ydx , 130, 420);
 	ctx.fillText(yd , 220, 420);
 }
 

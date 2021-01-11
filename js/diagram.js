@@ -19,7 +19,7 @@ var rmpx = 0; //用于初始情况让主机转速和刻盘示数为0，该参数
 function GetData2() {
 	data2.shift();
 	while(data2.length < totalPoints) {
-		var temp = [now2 += updateInterval, rmpx*1.4];
+		var temp = [now2 += updateInterval, rmpx];
 		data2.push(temp);
 	}
 }

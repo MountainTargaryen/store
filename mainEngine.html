@@ -1001,6 +1001,7 @@
 	
 				checkStart(); //检验是否准备就绪，备车完毕
 				valueCheck(); //检查气动逻辑图
+				engineNotReadyCheck();//驾驶台、集控室下方EngineState菜单内容
 				if (trmp >= 0 || brmp >= 0 || lrmp >= 0) {
 					calculate();
 				}
@@ -1018,21 +1019,23 @@
 				}else if(rmpx>60){
 					document.getElementById('threeDgif').src="img/gif-3.gif"
 				}
-				document.getElementById('threeSpeed').innerHTML= parseInt( rmpx*1.4)
+				document.getElementById('threeSpeed').innerHTML= parseInt( rmpx)
 				//集控室杠杆随着集控室车钟的变化而变化
 				bpointerLever1( ydx ,ydp, 'cCanvas1');
 				//集控室和驾控台表盘指针及示数随着集控室车钟的变化而变化
-				pointerRotate(rmpx * 1.4 * 0.75, 'cMERPMPointer');
-				pointerRotate(rmpx * 1.4 * 0.75, 'bMERPMPointer');
-				pointerRotate(rmpx * 1.4 * 0.75, 'lpointer');
+				pointerRotate(rmpx * 0.75, 'cMERPMPointer');
+				pointerRotate(rmpx * 0.75, 'bMERPMPointer');
+				pointerRotate(rmpx * 0.75, 'lpointer');
 				pointerRotate(ydp*1.8-90, 'bActuatorPosFeedbackPointer');
 				pointerRotate(ydp*1.8-90, 'cActuatorPosFeedbackPointer');
-				innerChange(parseInt(rmpx * 1.4), 'RPM', 'cMERPM');
-				innerChange(parseInt(rmpx * 1.4), 'RPM', 'bMERPM');
+				innerChange(parseInt(rmpx), 'RPM', 'cMERPM');
+				innerChange(parseInt(rmpx), 'RPM', 'bMERPM');
 				innerChange(parseInt(ydp), '', 'bActuatorPosFeedback');
 				innerChange(parseInt(ydp), '', 'cActuatorPosFeedback');
+
+				console.log('yd:',yd,"----------rpm",rmp)
+
 				setTimeout(update, 2000);
-	
 			}
 			update();
 	

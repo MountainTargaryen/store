@@ -1,4 +1,4 @@
-var n = 32;
+var n = 0;     //修改了初始输入值
 var vp = 1.2;
 var zhuansu = 31;
 var zhuansulast = 31;
@@ -125,12 +125,13 @@ function calculate() {
 		}
 	}
 
-	//
-	if(yd >= 20) {
-		index = yd / 150;
-	} else {
-		index = 0;
-	}
+	//模拟空气启动
+	// if(yd >= 10) {
+	// 	index = yd / 150;
+	// } else {
+	// 	index = 0;
+	// }
+	index = yd / 150;
 
 	aita = 0.526 * (1 - Math.exp(-14 * n / zhuansu)); //空气燃油质量比
 	owf = 1190 * aita * index * zhuansu;
@@ -146,7 +147,10 @@ function calculate() {
 	pep = pep + (0.005629 * yd * yd * yd - 1.015 * yd * yd + 36.51 * yd - 533.5);
 
 	rmp = parseInt(n);
-
+	rmp=rmp-20;
+	if(rmp<=0){
+		rmp=0;
+	}
 	//yd为实际燃油齿条刻度 ydx为车钟位置 ydp为指针所展现的燃油齿条刻度值
 	//燃油齿条刻度范围0-80
 	ydp=yd;

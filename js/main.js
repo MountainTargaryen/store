@@ -499,10 +499,10 @@ document.getElementById('conOnSea').onclick=function(){//航行状态
 	cStandBy.innerHTML='At Sea';
 
 	
+	
 	//rmpx=61;
 	brmp= 80;
-	rmp=80;
-	rmpx=80;
+	rmp=55;
 	schematicX=1;
 	lwheelx1x=0;
 	lprintPancel1(lwheelx1x);

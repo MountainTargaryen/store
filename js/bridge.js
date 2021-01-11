@@ -219,7 +219,6 @@ var bEngineStateBox = document.getElementById('bEngineStateBox');
 var bEngineState = document.getElementById('bEngineState');
 bEngineState.onclick = function () {
 	bEngineStateBox.style.display = "block";
-	engineNotReadyCheck()
 }
 document.getElementById('bEngineStateHomeButton').onclick = function () {
 	bEngineStateBox.style.display = "none";
@@ -236,25 +235,40 @@ document.getElementById('bcpHomeButton').onclick = function () {
 
 //检测气动逻辑阀门状态，匹配ENGINE STATE原因
 var bECRengine = document.getElementById('bECRengine')
+var cECRengine = document.getElementById('cECRengine')
 var bECRengines = bECRengine.getElementsByTagName('li')
+var cECRengines = cECRengine.getElementsByTagName('li')
 
 function engineNotReadyCheck() {
-	if (value16x % 2 == 0) { //主气动阀
-		bECRengines[1].style.color = 'red'
+	if (valueMainx % 2 == 0) { //主气动阀
+		bECRengines[1].style.color = 'red';
+		cECRengines[1].style.color = 'red';
 	} else {
-		bECRengines[1].style.color = 'white'
+		bECRengines[1].style.color = 'white';
+		cECRengines[1].style.color = 'white';
 	}
 
 	if (value116x % 2 == 0) { //盘车机
-		bECRengines[2].style.color = 'red'
+		bECRengines[2].style.color = 'red';
+		cECRengines[2].style.color = 'red';
 	} else {
-		bECRengines[2].style.color = 'white'
+		bECRengines[2].style.color = 'white';
+		cECRengines[2].style.color = 'white';
 	}
 
 	if (value118x % 2 == 0) { //空气分配器
-		bECRengines[0].style.color = 'red'
+		bECRengines[0].style.color = 'red';
+		cECRengines[0].style.color = 'red';
 	} else {
-		bECRengines[0].style.color = 'white'
+		bECRengines[0].style.color = 'white';
+		cECRengines[0].style.color = 'white';
+	}
+	if (lwheelx1x > 2){
+		bECRengines[3].style.color = 'red';
+		cECRengines[3].style.color = 'red';
+	} else {
+		bECRengines[3].style.color = 'white';
+		cECRengines[3].style.color = 'white';
 	}
 }
 

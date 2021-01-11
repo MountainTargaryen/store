@@ -516,14 +516,6 @@ function qidongbian() {
 function checkStart() {
 	//起动条件完成   0为关闭状态1位起动状态
 	if (value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && value118x % 2 == 1&& valueMainx%2==1) {
-		document.getElementById('bEngReady').innerHTML = 'Eng Ready';
-		document.getElementById('bEngReady').style.backgroundColor = '#01D867';
-		document.getElementById('cEngReady').innerHTML = 'Eng Ready';
-		document.getElementById('cEngReady').style.backgroundColor = '#01D867';
-		document.getElementById('bSystemReady').innerHTML = 'System Ready';
-		document.getElementById('bSystemReady').style.backgroundColor = '#01D867';
-		document.getElementById('cSystemReady').innerHTML = 'System Ready';
-		document.getElementById('cSystemReady').style.backgroundColor = '#01D867';
 		pointerRotate(31, 'bStartAirPressPointer');
 		document.getElementById('bStartAirPress').innerHTML = '27 bar';
 		pointerRotate(31, 'cStartAirPressPointer');
@@ -541,7 +533,7 @@ function checkStart() {
 		}
 
 		if (ydx > 0) {
-			rmpx = rmp;
+			rmpx = rmp*1.9;
 			bstate.innerHTML = 'Running';
 			cState.innerHTML = 'Running';
 		} else {
@@ -549,6 +541,16 @@ function checkStart() {
 			bstate.innerHTML = 'Stopping';
 			cState.innerHTML = 'Stopping';
 
+		}
+		if(lwheelx1x<3){
+			document.getElementById('bEngReady').innerHTML = 'Eng Ready';
+			document.getElementById('bEngReady').style.backgroundColor = '#01D867';
+			document.getElementById('cEngReady').innerHTML = 'Eng Ready';
+			document.getElementById('cEngReady').style.backgroundColor = '#01D867';
+			document.getElementById('bSystemReady').innerHTML = 'System Ready';
+			document.getElementById('bSystemReady').style.backgroundColor = '#01D867';
+			document.getElementById('cSystemReady').innerHTML = 'System Ready';
+			document.getElementById('cSystemReady').style.backgroundColor = '#01D867';
 		}
 	} else {
 		document.getElementById('bEngReady').innerHTML = 'Eng N. Ready';
