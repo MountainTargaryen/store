@@ -130,6 +130,630 @@ alocal.onclick = function() {
 	governor.style.display = "none";
 	condition.style.display="none";
 
+	
+
+
+
+// ZM-----------
+
+var lPic = document.getElementById('lpicture');
+var lPiced = lPic.getElementsByTagName('img');
+
+for(var i = 0; i < lPiced.length; i++) {
+
+	lPiced[i].onmouseover = function() {
+		startMove(this, 'opacity', 100);
+	};
+	lPiced[i].onmouseout = function() {
+		startMove(this, 'opacity', 0);
+	};
+}
+// “结构总览”的跳转
+// white.onclick = function(){
+// 	lmainsys.style.display = "none";
+// 	lpanel.style.display = "none";
+// 	lopwheel.style.display = "none";
+// 	lgov.style.display = "none";
+// 	ltele.style.display = "block";
+// 	l2d.style.display = "none";
+// }
+
+
+// jquery 点击变色，其余恢复
+$('#localmenu li').on('click',function(){
+
+	// this.color = "rgb(112, 42, 89)";
+	$(this).css({'border':' 2px solid white',
+	
+	'background-color':'#9EACAE','color':'yellow'
+	});
+	$(this).siblings().css({'border':' 1px solid white',
+	'background-color':' rgb(104, 156, 199)','color':'white'
+
+});
+})
+// var x=0;
+
+// $('#pstart').on('click',function(){
+// 	x+=1;
+	
+// 	if(x%2==1)
+// 	startMove(this, 'opacity', 0);
+// 	if(x%2==0)
+// 	startMove(this, 'opacity', 100);
+
+// })
+
+
+$('#pstart').on('mousedown',function(){
+	startMove(this, 'opacity', 100);
+
+})
+
+
+$('#pstart').on('mouseup',function(){
+	startMove(this, 'opacity', 0);
+})
+
+$('#pstop').on('mousedown',function(){
+	startMove(this, 'opacity', 100);
+})
+
+$('#pstop').on('mouseup',function(){
+	startMove(this, 'opacity', 0);
+})
+var x = 0;
+var y = 0;
+$('#pswitch1').on('click',function(){
+	
+	x+=1;
+	if(x%2==1){
+	startMove(this, 'opacity', 100);
+	$('#touming').on('click',function(){
+		$('#pswitch2').css('display','block');
+		document.getElementById('plaheadLed').style.backgroundColor = '#085A13';
+		document.getElementById('plasternLed').style.backgroundColor = '#FF0000';
+
+		document.getElementById('olaheadLed').style.backgroundColor = '#085A13';
+		document.getElementById('olasternLed').style.backgroundColor = '#FF0000';
+
+		document.getElementById('glaheadLed').style.backgroundColor = '#085A13';
+		document.getElementById('glasternLed').style.backgroundColor = '#FF0000';
+
+		document.getElementById('tlaheadLed').style.backgroundColor = '#085A13';
+		document.getElementById('tlasternLed').style.backgroundColor = '#FF0000';
+
+		document.getElementById('lhandle2').style.transformOrigin = '31% 31%';
+		document.getElementById('lhandle2').style.transform = 'rotate(' + 0 + 'deg)';
+		lhandle2x += 1;
+		// controlLocation();
+		document.getElementById('laheadLed').style.backgroundColor = '#085A13';
+		document.getElementById('lasternLed').style.backgroundColor = '#FF0000';
+	})
+	$('#touming2').on('click',function(){
+		$('#pswitch2').css('display','none');
+		document.getElementById('plaheadLed').style.backgroundColor = '#00FF00';
+		document.getElementById('plasternLed').style.backgroundColor = '#800000';
+
+		document.getElementById('olaheadLed').style.backgroundColor = '#00FF00';
+		document.getElementById('olasternLed').style.backgroundColor = '#800000';
+
+		document.getElementById('glaheadLed').style.backgroundColor = '#00FF00';
+		document.getElementById('glasternLed').style.backgroundColor = '#800000';
+
+		document.getElementById('tlaheadLed').style.backgroundColor = '#00FF00';
+		document.getElementById('tlasternLed').style.backgroundColor = '#800000';
+		
+		document.getElementById('lhandle2').style.transformOrigin = '31% 31%';
+		document.getElementById('lhandle2').style.transform = 'rotate(' + 90 + 'deg)';
+		lhandle2x += 1;
+		// controlLocation();
+		document.getElementById('laheadLed').style.backgroundColor = '#00FF00';
+		document.getElementById('lasternLed').style.backgroundColor = '#800000';
+		
+	})}
+	if(x%2==0){
+	startMove(this, 'opacity', 0);
+	$('#touming').on('click',function(){
+		$('#pswitch2').css('display','none');
+		
+	})
+	$('#touming2').on('click',function(){
+		$('#pswitch2').css('display','none');
+	})}
+
+})
+
+$('#pswitch3').on('click',function(){
+	
+	y+=1;
+	if(y%2==1){
+	startMove(this, 'opacity', 100);
+	$('#touming3').on('click',function(){
+		$('#pswitch4').css('display','block');
+		document.getElementById('glemergencyControlLed').style.backgroundColor = '#FF0000';
+		document.getElementById('glbridgeControlLed').style.backgroundColor = '#085A13';
+		document.getElementById('glcontrolRoomControlLed').style.backgroundColor = ' #085A13';
+	
+		document.getElementById('plemergencyControlLed').style.backgroundColor = '#FF0000';
+		document.getElementById('plbridgeControlLed').style.backgroundColor = '#085A13';
+		document.getElementById('plcontrolRoomControlLed').style.backgroundColor = ' #085A13';
+
+		document.getElementById('olemergencyControlLed').style.backgroundColor = '#FF0000';
+		document.getElementById('olbridgeControlLed').style.backgroundColor = '#085A13';
+		document.getElementById('olcontrolRoomControlLed').style.backgroundColor = ' #085A13';
+
+		document.getElementById('tlemergencyControlLed').style.backgroundColor = '#FF0000';
+		document.getElementById('tlbridgeControlLed').style.backgroundColor = '#085A13';
+		document.getElementById('tlcontrolRoomControlLed').style.backgroundColor = ' #085A13';
+		
+		document.getElementById('plbcr').style.borderColor = 'white';
+		document.getElementById('plecr').style.borderColor = 'white';
+		document.getElementById('plloc').style.borderColor = '#FFC200';
+
+		document.getElementById('lemergencyControlLed').style.backgroundColor = '#FF0000';
+		document.getElementById('lbridgeControlLed').style.backgroundColor = '#085A13';
+		// document.getElementById('lcontrolRoomControlLed').style.backgroundColor = ' #085A13';
+
+
+		document.getElementById('lhandle1').style.transformOrigin = '31% 31%';
+		document.getElementById('lhandle1').style.transform = 'rotate(' + 90 + 'deg)';
+		lhandle1x += 1;
+		// controlLocation();
+
+		document.getElementById('plcontrolRoomControlLed').style.backgroundColor = ' #085A13';
+		document.getElementById('olcontrolRoomControlLed').style.backgroundColor = ' #085A13';
+		document.getElementById('glcontrolRoomControlLed').style.backgroundColor = ' #085A13';
+		document.getElementById('tlcontrolRoomControlLed').style.backgroundColor = ' #085A13';
+		document.getElementById('lcontrolRoomControlLed').style.backgroundColor =' #085A13';
+		document.getElementById('lemergencyControlLed').style.backgroundColor = '#FF0000';
+		document.getElementById('lbcrled').style.backgroundColor = 'white';
+		document.getElementById('lecrled').style.backgroundColor = 'white';
+		document.getElementById('llocled').style.backgroundColor = '#FFC200';
+		document.getElementById('plbcrled').style.backgroundColor = 'white';
+		document.getElementById('plecrled').style.backgroundColor = 'white';
+		document.getElementById('pllocled').style.backgroundColor = '#FFC200';
+		document.getElementById('plbcr').style.borderColor = 'white';
+		document.getElementById('plecr').style.borderColor =  'white';
+		document.getElementById('plloc').style.borderColor ='#FFC200';
+		document.getElementById('lbcr').style.borderColor = 'white';
+		document.getElementById('lecr').style.borderColor =  'white';
+		document.getElementById('lloc').style.borderColor ='#FFC200';
+	})
+	$('#touming4').on('click',function(){
+		$('#pswitch4').css('display','none');
+		document.getElementById('plbcr').style.borderColor = '#FFC200';
+		document.getElementById('plecr').style.borderColor = 'white';
+		document.getElementById('plloc').style.borderColor = 'white';
+		document.getElementById('pllocled').style.backgroundColor = 'white';
+
+		document.getElementById('lhandle1').style.transformOrigin = '31% 31%';
+		document.getElementById('lhandle1').style.transform = 'rotate(' + 0 + 'deg)';
+		lhandle1x += 1;
+		
+	})}
+	if(y%2==0){
+	startMove(this, 'opacity', 0);
+	// $('#touming3').on('click',function(){
+	// 	$('#pswitch4').css('display','none');
+		
+	// })
+	$('#touming4').on('click',function(){
+		$('#pswitch4').css('display','none');
+	})}
+
+})
+//油门开关
+var x=0;
+var yy=0;
+$('#wheelswitch').on('click',function(){
+	x+=1;
+	if(x%2==1){
+		startMove(this, 'opacity', 100);
+		lhandle3x += 1;
+		yy+=1;
+	}
+	if(x%2==0){
+		startMove(this, 'opacity', 0);
+		lhandle3x -= 1;
+		yy-=1;	
+	}
+})
+
+//油门开关控制油门的逻辑
+var z=0;
+
+var pwheelx1x = 0;
+
+$('#wheeltouming').on('click',function(){
+	if(yy==1){
+	z+=1;
+	if(z==1){
+		$('#wheelstart').css('display','block');
+		$('#wheeloil1').css('display','none');
+		$('#wheeloil1_5').css('display','none');
+		$('#wheeloil2').css('display','none');
+		$('#wheeloil3').css('display','none');
+		$('#wheeloil4').css('display','none');
+		
+		
+	}
+	if(z==2){
+		$('#wheelstart').css('display','none');
+		$('#wheeloil1').css('display','block');
+		$('#wheeloil1_5').css('display','none');
+		$('#wheeloil2').css('display','none');
+		$('#wheeloil3').css('display','none');
+		$('#wheeloil4').css('display','none');
+		lrmp = 30;
+	}
+	if(z==3){
+		$('#wheelstart').css('display','none');
+		$('#wheeloil1').css('display','none');
+		$('#wheeloil1_5').css('display','block');
+		$('#wheeloil2').css('display','none');
+		$('#wheeloil3').css('display','none');
+		$('#wheeloil4').css('display','none');
+		lrmp = 60;
+	}
+	if(z==4){
+		$('#wheelstart').css('display','none');
+		$('#wheeloil1').css('display','none');
+		$('#wheeloil1_5').css('display','none');
+		$('#wheeloil2').css('display','block');
+		$('#wheeloil3').css('display','none');
+		$('#wheeloil4').css('display','none');
+		lrmp = 90;
+	}
+	if(z==5){
+		$('#wheelstart').css('display','none');
+		$('#wheeloil1').css('display','none');
+		$('#wheeloil1_5').css('display','none');
+		$('#wheeloil2').css('display','none');
+		$('#wheeloil3').css('display','block');
+		$('#wheeloil4').css('display','none');
+		lrmp = 120;
+	}
+	if(z==6){
+		$('#wheelstart').css('display','none');
+		$('#wheeloil1').css('display','none');
+		$('#wheeloil1_5').css('display','none');
+		$('#wheeloil2').css('display','none');
+		$('#wheeloil3').css('display','none');
+		$('#wheeloil4').css('display','block');
+		lrmp = 120;
+	}
+	if(z >= 6){
+		z = 6;
+	}
+}
+})
+$('#wheeltoumingleft').on('click',function(){
+	if(yy==1){
+		z-=1;
+		if(z==1){
+			$('#wheelstart').css('display','block');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+			
+		}
+		if(z==2){
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','block');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+			lrmp = 30;
+		}
+		if(z==3){
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','block');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+			lrmp = 60;
+		}
+		if(z==4){
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','block');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+			lrmp = 90;
+		}
+		if(z==5){
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','block');
+			$('#wheeloil4').css('display','none');
+			lrmp = 120;
+		}
+		if(z==6){
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','block');
+			lrmp = 120;
+		}
+		if(z==0){
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1.5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+		}
+		if(z <= 0){
+			z = 0;
+		}
+	}
+		
+})
+		
+// else{
+// 	$('#wheeltouming').on('click',function(){})
+// 	$('#wheeltoumingleft').on('click',function(){})
+// }
+	
+
+// document.getElementById('glbridgeControlLed').style.backgroundColor = '#00FF00';
+// document.getElementById('glemergencyControlLed').style.backgroundColor = '#800000';
+
+// document.getElementById('plbridgeControlLed').style.backgroundColor = '#00FF00';
+// document.getElementById('plemergencyControlLed').style.backgroundColor = '#800000';
+// document.getElementById('olbridgeControlLed').style.backgroundColor = '#00FF00';
+// document.getElementById('olemergencyControlLed').style.backgroundColor = '#800000';
+// document.getElementById('tlbridgeControlLed').style.backgroundColor = '#00FF00';
+// document.getElementById('tlemergencyControlLed').style.backgroundColor = '#800000';
+
+var x=0;
+$('#impactwheel').on('click',function(){
+	x+=1;
+	if(x%2==1){
+		startMove(this, 'opacity', 100);
+
+	}
+	if(x%2==0){
+		startMove(this, 'opacity', 0);
+
+	}
+})
+
+
+	
+
+
+
+
+
+$('#white1').on('click',function(){
+	$('#ltele').css('display','block');	
+	$('#lpanel').css('display','none');
+	$('#lmainsys').css('display','none');
+	$('#lgov').css('display','none');
+	$('#lopwheel').css('display','none');
+	$('#l2d').css('display','none');
+	$('#lm_tele').css({'border':' 2px solid white',
+	'background-color':'#9EACAE','color':'yellow'
+	});
+	$('#lm_tele').siblings().css({'border':' 1px solid white',
+	'background-color':'','color':''
+
+});})
+$('#white2').on('click',function(){
+	$('#ltele').css('display','none');	
+	$('#lpanel').css('display','none');
+	$('#lmainsys').css('display','none');
+	$('#lgov').css('display','block');
+	$('#lopwheel').css('display','none');
+	$('#l2d').css('display','none');
+	$('#lm_gov').css({'border':' 2px solid white',
+	'background-color':'#9EACAE','color':'yellow'
+	});
+	$('#lm_gov').siblings().css({'border':' 1px solid white',
+	'background-color':'','color':''
+
+});})
+$('#white3').on('click',function(){
+	$('#ltele').css('display','none');	
+	$('#lpanel').css('display','block');
+	$('#lmainsys').css('display','none');
+	$('#lgov').css('display','none');
+	$('#lopwheel').css('display','none');
+	$('#l2d').css('display','none');
+	$('#lm_panel').css({'border':' 2px solid white',
+	'background-color':'#9EACAE','color':'yellow'
+	});
+	$('#lm_panel').siblings().css({'border':' 1px solid white',
+	'background-color':'','color':''
+
+});})
+$('#white4').on('click',function(){
+	$('#ltele').css('display','none');	
+	$('#lpanel').css('display','none');
+	$('#lmainsys').css('display','none');
+	$('#lgov').css('display','none');
+	$('#lopwheel').css('display','block');
+	$('#l2d').css('display','none');
+	$('#lm_opwheel').css({'border':' 2px solid white',
+	'background-color':'#9EACAE','color':'yellow'
+	});
+	$('#lm_opwheel').siblings().css({'border':' 1px solid white',
+	'background-color':'','color':''
+
+});})
+
+
+
+var zmm=0;
+	lm_mainsys.onclick = function(){
+		zmm=1;
+		lmainsys.style.display = "block";
+		lpanel.style.display = "none";
+		lopwheel.style.display = "none";
+		lgov.style.display = "none";
+		ltele.style.display = "none";
+		l2d.style.display = "none";
+	}
+	lm_panel.onclick = function(){
+		zmm=2;
+		lmainsys.style.display = "none";
+		lpanel.style.display = "block";
+		lopwheel.style.display = "none";
+		lgov.style.display = "none";
+		ltele.style.display = "none";
+		l2d.style.display = "none";
+
+	}
+	lm_gov.onclick = function(){
+		zmm=3;
+		lmainsys.style.display = "none";
+		lpanel.style.display = "none";
+		lopwheel.style.display = "none";
+		lgov.style.display = "block";
+		ltele.style.display = "none";
+		l2d.style.display = "none";
+	}
+	lm_opwheel.onclick = function(){
+		zmm=4;
+		lmainsys.style.display = "none";
+		lpanel.style.display = "none";
+		lopwheel.style.display = "block";
+		lgov.style.display = "none";
+		ltele.style.display = "none";
+		l2d.style.display = "none";
+	}
+	lm_tele.onclick = function(){
+		zmm=5;
+		lmainsys.style.display = "none";
+		lpanel.style.display = "none";
+		lopwheel.style.display = "none";
+		lgov.style.display = "none";
+		ltele.style.display = "block";
+		l2d.style.display = "none";
+	}
+	lm_2d.onclick = function(){
+		zmm=6;
+		lmainsys.style.display = "none";
+		lpanel.style.display = "none";
+		lopwheel.style.display = "none";
+		lgov.style.display = "none";
+		ltele.style.display = "none";
+		l2d.style.display = "block";
+	}
+
+
+	if(zmm==1){
+		$('#alocal').on('click',function(){
+		lmainsys.style.display = "block";
+		lpanel.style.display = "none";
+		lopwheel.style.display = "none";
+		lgov.style.display = "none";
+		ltele.style.display = "none";
+		l2d.style.display = "none";
+		$('#lm_mainsys').css({'border':' 2px solid white',
+		'background-color':'#9EACAE','color':'yellow'
+		});
+		$('#lm_mainsys').siblings().css({'border':' 1px solid white',
+		'background-color':'','color':'white'});
+		})
+
+	}
+	if(zmm==2){
+		$('#alocal').on('click',function(){
+		lmainsys.style.display = "none";
+		lpanel.style.display = "block";
+		lopwheel.style.display = "none";
+		lgov.style.display = "none";
+		ltele.style.display = "none";
+		l2d.style.display = "none";
+		$('#lm_panel').css({'border':' 2px solid white',
+		'background-color':'#9EACAE','color':'yellow'
+		});
+		$('#lm_panel').siblings().css({'border':' 1px solid white',
+		'background-color':'','color':'white'});
+		})
+
+	}
+	if(zmm==3){
+		$('#alocal').on('click',function(){
+		lmainsys.style.display = "none";
+		lpanel.style.display = "none";
+		lopwheel.style.display = "block";
+		lgov.style.display = "none";
+		ltele.style.display = "none";
+		l2d.style.display = "none";
+		$('#lm_opwheel').css({'border':' 2px solid white',
+		'background-color':'#9EACAE','color':'yellow'
+		});
+		$('#lm_opwheel').siblings().css({'border':' 1px solid white',
+		'background-color':'','color':'white'});
+		})
+
+	}
+	if(zmm==4){
+		$('#alocal').on('click',function(){
+		lmainsys.style.display = "none";
+		lpanel.style.display = "none";
+		lopwheel.style.display = "none";
+		lgov.style.display = "block";
+		ltele.style.display = "none";
+		l2d.style.display = "none";
+		$('#lm_gov').css({'border':' 2px solid white',
+		'background-color':'#9EACAE','color':'yellow'
+		});
+		$('#lm_gov').siblings().css({'border':' 1px solid white',
+		'background-color':'','color':'white'});
+		})
+
+	}
+	if(zmm==5){
+		$('#alocal').on('click',function(){
+		lmainsys.style.display = "none";
+		lpanel.style.display = "none";
+		lopwheel.style.display = "none";
+		lgov.style.display = "none";
+		ltele.style.display = "block";
+		l2d.style.display = "none";
+		$('#lm_tele').css({'border':' 2px solid white',
+		'background-color':'#9EACAE','color':'yellow'
+		});
+		$('#lm_tele').siblings().css({'border':' 1px solid white',
+		'background-color':'','color':'white'});
+		})
+
+	}
+	if(zmm==6){
+		$('#alocal').on('click',function(){
+		lmainsys.style.display = "none";
+		lpanel.style.display = "none";
+		lopwheel.style.display = "none";
+		lgov.style.display = "none";
+		ltele.style.display = "none";
+		l2d.style.display = "block";
+		$('#lm_2d').css({'border':' 2px solid white',
+		'background-color':'#9EACAE','color':'yellow'
+		});
+		$('#lm_2d').siblings().css({'border':' 1px solid white',
+		'background-color':'','color':'white'});
+		})
+
+	}
+
+
+
+
+
 	for(var menulixx = 0; menulixx < menuli.length; menulixx++) {
 		menuli[menulixx].style.backgroundColor = '';
 		menuli[menulixx].style.color = 'white';
@@ -421,6 +1045,8 @@ document.getElementById('conBefore').onclick=function(){//原始状况
 	lrmp=0;
 	LED()
 	schematicX=0;
+	// lwheelx1x=0;
+	// lprintPancel1(lwheelx1x);
 }
 document.getElementById('conReadyC').onclick=function(){//备车完毕
 	value16x = 1;
@@ -430,6 +1056,7 @@ document.getElementById('conReadyC').onclick=function(){//备车完毕
 	value118x  = 1;
 	valueMainx = 1;
 	condition.style.display='none';
+	// conditionX+=1;
 	btelegraph1lever.style.top = '-330px';
 	ttelegraph1lever.style.top = '0px';
 	ttelegraph2lever.style.top = '0px';
@@ -458,7 +1085,7 @@ document.getElementById('conReadyC').onclick=function(){//备车完毕
 	bStandBy.innerHTML='FWE';
 	cStandBy.style.backgroundColor='#01D867';
 	cStandBy.innerHTML='FWE';
-	
+
 	LED()
 	controlLocation();
 	schematicX=1;
@@ -483,9 +1110,8 @@ document.getElementById('conOnSea').onclick=function(){//航行状态
 	value118x  = 1;
 	valueMainx = 1;
 	condition.style.display='none';
-	//车钟杠杆位置
+	// conditionX+=1;
 	btelegraph1lever.style.top = '-495px';
-	//车令位置
 	LED()
 	subTelegraph(-30);
 	ttled1[0].style.background = '#00FF00';
@@ -497,9 +1123,6 @@ document.getElementById('conOnSea').onclick=function(){//航行状态
 	bStandBy.innerHTML='At Sea';
 	cStandBy.style.backgroundColor='#01D867';
 	cStandBy.innerHTML='At Sea';
-
-	
-	
 	//rmpx=61;
 	brmp= 80;
 	rmp=55;

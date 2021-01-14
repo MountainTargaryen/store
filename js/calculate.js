@@ -123,15 +123,12 @@ function calculate() {
 		}else{
 			ydx = 0;
 		}
+		// ydx = lrmp;
 	}
 
-	//模拟空气启动
-	// if(yd >= 10) {
-	// 	index = yd / 150;
-	// } else {
-	// 	index = 0;
-	// }
-	index = yd / 150;
+
+		index = yd / 150;
+
 
 	aita = 0.526 * (1 - Math.exp(-14 * n / zhuansu)); //空气燃油质量比
 	owf = 1190 * aita * index * zhuansu;

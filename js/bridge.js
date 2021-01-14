@@ -219,6 +219,7 @@ var bEngineStateBox = document.getElementById('bEngineStateBox');
 var bEngineState = document.getElementById('bEngineState');
 bEngineState.onclick = function () {
 	bEngineStateBox.style.display = "block";
+	engineNotReadyCheck()
 }
 document.getElementById('bEngineStateHomeButton').onclick = function () {
 	bEngineStateBox.style.display = "none";
@@ -342,7 +343,7 @@ bcpctx.fillText("ECR", 380, 370);
 bcpctx.fillText("ECR Manual Control", 700, 370);
 bcpctx.fillText("Local Manual Control", 560, 450);
 
-function subTelegraph(t){
+function subTelegraph(t){//ZM:plspeedsled 跟随驾控台的车钟 绿灯亮
 	if (t >= -45 && t < -25) {
 		if (schematicX == 2) {
 			schematicX = 1; //空气起动结束
@@ -354,6 +355,7 @@ function subTelegraph(t){
 		btled1[0].style.background = '#00FF00';
 		btled2[0].style.background = '#00FF00';
 		lspeedsLed[0].style.background = '#00FF00';
+		plspeedsLed[0].style.background = '#00FF00';
 		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
@@ -373,6 +375,7 @@ function subTelegraph(t){
 		btled1[1].style.background = '#00FF00';
 		btled2[1].style.background = '#00FF00';
 		lspeedsLed[1].style.background = '#00FF00';
+		plspeedsLed[1].style.background = '#00FF00';
 		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
@@ -389,6 +392,7 @@ function subTelegraph(t){
 		btled1[2].style.background = '#00FF00';
 		btled2[2].style.background = '#00FF00';
 		lspeedsLed[2].style.background = '#00FF00';
+		plspeedsLed[2].style.background = '#00FF00';
 		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
@@ -408,6 +412,7 @@ function subTelegraph(t){
 		btled1[3].style.background = '#00FF00';
 		btled2[3].style.background = '#00FF00';
 		lspeedsLed[3].style.background = '#00FF00';
+		plspeedsLed[3].style.background = '#00FF00';
 		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
@@ -427,6 +432,7 @@ function subTelegraph(t){
 		btled1[4].style.background = '#00FF00';
 		btled2[4].style.background = '#00FF00';
 		lspeedsLed[4].style.background = '#00FF00';
+		plspeedsLed[4].style.background = '#00FF00';
 		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 608, 726, 10, 20); //方向车钟ahead阀门通路
@@ -462,6 +468,7 @@ function subTelegraph(t){
 		btled1[6].style.background = '#E40000';
 		btled2[6].style.background = '#E40000';
 		lspeedsLed[6].style.background = '#00FF00';
+		plspeedsLed[6].style.background = '#00FF00';
 		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
@@ -482,6 +489,7 @@ function subTelegraph(t){
 		btled1[7].style.background = '#E40000';
 		btled2[7].style.background = '#E40000';
 		lspeedsLed[7].style.background = '#00FF00';
+		plspeedsLed[7].style.background = '#00FF00';
 		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
@@ -501,6 +509,7 @@ function subTelegraph(t){
 		btled1[8].style.background = '#E40000';
 		btled2[8].style.background = '#E40000';
 		lspeedsLed[8].style.background = '#00FF00';
+		plspeedsLed[8].style.background = '#00FF00';
 		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
@@ -520,6 +529,7 @@ function subTelegraph(t){
 		btled1[9].style.background = '#E40000';
 		btled2[9].style.background = '#E40000';
 		lspeedsLed[9].style.background = '#00FF00';
+		plspeedsLed[9].style.background = '#00FF00';
 		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭
@@ -539,6 +549,7 @@ function subTelegraph(t){
 		btled1[10].style.background = '#E40000';
 		btled2[10].style.background = '#E40000';
 		lspeedsLed[10].style.background = '#00FF00';
+		plspeedsLed[10].style.background = '#00FF00';
 		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 608, 726, 10, 20); //方向车钟ahead阀门关闭

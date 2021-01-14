@@ -182,18 +182,19 @@ ttelegraph2lever.onmousedown = function (ev) {
 		if (lhandle1x % 2 == 0) {
 			if (thandlex % 2 == 1) {
 				//驾驶台控制
+
 				var a = 0;
 				if (t >= -225 && t < -40) {
-					a = parseInt(20-(t + 40) * 62 / 185);
+					a = parseInt(-(t + 40) * 82 / 185);
 					ttelegraph2watch.innerHTML = a;
 					speedLevelChange(a);
 					schematicX = 1; //气动逻辑为状态1：气动逻辑完成
 				};
 				if (t >= -40 && t < -20) {
 					ttelegraph2watch.innerHTML = 'START';
-					a=15;
 					schematicX = 2; //气动逻辑为状态2：开始空气起动
 					sdc2tx.drawImage(picMap, 306, 521, 123, 89, 72, 488, 155, 100); //速度车钟start位置
+
 				};
 				if (t >= -20 && t < 30) {
 					ttelegraph2watch.innerHTML = 'STOP';
@@ -206,7 +207,7 @@ ttelegraph2lever.onmousedown = function (ev) {
 				};
 				if (t >= 50 && t < 250) {
 					a = parseInt(-(t - 50) * 78 / 180);
-					ttelegraph2watch.innerHTML = t;
+					ttelegraph2watch.innerHTML = a;
 					speedLevelChange(-a);
 					schematicX = 1; //气动逻辑为状态1：气动逻辑完成
 				};
@@ -254,7 +255,7 @@ ttelegraph2lever.onmousedown = function (ev) {
 
 //驾控台与集控室 切换手柄
 var thandle = document.getElementById('thandle');
-var thandlex = 0; //杠杆手柄左右标志位，0为bridge
+var thandlex = 0; //杠杆手柄左右标志位，默认集控室
 thandle.onclick = function () {
 	if (thandlex % 2 == 1) { //由集控室改到驾控台
 		this.style.transformOrigin = '31% 31%';

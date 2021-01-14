@@ -30,6 +30,144 @@ lbox1ctx.fillText('SHUT DOWN', 77, 240);
 lbox1ctx.fillText('LAMP', 219, 225);
 lbox1ctx.fillText('TEST', 219, 240);
 
+// canvas副本
+var plbox1c = document.getElementById('plbox1canvas');
+var plbox1ctx = plbox1c.getContext("2d");
+plbox1ctx.font = '15px Arial';
+plbox1ctx.fillStyle = '#FFFF00';
+plbox1ctx.fillText('AHEAD', 70, 33);
+plbox1ctx.fillText('ASTERN', 165, 33);
+plbox1ctx.font = '10px Arial';
+plbox1ctx.fillText('SHUT DOWN', 70, 72);
+plbox1ctx.beginPath();
+plbox1ctx.font = '9px Arial';
+plbox1ctx.fillStyle = '#FFFF00';
+plbox1ctx.fillText('TURNING GEAR', 68, 110);
+plbox1ctx.fillText('ENGAGED', 78, 120);
+plbox1ctx.font = '12px Arial';
+plbox1ctx.fillText('BRIDGE', 165, 72);
+plbox1ctx.fillText('CONTROL', 165, 87);
+plbox1ctx.fillText('CONTROL ROOM', 165, 110);
+plbox1ctx.fillText('CONTROL', 165, 125);
+plbox1ctx.fillText('EMERGENCY', 165, 148);
+plbox1ctx.fillText('CONTROL', 165, 163);
+plbox1ctx.font = '9px Arial';
+plbox1ctx.fillText('AUX BLOWER', 70, 150);
+plbox1ctx.fillText('RUNNING', 80, 163);
+
+
+plbox1ctx.beginPath();
+plbox1ctx.font = '10px Arial';
+plbox1ctx.fillStyle = '#FFFFFF';
+plbox1ctx.fillText('CANCEL', 72, 183);
+plbox1ctx.fillText('SHUT DOWN', 62, 195);
+plbox1ctx.fillText('LAMP', 158, 183);
+plbox1ctx.fillText('TEST', 158, 195);
+
+
+var glbox1c = document.getElementById('glbox1canvas');
+var glbox1ctx = glbox1c.getContext("2d");
+glbox1ctx.font = '15px Arial';
+glbox1ctx.fillStyle = '#FFFF00';
+glbox1ctx.fillText('AHEAD', 70, 33);
+glbox1ctx.fillText('ASTERN', 165, 33);
+glbox1ctx.font = '10px Arial';
+glbox1ctx.fillText('SHUT DOWN', 70, 72);
+glbox1ctx.beginPath();
+glbox1ctx.font = '9px Arial';
+glbox1ctx.fillStyle = '#FFFF00';
+glbox1ctx.fillText('TURNING GEAR', 68, 110);
+glbox1ctx.fillText('ENGAGED', 78, 120);
+glbox1ctx.font = '12px Arial';
+glbox1ctx.fillText('BRIDGE', 165, 72);
+glbox1ctx.fillText('CONTROL', 165, 87);
+glbox1ctx.fillText('CONTROL ROOM', 165, 110);
+glbox1ctx.fillText('CONTROL', 165, 125);
+glbox1ctx.fillText('EMERGENCY', 165, 148);
+glbox1ctx.fillText('CONTROL', 165, 163);
+glbox1ctx.font = '9px Arial';
+glbox1ctx.fillText('AUX BLOWER', 70, 150);
+glbox1ctx.fillText('RUNNING', 80, 163);
+
+
+glbox1ctx.beginPath();
+glbox1ctx.font = '10px Arial';
+glbox1ctx.fillStyle = '#FFFFFF';
+glbox1ctx.fillText('CANCEL', 72, 183);
+glbox1ctx.fillText('SHUT DOWN', 62, 195);
+glbox1ctx.fillText('LAMP', 158, 183);
+glbox1ctx.fillText('TEST', 158, 195);
+
+
+var olbox1c = document.getElementById('olbox1canvas');
+var olbox1ctx = olbox1c.getContext("2d");
+olbox1ctx.font = '15px Arial';
+olbox1ctx.fillStyle = '#FFFF00';
+olbox1ctx.fillText('AHEAD', 70, 33);
+olbox1ctx.fillText('ASTERN', 165, 33);
+olbox1ctx.font = '10px Arial';
+olbox1ctx.fillText('SHUT DOWN', 70, 72);
+olbox1ctx.beginPath();
+olbox1ctx.font = '9px Arial';
+olbox1ctx.fillStyle = '#FFFF00';
+olbox1ctx.fillText('TURNING GEAR', 68, 110);
+olbox1ctx.fillText('ENGAGED', 78, 120);
+olbox1ctx.font = '12px Arial';
+olbox1ctx.fillText('BRIDGE', 165, 72);
+olbox1ctx.fillText('CONTROL', 165, 87);
+olbox1ctx.fillText('CONTROL ROOM', 165, 110);
+olbox1ctx.fillText('CONTROL', 165, 125);
+olbox1ctx.fillText('EMERGENCY', 165, 148);
+olbox1ctx.fillText('CONTROL', 165, 163);
+olbox1ctx.font = '9px Arial';
+olbox1ctx.fillText('AUX BLOWER', 70, 150);
+olbox1ctx.fillText('RUNNING', 80, 163);
+
+
+olbox1ctx.beginPath();
+olbox1ctx.font = '10px Arial';
+olbox1ctx.fillStyle = '#FFFFFF';
+olbox1ctx.fillText('CANCEL', 72, 183);
+olbox1ctx.fillText('SHUT DOWN', 62, 195);
+olbox1ctx.fillText('LAMP', 158, 183);
+olbox1ctx.fillText('TEST', 158, 195);
+
+var tlbox1c = document.getElementById('tlbox1canvas');
+var tlbox1ctx = tlbox1c.getContext("2d");
+tlbox1ctx.font = '15px Arial';
+tlbox1ctx.fillStyle = '#FFFF00';
+tlbox1ctx.fillText('AHEAD', 70, 33);
+tlbox1ctx.fillText('ASTERN', 165, 33);
+tlbox1ctx.font = '10px Arial';
+tlbox1ctx.fillText('SHUT DOWN', 70, 72);
+tlbox1ctx.beginPath();
+tlbox1ctx.font = '9px Arial';
+tlbox1ctx.fillStyle = '#FFFF00';
+tlbox1ctx.fillText('TURNING GEAR', 68, 110);
+tlbox1ctx.fillText('ENGAGED', 78, 120);
+tlbox1ctx.font = '12px Arial';
+tlbox1ctx.fillText('BRIDGE', 165, 72);
+tlbox1ctx.fillText('CONTROL', 165, 87);
+tlbox1ctx.fillText('CONTROL ROOM', 165, 110);
+tlbox1ctx.fillText('CONTROL', 165, 125);
+tlbox1ctx.fillText('EMERGENCY', 165, 148);
+tlbox1ctx.fillText('CONTROL', 165, 163);
+tlbox1ctx.font = '9px Arial';
+tlbox1ctx.fillText('AUX BLOWER', 70, 150);
+tlbox1ctx.fillText('RUNNING', 80, 163);
+
+
+tlbox1ctx.beginPath();
+tlbox1ctx.font = '10px Arial';
+tlbox1ctx.fillStyle = '#FFFFFF';
+tlbox1ctx.fillText('CANCEL', 72, 183);
+tlbox1ctx.fillText('SHUT DOWN', 62, 195);
+tlbox1ctx.fillText('LAMP', 158, 183);
+tlbox1ctx.fillText('TEST', 158, 195);
+
+
+document.getElementById('lhandwheelDis').style.border = '1px solid red'
+
 
 //扳手转动
 var lhandle1 = document.getElementById('lhandle1');
@@ -48,6 +186,7 @@ lhandle1.onclick = function () {
 	}
 
 }
+//ZM：ahead联动
 
 var lhandle2 = document.getElementById('lhandle2');
 var lhandle2x = 1; //标识位 1为AHEAD 0为ASTERN
@@ -55,10 +194,34 @@ lhandle2.onclick = function () {
 	if (lhandle2x % 2 == 0) {
 		this.style.transformOrigin = '31% 31%';
 		this.style.transform = 'rotate(' + 90 + 'deg)';
+		document.getElementById('laheadLed').style.backgroundColor = '#00FF00';
+		document.getElementById('lasternLed').style.backgroundColor = '#800000';
+		document.getElementById('pswitch2').style.display = 'none';
+		document.getElementById('plaheadLed').style.backgroundColor = '#00FF00';
+		document.getElementById('plasternLed').style.backgroundColor = '#800000';
+		document.getElementById('olaheadLed').style.backgroundColor = '#00FF00';
+		document.getElementById('olasternLed').style.backgroundColor = '#800000';
+		document.getElementById('glaheadLed').style.backgroundColor = '#00FF00';
+		document.getElementById('glasternLed').style.backgroundColor = '#800000';
+		document.getElementById('tlaheadLed').style.backgroundColor = '#00FF00';
+		document.getElementById('tlasternLed').style.backgroundColor = '#800000';
 		lhandle2x += 1;
 	} else {
 		this.style.transformOrigin = '31% 31%';
 		this.style.transform = 'rotate(' + 0 + 'deg)';
+
+		document.getElementById('laheadLed').style.backgroundColor = '#085A13';
+		document.getElementById('lasternLed').style.backgroundColor = '#FF0000';
+		document.getElementById('pswitch2').style.display = 'block';
+		document.getElementById('plaheadLed').style.backgroundColor = '#085A13';
+		document.getElementById('plasternLed').style.backgroundColor = '#FF0000';
+		document.getElementById('olaheadLed').style.backgroundColor = '#085A13';
+		document.getElementById('olasternLed').style.backgroundColor = '#FF0000';
+		document.getElementById('glaheadLed').style.backgroundColor = '#085A13';
+		document.getElementById('glasternLed').style.backgroundColor = '#FF0000';
+		document.getElementById('tlaheadLed').style.backgroundColor = '#085A13';
+		document.getElementById('tlasternLed').style.backgroundColor = '#FF0000';
+
 		lhandle2x += 1;
 	}
 
@@ -71,11 +234,14 @@ lhandle3.onclick = function () {
 	if (lhandle3x % 2 == 0) {
 		this.style.transformOrigin = '31% 31%';
 		this.style.transform = 'rotate(' + 90 + 'deg)';
+		// startMove(this, 'opacity', 0);
 		lhandle3x += 1;
+		x+=1;
 	} else {
 		this.style.transformOrigin = '31% 31%';
 		this.style.transform = 'rotate(' + 0 + 'deg)';
 		lhandle3x += 1;
+		x-=1;
 	}
 
 }
@@ -117,19 +283,47 @@ var lbuttonStart = document.getElementById('lbuttonStart');
 var lbuttonStop = document.getElementById('lbuttonStop');
 lbuttonStart.onmousedown = function () {
 	lbuttonStart.style.backgroundColor = "green";
+	// lbuttonStop.style.backgroundColor = "grey";
 	 if(value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx%2==1 && lhandle1x % 2 == 1){
 		airstart=1;
 		LED()
 		schematicX = 1;
+		
 		console.log('airstart',lrmp)
 	 }	
 }
 lbuttonStart.onmouseup = function () {
 	lbuttonStart.style.backgroundColor = "grey";
+	// lrmp=lrmpx;
 	airstart=2;
 	console.log('airstop',lrmpx);
 }
 
+//ZM
+
+$('#pstart').on('mousedown',function(){
+	if(value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx%2==1 && lhandle1x % 2 == 1){
+		airstart=1;
+		LED()
+		schematicX = 1;
+		
+		console.log('airstart',lrmp)
+	 }	
+})
+$('#pstart').on('mouseup',function(){
+	airstart=2;
+	console.log('airstop',lrmpx);
+})
+
+$('#pstop').on('mousedown',function(){
+	yd = 0;
+	ydx = 0;
+	rmp = 0;
+	rmpx = 0;
+	brmp = 0;
+	trmp = 0;
+	lrmp = 0;
+})
 lbuttonStop.onmousedown = function () {
 	lbuttonStop.style.backgroundColor = "#B40404";
 	yd = 0;
@@ -162,9 +356,11 @@ lwheel1Right.onclick = function () {
 	if (lwheelx1x <= 2) {
 		document.getElementById('lhandwheelDis').style.border = '1px solid red'
 		document.getElementById('lhandwheelCon').style.border = ''
+		// startMove($('#impactwheel'), 'opacity', 0);
 	} else {
 		document.getElementById('lhandwheelDis').style.border = ''
 		document.getElementById('lhandwheelCon').style.border = '1px solid red'
+		// startMove($('#impactwheel'), 'opacity', 100);
 	}
 
 	lprintPancel1(lwheelx1x);
@@ -181,9 +377,11 @@ lwheel1Left.onclick = function () {
 		document.getElementById('lhandwheelDis').style.border = '1px solid red'
 		// document.getElementById('lhandwheelDis').style.color='yellow'
 		document.getElementById('lhandwheelCon').style.border = ''
+		
 	} else {
 		document.getElementById('lhandwheelDis').style.border = ''
 		document.getElementById('lhandwheelCon').style.border = '1px solid red'
+		// startMove($('#impactwheel'), 'opacity', 100);
 	}
 	lprintPancel1(lwheelx1x);
 	console.log('lwheelx1x',lwheelx1x)
@@ -207,7 +405,7 @@ lwheel2Right.onclick = function () {
 		}
 		lprintPancel2(lwheelx2x);
 		lrmp += 7.5;
-		lrmp=parseInt(lrmp);
+		lrmp=parseInt(lrmp);		
 		if (lrmp >= 110) {
 			lrmp = 110;
 		}
@@ -254,60 +452,196 @@ var lclearSpeedLed = function () {
 		lspeedsLed[i1].style.backgroundColor = 'white';
 	}
 }
+var plspeeds = document.getElementById('plbox2box3');
+var plspeedsAll = plspeeds.getElementsByTagName('div');
+var plspeedsLed = plspeeds.getElementsByClassName('plspeedButtonLed');
+var plclearSpeedLed = function () {
+	for (var i = 0; i < plspeedsAll.length; i++) {
+		plspeedsAll[i].style.borderColor = 'white';
+	}
+	for (var i1 = 0; i1 <plspeedsLed.length; i1++) {
+		plspeedsLed[i1].style.backgroundColor = 'white';
+	}
+}
+// ZM复制车钟的点击事件
+document.getElementById('plstopled').style.backgroundColor = '#FFC200';
+
 document.getElementById('lnavFull').onclick = function () {
+	lclearSpeedLed();
+	plclearSpeedLed();
+	this.style.borderColor = '#FFC200';
+	document.getElementById('plnavFullled').style.backgroundColor = '#FFC200';
+	document.getElementById('plnavFull').style.borderColor = '#FFC200';
+	document.getElementById('lnavFullled').style.backgroundColor = '#FFC200';
+}
+document.getElementById('plnavFull').onclick = function () {
+	plclearSpeedLed();
 	lclearSpeedLed();
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lnavFullled').style.backgroundColor = '#FFC200';
+	document.getElementById('lnavFull').style.borderColor = '#FFC200';
+	document.getElementById('plnavFullled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lfull').onclick = function () {
 	lclearSpeedLed();
+	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
+	document.getElementById('plfull').style.borderColor = '#FFC200';
+	document.getElementById('plfullled').style.backgroundColor = '#FFC200';
 	document.getElementById('lfullled').style.backgroundColor = '#FFC200';
+}
+document.getElementById('plfull').onclick = function () {
+	plclearSpeedLed();
+	lclearSpeedLed();
+	this.style.borderColor = '#FFC200';
+	document.getElementById('plfullled').style.backgroundColor = '#FFC200';
+	document.getElementById('lfull').style.borderColor = '#FFC200';
+	document.getElementById('lfullled').style.backgroundColor = '#FFC200';
+
 }
 document.getElementById('lhalf').onclick = function () {
 	lclearSpeedLed();
+	plclearSpeedLed();
+	this.style.borderColor = '#FFC200';
+	document.getElementById('plhalf').style.borderColor = '#FFC200';
+	document.getElementById('plhalfled').style.backgroundColor = '#FFC200';
+	document.getElementById('lhalfled').style.backgroundColor = '#FFC200';
+}
+document.getElementById('plhalf').onclick = function () {
+	plclearSpeedLed();
+	lclearSpeedLed();
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lhalfled').style.backgroundColor = '#FFC200';
+	document.getElementById('lhalf').style.borderColor = '#FFC200';
+	document.getElementById('plhalfled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lslow').onclick = function () {
 	lclearSpeedLed();
+	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
+	document.getElementById('plslow').style.borderColor = '#FFC200';
+	document.getElementById('plslowled').style.backgroundColor = '#FFC200';
+	document.getElementById('lslowled').style.backgroundColor = '#FFC200';
+}
+document.getElementById('plslow').onclick = function () {
+	plclearSpeedLed();
+	lclearSpeedLed();
+	this.style.borderColor = '#FFC200';
+	document.getElementById('plslowled').style.backgroundColor = '#FFC200';
+	document.getElementById('lslow').style.borderColor = '#FFC200';
 	document.getElementById('lslowled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('ldeSlow').onclick = function () {
 	lclearSpeedLed();
+	plclearSpeedLed();
+	this.style.borderColor = '#FFC200';
+	document.getElementById('pldeSlowled').style.backgroundColor = '#FFC200';
+	document.getElementById('pldeSlow').style.borderColor = '#FFC200';
+	document.getElementById('ldeSlowled').style.backgroundColor = '#FFC200';
+}
+document.getElementById('pldeSlow').onclick = function () {
+	plclearSpeedLed();
+	lclearSpeedLed();
 	this.style.borderColor = '#FFC200';
 	document.getElementById('ldeSlowled').style.backgroundColor = '#FFC200';
+	document.getElementById('ldeSlow').style.borderColor = '#FFC200';
+	document.getElementById('pldeSlowled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lstop').onclick = function () {
 	lclearSpeedLed();
+	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
+	document.getElementById('plstop').style.borderColor = '#FFC200';
+	document.getElementById('plstopled').style.backgroundColor = '#FFC200';
 	document.getElementById('lstopled').style.backgroundColor = '#FFC200';
+}
+document.getElementById('plstop').onclick = function () {
+	plclearSpeedLed();
+	lclearSpeedLed();
+	this.style.borderColor = '#FFC200';
+	document.getElementById('lstop').style.borderColor = '#FFC200';
+	document.getElementById('lstopled').style.backgroundColor = '#FFC200';
+	document.getElementById('plstopled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('ldeSlow1').onclick = function () {
 	lclearSpeedLed();
+	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
+	document.getElementById('pldeSlow1').style.borderColor = '#FFC200';
+	document.getElementById('pldeSlow1led').style.backgroundColor = '#FFC200';
 	document.getElementById('ldeSlow1led').style.backgroundColor = '#FFC200';
+}
+document.getElementById('pldeSlow1').onclick = function () {
+	plclearSpeedLed();
+	lclearSpeedLed();
+	this.style.borderColor = '#FFC200';
+	document.getElementById('ldeSlow1').style.borderColor = '#FFC200';
+	document.getElementById('ldeSlow1led').style.backgroundColor = '#FFC200';
+	document.getElementById('pldeSlow1led').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lslow1').onclick = function () {
 	lclearSpeedLed();
+	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
+	document.getElementById('plslow1').style.borderColor = '#FFC200';
+	document.getElementById('plslow1led').style.backgroundColor = '#FFC200';
 	document.getElementById('lslow1led').style.backgroundColor = '#FFC200';
+}
+document.getElementById('plslow1').onclick = function () {
+	plclearSpeedLed();
+	lclearSpeedLed();
+	this.style.borderColor = '#FFC200';
+	document.getElementById('lslow1').style.borderColor = '#FFC200';
+	document.getElementById('lslow1led').style.backgroundColor = '#FFC200';
+	document.getElementById('plslow1led').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lhalf1').onclick = function () {
 	lclearSpeedLed();
+	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
+	document.getElementById('plhalf1').style.borderColor = '#FFC200';
+	document.getElementById('plhalf1led').style.backgroundColor = '#FFC200';
 	document.getElementById('lhalf1led').style.backgroundColor = '#FFC200';
+}
+document.getElementById('plhalf1').onclick = function () {
+	plclearSpeedLed();
+	lclearSpeedLed();
+	this.style.borderColor = '#FFC200';
+	document.getElementById('lhalf1').style.borderColor = '#FFC200';
+	document.getElementById('lhalf1led').style.backgroundColor = '#FFC200';
+	document.getElementById('plhalf1led').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lfull1').onclick = function () {
 	lclearSpeedLed();
+	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
+	document.getElementById('plfull1').style.borderColor = '#FFC200';
+	document.getElementById('plfull1led').style.backgroundColor = '#FFC200';
 	document.getElementById('lfull1led').style.backgroundColor = '#FFC200';
+}
+document.getElementById('plfull1').onclick = function () {
+	plclearSpeedLed();
+	lclearSpeedLed();
+	this.style.borderColor = '#FFC200';
+	document.getElementById('lfull1').style.borderColor = '#FFC200';
+	document.getElementById('lfull1led').style.backgroundColor = '#FFC200';
+	document.getElementById('plfull1led').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lemAst').onclick = function () {
 	lclearSpeedLed();
+	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
+	document.getElementById('plemAst').style.borderColor = '#FFC200';
+	document.getElementById('plemAstled').style.backgroundColor = '#FFC200';
 	document.getElementById('lemAstled').style.backgroundColor = '#FFC200';
+}
+document.getElementById('plemAst').onclick = function () {
+	plclearSpeedLed();
+	lclearSpeedLed();
+	this.style.borderColor = '#FFC200';
+	document.getElementById('lemAst').style.borderColor = '#FFC200';
+	document.getElementById('lemAstled').style.backgroundColor = '#FFC200';
+	document.getElementById('plemAstled').style.backgroundColor = '#FFC200';
 }
 /*紧急停车*/
 var lemergencyStop = document.getElementById('lemergencyStop'); //紧急停车
@@ -356,3 +690,128 @@ lcancelSHD.onclick = function () {
 		lcancelSHDx = 0;
 	}, 7000);
 }
+// ZM紧急停车 待改进
+
+var plemergencyStop = document.getElementById('plemergencyStop'); //紧急停车
+var plcancelSHD = document.getElementById('plbuttonCancelShutDown'); //取消紧急停车按钮
+var plcancelSHDx = 0;
+plemergencyStop.onmouseover = function () {
+	this.style.backgroundColor = '#DD001B'
+}
+plemergencyStop.onmouseleave = function () {
+	this.style.backgroundColor = '#7f0000'
+}
+plemergencyStop.onclick = function () {
+	var a = 1;
+	clearInterval(cancel)
+	var cancel = setInterval(() => { //取消紧急停车按钮闪烁
+		if (a % 2 == 1) {
+			plcancelSHD.style.borderColor = "red"
+			a++
+		} else {
+			plcancelSHD.style.borderColor = "white"
+			a++
+		}
+		if (plcancelSHDx == 1) {
+			clearInterval(cancel)
+			plcancelSHD.style.borderColor = "white"
+		}
+	}, 300);
+
+	setTimeout(() => {
+		clearInterval(cancel)
+		plcancelSHD.style.borderColor = "white"
+		if (plcancelSHDx == 0) {
+			yd = 0;
+			ydx = 0;
+			rmp = 0;
+			rmpx = 0;
+			brmp = 0;
+			trmp = 0;
+			lrmp = 0;
+		}
+	}, 5000);
+}
+plcancelSHD.onclick = function () {
+	plcancelSHDx = 1;
+	setTimeout(() => {
+		plcancelSHDx = 0;
+	}, 7000);
+}
+
+
+
+
+
+
+
+// ZM panel页面的start和stop 具体给油还没写
+var plbuttonStart = document.getElementById('pstart');
+var plbuttonStop = document.getElementById('pstop');
+plbuttonStart.onmousedown = function () {
+	// lbuttonStart.style.backgroundColor = "green";
+	// lbuttonStop.style.backgroundColor = "grey";
+	 if(value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx%2==1 && lwheelx1x>=3 && lhandle1x % 2 == 1){
+		LED(); //车钟led初始化
+		schematicX = 1;
+		lrmpx=lrmp;
+		lrmp=30;
+		console.log('ok',lrmp);
+	 }	
+}
+plbuttonStart.onmouseup = function () {
+	// lbuttonStart.style.backgroundColor = "grey";
+	lrmp=lrmpx;
+	console.log('lrmp',lrmpx);
+}
+
+plbuttonStop.onclick = function () {
+	// lbuttonStop.style.backgroundColor = "#B40404";
+}
+
+var pimpactwheel = document.getElementById('impactwheel');
+// lwheel1Left.onmousemove = function () {
+// 	this.style.cursor = "url('img/cursorLeft.ico'), auto";
+// }
+// var lwheel1Right = document.getElementById('lwheel1Right');
+// lwheel1Right.onmousemove = function () {
+// 	this.style.cursor = "url('img/cursorRight.ico'), auto";
+// }
+var imx=0;
+
+pimpactwheel.onclick = function () {
+		imx+=1;console.log('imx',imx);
+		if(imx%2==1){
+		document.getElementById('lhandwheelDis').style.border = ''
+		document.getElementById('lhandwheelCon').style.border = '1px solid red'
+		
+		lwheelx1x=5;
+		var lw1c = document.getElementById("lwheel1canvas");
+		var lw1ctx = lw1c.getContext("2d");
+		lw1ctx.clearRect(0, 0, 140, 11);
+		lw1ctx.beginPath();
+		lw1ctx.rect(0, 0, 140, 11);
+		lw1ctx.fillStyle = "red"
+		lw1ctx.fill();
+}
+if(imx%2==0){
+	document.getElementById('lhandwheelDis').style.border = '1px solid red'
+		document.getElementById('lhandwheelCon').style.border = ''
+		
+		lwheelx1x=0;
+		var lw1c = document.getElementById("lwheel1canvas");
+		var lw1ctx = lw1c.getContext("2d");
+		lw1ctx.clearRect(0, 0, 140, 11);
+		lw1ctx.beginPath();
+		lw1ctx.rect(0, 0, 0, 11);
+		lw1ctx.fillStyle = "red"
+		lw1ctx.fill();
+}
+
+}
+
+
+
+
+
+

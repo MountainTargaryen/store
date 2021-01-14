@@ -56,7 +56,7 @@
 			<!--          驾控室部分               -->
 			<div id="bridge">
 				<div id="bWorkingCondition1">
-					<div id="bStandBy">Stand By</div>
+					<div id="bStandBy">FWE</div>
 					<div id="bDeadband">Warnning</div>
 					<div id="bBridge">Bridge</div>
 					<div id="bEngReady">Eng N. Ready</div>
@@ -637,8 +637,9 @@
 						<div id="talarmAckLed"></div>
 					</div>
 				</div>
+				<!-- ZM -->
 				<div id="thandlebox">
-					&nbsp;ECR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BRIDGE
+					&nbsp;ECR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BRIDGE   
 					<img id="thandle" src="img/handle.png" style="transform-origin: 31% 31%;transform:rotate(90deg);"/>
 				</div>
 
@@ -704,154 +705,406 @@
 
 			<!--          机旁               -->
 			<div id="local">
-				<div id="lbox1">
-					<div id="lbox1box">
-						<img id="lpancel1" src="img/lPancel1.png" />
-						<div id="lbox1Ledbox">
-							<div id="laheadLed"></div>
-							<div id="lasternLed"></div>
-							<div id="lshutDownLed"></div>
-							<div id="lbridgeControlLed"></div>
-							<div id="lTurningGearEngagedLed"></div>
-							<div id="lcontrolRoomControlLed"></div>
-							<div id="lauxBlowerRunningLed"></div>
-							<div id="lemergencyControlLed"></div>
-						</div>
-						<div class="operableLed" id="lbuttonCancelShutDown"></div>
-						<div class="operableLed" id="lbuttonLampTest"></div>
-						<canvas id="lbox1canvas" width="360" height="250">你的浏览器不支持canvas</canvas>
-						<img id="llogo" src="img/logo.png" />
-						<img id="lpointer" src="img/pointer1.png" />
-					</div>
-				</div>
-				<div id="lbox2">
-					<div id="lbox2box">
-						<div id="lbox2box1">
-							<div id="lwrWay">
-								Wr.<br />way
-								<div id="lwrWayled"></div>
-							</div>
-							<div id="llaTest">
-								La.<br />test
-								<div id="llaTestled"></div>
-							</div>
-						</div>
-						<div id="lbox2box2">
-							<div id="lbcr">
-								BCR
-								<div id="lbcrled"></div>
-							</div>
-							<div id="lecr">
-								ECR
-								<div id="lecrled"></div>
-							</div>
-							<div id="lloc">
-								Loc.
-								<div id="llocled"></div>
-							</div>
-						</div>
-						<div id="lbox2box3">
-							<div id="lnavFull">
-								Nav<br />Full
-								<div class="lspeedButtonLed" id="lnavFullled"></div>
-							</div>
-							<div id="lfull">
-								Full
-								<div class="lspeedButtonLed" id="lfullled"></div>
-							</div>
-							<div id="lhalf">
-								Half
-								<div class="lspeedButtonLed" id="lhalfled"></div>
-							</div>
-							<div id="lslow">
-								Slow
-								<div class="lspeedButtonLed" id="lslowled"></div>
-							</div>
-							<div id="ldeSlow">
-								De.<br />Slow
-								<div class="lspeedButtonLed" id="ldeSlowled"></div>
-							</div>
-							<div id="lstop">
-								Stop
-								<div class="lspeedButtonLed" id="lstopled"></div>
-							</div>
-							<div id="ldeSlow1">
-								De.<br />Slow
-								<div class="lspeedButtonLed" id="ldeSlow1led"></div>
-							</div>
-							<div id="lslow1">
-								Slow
-								<div class="lspeedButtonLed" id="lslow1led"></div>
-							</div>
-							<div id="lhalf1">
-								Half
-								<div class="lspeedButtonLed" id="lhalf1led"></div>
-							</div>
-							<div id="lfull1">
-								Full
-								<div class="lspeedButtonLed" id="lfull1led"></div>
-							</div>
-							<div id="lemAst">
-								Em.<br />Ast
-								<div class="lspeedButtonLed" id="lemAstled"></div>
-							</div>
-						</div>
 
-						<div id="lbox2box4">
-							<div id="latSea">
-								At<br />Sea
-								<div id="latSealed"></div>
-							</div>
-							<div id="lstBy">
-								St.<br />By
-								<div id="lstByled"></div>
-							</div>
-							<div id="lfwe">
-								FWE
-								<div id="lfweled"></div>
-							</div>
-						</div>
-						<div id="lbox2boxStop">
-							EMERGENCY<br />STOP
-							<div id="lemergencyStop"></div>
+				<div id="localmenu">
+					<ul id="localmenuul">
+						<li id="lm_mainsys">结构总览</li>
+						<li id="lm_panel">控制面板</li>
+						<li id="lm_gov">调速器切换</li>
+						<li id="lm_opwheel">调油手轮</li>
+						<li id="lm_tele">辅车钟</li>
+						<li id="lm_2d">二维操作</li>
+						
+					</ul>
+
+				</div>
+				<!-- 机旁内部的几个页面 -->
+				<div id="linside">
+					<div id="lmainsys" style="display: block;">
+						<img src="img/mainsys.png" width="100%" height="795px"  />
+						<div id="lpicture">
+							<img src="img/panel_b.PNG" width="55px" height="139px" style="cursor: pointer; position: absolute; left: 564px;top: 232px; "  id="white1">
+							<img src="img/gov_b.png" style="cursor: pointer; position: absolute; left: 732px;top: 425px; " id="white2">
+							<img src="img/underpanel_b.png" style="cursor: pointer; position: absolute; left: 530px;top: 367px; " id="white3">
+							<img src="img/opwheel_b.png" style="cursor: pointer; position: absolute; left: 650px;top: 378px; " id="white4" >
 						</div>
 					</div>
+					<div id="lpanel" style="display: none;">
+						<img src="img/panel.png" width="100%" height="795px"  />
+						<img src="img/pstart.png" style="cursor: pointer; position: absolute; left: 531px;top: 408px;" id="pstart"/>
+						<img src="img/pstop.png" style="cursor: pointer; position: absolute;left: 510px;top: 499px; "id="pstop"/>
+						<img src="img/pswitch1.png" style="cursor: pointer; position: absolute;left: 684px;top: 352px; "id="pswitch1"/>
+						<img src="img/pswitch2.png" style="cursor: pointer; display: none; position: absolute;left: 640px;top: 312px; "id="pswitch2"/>
+	
+						<img src="img/pswitch3.png" style="cursor: pointer; position: absolute;left: 705px;top: 260px; "id="pswitch3"/>
+						<img src="img/pswitch4.png" style="cursor: pointer; display: none; position: absolute;left: 642px;top: 219px; "id="pswitch4"/>
+
+
+						<!-- <img src="img/pswitch2.png" style="position: absolute;left: 458px;top: 336.5px; "id="pswitch22"/> -->
+						<button id="touming" style="cursor: pointer; width: 30px;height: 30px; position: absolute;left: 709px;top: 328.5px;filter: alpha(opacity：0);opacity: 0;">123</button>	
+						<button id="touming2" style="cursor: pointer; width: 30px;height: 30px;  position: absolute;left: 705px;top: 382.5px; filter: alpha(opacity：0);opacity: 0;">123</button>	
+
+						<button id="touming3" style="cursor: pointer; width: 30px;height: 30px; position: absolute;left: 727px;top: 240px; filter: alpha(opacity：0);opacity: 0;">123</button>	
+						<button id="touming4" style="cursor: pointer; width: 30px;height: 30px;  position: absolute;left: 727px;top: 278px; filter: alpha(opacity：0);opacity: 0;">123</button>
+						
+						
+						
+						<div id="plbox1">
+							<div id="plbox1box">
+								<img id="plpancel1" src="img/lPancel1.png" />
+								<div id="plbox1Ledbox">
+									<div id="plaheadLed"></div>
+									<div id="plasternLed"></div>
+									<div id="plshutDownLed"></div>
+									<div id="plbridgeControlLed"></div>
+									<div id="plTurningGearEngagedLed"></div>
+									<div id="plcontrolRoomControlLed"></div>
+									<div id="plauxBlowerRunningLed"></div>
+									<div id="plemergencyControlLed"></div>
+								</div>
+								<div class="poperableLed" id="plbuttonCancelShutDown"></div>
+								<div class="poperableLed" id="plbuttonLampTest"></div>
+								<canvas id="plbox1canvas" width="360" height="250">你的浏览器不支持canvas</canvas>
+								<img id="pllogo" src="img/logo.png" />
+								<img id="plpointer" src="img/pointer1.png" />
+							</div>
+						</div>
+					</div>
+					<div id="lgov" style="display: none;">
+						<img src="img/gov.png" width="100%" height="795px"  />
+						<img src="img/wheelswitch.png" style="cursor: pointer; position: absolute; left: 845px;top: 278px; " id="wheelswitch">
+						<img src="img/impactwheel.png" style="cursor: pointer; position: absolute; left: 844px;top: 377px; " id="impactwheel">
+						<img src="img/zi1red.png" style="position: absolute; left: 869px;top: 264px;">
+						<img src="img/zi2.png" style="position: absolute; left: 830px;top: 264px;" id="2">
+						<!-- <img src="img/zi2_1.png" style="display: none; position: absolute; left: 830px;top: 264px;" id="2_1"> -->
+						<img src="img/zi3red.png" style="position: absolute; left: 835px;top: 498px;" id="3">
+
+
+
+						<div id="glbox1">
+							<div id="glbox1box">
+								<img id="glpancel1" src="img/lPancel1.png" />
+								<div id="glbox1Ledbox">
+									<div id="glaheadLed"></div>
+									<div id="glasternLed"></div>
+									<div id="glshutDownLed"></div>
+									<div id="glbridgeControlLed"></div>
+									<div id="glTurningGearEngagedLed"></div>
+									<div id="glcontrolRoomControlLed"></div>
+									<div id="glauxBlowerRunningLed"></div>
+									<div id="glemergencyControlLed"></div>
+								</div>
+								<div class="goperableLed" id="glbuttonCancelShutDown"></div>
+								<div class="goperableLed" id="glbuttonLampTest"></div>
+								<canvas id="glbox1canvas" width="360" height="250">你的浏览器不支持canvas</canvas>
+								<img id="gllogo" src="img/logo.png" />
+								<img id="glpointer" src="img/pointer1.png" />
+							</div>
+						</div>
+					</div>
+					<div id="lopwheel" style="display: none;">
+						<img src="img/opwheel.png" width="100%" height="795px"  />
+						<img src="img/wheelstart.png" style="cursor: pointer; position: absolute; left: 768px;top: 235px;display: none; " id="wheelstart">
+						<img src="img/oil1.png" style="cursor: pointer; position: absolute; left: 767px;top: 234px; display: none;" id="wheeloil1">
+						<img src="img/oil1.5.png" style="cursor: pointer; position: absolute; left: 767px;top: 234px; display: none;" id="wheeloil1_5">
+						<img src="img/oil2.png" style="cursor: pointer; position: absolute; left: 767px;top: 234px; display: none;" id="wheeloil2">
+						<img src="img/oil3.png" style="cursor: pointer; position: absolute; left: 767px;top: 234px; display: none;" id="wheeloil3">
+						<img src="img/oil4.png" style="cursor: pointer; position: absolute; left: 767px;top: 234px; display: none;" id="wheeloil4">
+
+
+						<button id="wheeltouming" style="cursor: e-resize; width: 100px;height: 160px; position: absolute;left: 889px;top: 489px; filter: alpha(opacity：0);opacity: 0;">123</button>	
+						<button id="wheeltoumingleft" style="cursor: w-resize; width: 100px;height: 160px; position: absolute;left: 789px;top: 489px; filter: alpha(opacity：0);opacity: 0;">321</button>	
+
+						
+						<div id="olbox1">
+							<div id="olbox1box">
+								<img id="olpancel1" src="img/lPancel1.png" />
+								<div id="olbox1Ledbox">
+									<div id="olaheadLed"></div>
+									<div id="olasternLed"></div>
+									<div id="olshutDownLed"></div>
+									<div id="olbridgeControlLed"></div>
+									<div id="olTurningGearEngagedLed"></div>
+									<div id="olcontrolRoomControlLed"></div>
+									<div id="olauxBlowerRunningLed"></div>
+									<div id="olemergencyControlLed"></div>
+								</div>
+								<div class="ooperableLed" id="olbuttonCancelShutDown"></div>
+								<div class="ooperableLed" id="olbuttonLampTest"></div>
+								<canvas id="olbox1canvas" width="360" height="250">你的浏览器不支持canvas</canvas>
+								<img id="ollogo" src="img/logo.png" />
+								<img id="olpointer" src="img/pointer1.png" />
+							</div>
+						</div>
+					</div>
+					<div id="ltele" style="display: none;">
+						<div id="tlbox1">
+							<div id="tlbox1box">
+								<img id="tlpancel1" src="img/lPancel1.png" />
+								<div id="tlbox1Ledbox">
+									<div id="tlaheadLed"></div>
+									<div id="tlasternLed"></div>
+									<div id="tlshutDownLed"></div>
+									<div id="tlbridgeControlLed"></div>
+									<div id="tlTurningGearEngagedLed"></div>
+									<div id="tlcontrolRoomControlLed"></div>
+									<div id="tlauxBlowerRunningLed"></div>
+									<div id="tlemergencyControlLed"></div>
+								</div>
+								<div class="toperableLed" id="tlbuttonCancelShutDown"></div>
+								<div class="toperableLed" id="tlbuttonLampTest"></div>
+								<canvas id="tlbox1canvas" width="360" height="250">你的浏览器不支持canvas</canvas>
+								<img id="tllogo" src="img/logo.png" />
+								<img id="tlpointer" src="img/pointer1.png" />
+							</div>
+						</div>
+						<div id="plbox2"> 
+							<div id="plbox2box">
+								<div id="plbox2box1">
+									<div id="plwrWay">
+										Wr.<br />way
+										<div id="plwrWayled"></div>
+									</div>
+									<div id="pllaTest">
+										La.<br />test
+										<div id="pllaTestled"></div>
+									</div>
+								</div>
+								<div id="plbox2box2">
+									<div id="plbcr">
+										BCR
+										<div id="plbcrled"></div>
+									</div>
+									<div id="plecr">
+										ECR
+										<div id="plecrled"></div>
+									</div>
+									<div id="plloc">
+										Loc.
+										<div id="pllocled"></div>
+									</div>
+								</div>
+								<div id="plbox2box3">
+									<div id="plnavFull">
+										Nav<br />Full
+										<div class="plspeedButtonLed" id="plnavFullled"></div>
+									</div>
+									<div id="plfull">
+										Full
+										<div class="plspeedButtonLed" id="plfullled"></div>
+									</div>
+									<div id="plhalf">
+										Half
+										<div class="plspeedButtonLed" id="plhalfled"></div>
+									</div>
+									<div id="plslow">
+										Slow
+										<div class="plspeedButtonLed" id="plslowled"></div>
+									</div>
+									<div id="pldeSlow">
+										De.<br />Slow
+										<div class="plspeedButtonLed" id="pldeSlowled"></div>
+									</div>
+									<div id="plstop">
+										Stop
+										<div class="plspeedButtonLed" id="plstopled"></div>
+									</div>
+									<div id="pldeSlow1">
+										De.<br />Slow
+										<div class="plspeedButtonLed" id="pldeSlow1led"></div>
+									</div>
+									<div id="plslow1">
+										Slow
+										<div class="plspeedButtonLed" id="plslow1led"></div>
+									</div>
+									<div id="plhalf1">
+										Half
+										<div class="plspeedButtonLed" id="plhalf1led"></div>
+									</div>
+									<div id="plfull1">
+										Full
+										<div class="plspeedButtonLed" id="plfull1led"></div>
+									</div>
+									<div id="plemAst">
+										Em.<br />Ast
+										<div class="plspeedButtonLed" id="plemAstled"></div>
+									</div>
+								</div>
+		
+								<div id="plbox2box4">
+									<div id="platSea">
+										At<br />Sea
+										<div id="platSealed"></div>
+									</div>
+									<div id="plstBy">
+										St.<br />By
+										<div id="plstByled"></div>
+									</div>
+									<div id="plfwe">
+										FWE
+										<div id="plfweled"></div>
+									</div>
+								</div>
+								<div id="plbox2boxStop">
+									EMERGENCY<br />STOP
+									<div id="plemergencyStop"></div>
+								</div>
+							</div>
+						</div> 
+
+					</div>
+					<div id="l2d" style="display: none;">
+						<div id="lbox1">
+							<div id="lbox1box">
+								<img id="lpancel1" src="img/lPancel1.png" />
+								<div id="lbox1Ledbox">
+									<div id="laheadLed"></div>
+									<div id="lasternLed"></div>
+									<div id="lshutDownLed"></div>
+									<div id="lbridgeControlLed"></div>
+									<div id="lTurningGearEngagedLed"></div>
+									<div id="lcontrolRoomControlLed"></div>
+									<div id="lauxBlowerRunningLed"></div>
+									<div id="lemergencyControlLed"></div>
+								</div>
+								<div class="operableLed" id="lbuttonCancelShutDown"></div>
+								<div class="operableLed" id="lbuttonLampTest"></div>
+								<canvas id="lbox1canvas" width="360" height="250">你的浏览器不支持canvas</canvas>
+								<img id="llogo" src="img/logo.png" />
+								<img id="lpointer" src="img/pointer1.png" />
+							</div>
+						</div>
+						<div id="lbox2">
+							<div id="lbox2box">
+								<div id="lbox2box1">
+									<div id="lwrWay">
+										Wr.<br />way
+										<div id="lwrWayled"></div>
+									</div>
+									<div id="llaTest">
+										La.<br />test
+										<div id="llaTestled"></div>
+									</div>
+								</div>
+								<div id="lbox2box2">
+									<div id="lbcr">
+										BCR
+										<div id="lbcrled"></div>
+									</div>
+									<div id="lecr">
+										ECR
+										<div id="lecrled"></div>
+									</div>
+									<div id="lloc">
+										Loc.
+										<div id="llocled"></div>
+									</div>
+								</div>
+								<div id="lbox2box3">
+									<div id="lnavFull">
+										Nav<br />Full
+										<div class="lspeedButtonLed" id="lnavFullled"></div>
+									</div>
+									<div id="lfull">
+										Full
+										<div class="lspeedButtonLed" id="lfullled"></div>
+									</div>
+									<div id="lhalf">
+										Half
+										<div class="lspeedButtonLed" id="lhalfled"></div>
+									</div>
+									<div id="lslow">
+										Slow
+										<div class="lspeedButtonLed" id="lslowled"></div>
+									</div>
+									<div id="ldeSlow">
+										De.<br />Slow
+										<div class="lspeedButtonLed" id="ldeSlowled"></div>
+									</div>
+									<div id="lstop">
+										Stop
+										<div class="lspeedButtonLed" id="lstopled"></div>
+									</div>
+									<div id="ldeSlow1">
+										De.<br />Slow
+										<div class="lspeedButtonLed" id="ldeSlow1led"></div>
+									</div>
+									<div id="lslow1">
+										Slow
+										<div class="lspeedButtonLed" id="lslow1led"></div>
+									</div>
+									<div id="lhalf1">
+										Half
+										<div class="lspeedButtonLed" id="lhalf1led"></div>
+									</div>
+									<div id="lfull1">
+										Full
+										<div class="lspeedButtonLed" id="lfull1led"></div>
+									</div>
+									<div id="lemAst">
+										Em.<br />Ast
+										<div class="lspeedButtonLed" id="lemAstled"></div>
+									</div>
+								</div>
+		
+								<div id="lbox2box4">
+									<div id="latSea">
+										At<br />Sea
+										<div id="latSealed"></div>
+									</div>
+									<div id="lstBy">
+										St.<br />By
+										<div id="lstByled"></div>
+									</div>
+									<div id="lfwe">
+										FWE
+										<div id="lfweled"></div>
+									</div>
+								</div>
+								<div id="lbox2boxStop">
+									EMERGENCY<br />STOP
+									<div id="lemergencyStop"></div>
+								</div>
+							</div>
+						</div>
+						<div id="lhandleBox1">
+							&nbsp; REMOTE &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; LOCAL
+							<img id="lhandle1" src="img/handle.png" />
+						</div>
+						<div id="lhandleBox2">
+							&nbsp; ASTERN &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AHEAD
+							<img id="lhandle2" src="img/handle.png" />
+						</div>
+						<!-- ZM -->
+						<div id="lhandleBox3">
+							LOCK &nbsp;&nbsp; UNLOCK  
+							<img id="lhandle3" src="img/handle.png" />
+						</div>
+						<div id="lbuttonStartBox">
+							START
+							<div class="operableLed" id="lbuttonStart"></div>
+						</div>
+						<div id="lbuttonStopBox">
+							STOP
+							<div class="operableLed" id="lbuttonStop"></div>
+						</div>
+						<img id="lwheel1" src="img/lwheelx.png" />
+						<img id="lwheel2" src="img/lwheel2.bmp" />
+						<img id="lpancel" src="img/localPancel.png" />
+						<img id="lshoulun" src="img/锁轮.png" />
+						<canvas id="lwheel2canvas" width="140" height="210">你的浏览器不支持canvas</canvas>
+						<canvas id="lwheel1canvas" width="140" height="11">你的浏览器不支持canvas</canvas>
+						<div id="lwheel1Left"></div>
+						<div id="lwheel1Right"></div>
+						<div id="lwheel2Left"></div>
+						<div id="lwheel2Right"></div>
+						<div id="lhandwheel">Impack hand wheel</div>
+						<div id="lhandwheelDis">CONNECTED</div>
+						<div id="lhandwheelCon">DISCONNECTED</div>
+						<div></div>
+					</div>
+					</div>
 				</div>
-				<div id="lhandleBox1">
-					&nbsp; REMOTE &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; LOCAL
-					<img id="lhandle1" src="img/handle.png" />
-				</div>
-				<div id="lhandleBox2">
-					&nbsp; ASTERN &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AHEAD
-					<img id="lhandle2" src="img/handle.png" />
-				</div>
-				<div id="lhandleBox3">
-					LOCK &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UNLOCK
-					<img id="lhandle3" src="img/handle.png" />
-				</div>
-				<div id="lbuttonStartBox">
-					START
-					<div class="operableLed" id="lbuttonStart"></div>
-				</div>
-				<div id="lbuttonStopBox">
-					STOP
-					<div class="operableLed" id="lbuttonStop"></div>
-				</div>
-				<img id="lwheel1" src="img/lwheelx.png" />
-				<img id="lwheel2" src="img/lwheel2.bmp" />
-				<img id="lpancel" src="img/localPancel.png" />
-				<img id="lshoulun" src="img/锁轮.png" />
-				<canvas id="lwheel2canvas" width="140" height="210">你的浏览器不支持canvas</canvas>
-				<canvas id="lwheel1canvas" width="140" height="11">你的浏览器不支持canvas</canvas>
-				<div id="lwheel1Left"></div>
-				<div id="lwheel1Right"></div>
-				<div id="lwheel2Left"></div>
-				<div id="lwheel2Right"></div>
-				<div id="lhandwheel">Impack hand wheel</div>
-				<div id="lhandwheelDis">CONNECTED</div>
-				<div id="lhandwheelCon">DISCONNECTED</div>
-				<div></div>
-			</div>
 
 			<!--          输入输出曲线               -->
 			<div id="diagram">
@@ -1002,6 +1255,7 @@
 				checkStart(); //检验是否准备就绪，备车完毕
 				valueCheck(); //检查气动逻辑图
 				engineNotReadyCheck();//驾驶台、集控室下方EngineState菜单内容
+
 				if (trmp >= 0 || brmp >= 0 || lrmp >= 0) {
 					calculate();
 				}
@@ -1009,7 +1263,7 @@
 				GetData2();
 				$.plot($("#flot-placeholder1"), dataset1, options1);
 				$.plot($("#flot-placeholder2"), dataset2, options2);
-
+				
 				if(rmpx==0){
 					document.getElementById('threeDgif').src="img/gif-0.gif"
 				}else if(rmpx<=30 && rmpx>0){
@@ -1026,6 +1280,10 @@
 				pointerRotate(rmpx * 0.75, 'cMERPMPointer');
 				pointerRotate(rmpx * 0.75, 'bMERPMPointer');
 				pointerRotate(rmpx * 0.75, 'lpointer');
+				pointerRotate(rmpx * 0.75, 'plpointer');
+				pointerRotate(rmpx * 0.75, 'olpointer');
+				pointerRotate(rmpx * 0.75, 'glpointer');
+				pointerRotate(rmpx * 0.75, 'tlpointer');
 				pointerRotate(ydp*1.8-90, 'bActuatorPosFeedbackPointer');
 				pointerRotate(ydp*1.8-90, 'cActuatorPosFeedbackPointer');
 				innerChange(parseInt(rmpx), 'RPM', 'cMERPM');
@@ -1034,8 +1292,8 @@
 				innerChange(parseInt(ydp), '', 'cActuatorPosFeedback');
 
 				console.log('yd:',yd,"----------rpm",rmp)
-
 				setTimeout(update, 2000);
+	
 			}
 			update();
 	
