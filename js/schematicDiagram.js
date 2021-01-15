@@ -571,6 +571,7 @@ function checkStart() {
 			document.getElementById('bSystemReady').style.backgroundColor = '#01D867';
 			document.getElementById('cSystemReady').innerHTML = 'System Ready';
 			document.getElementById('cSystemReady').style.backgroundColor = '#01D867';
+
 		}
 	} else {
 		document.getElementById('bEngReady').innerHTML = 'Eng N. Ready';

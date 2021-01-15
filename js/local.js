@@ -4,7 +4,6 @@ var lbox1c = document.getElementById('lbox1canvas');
 var lbox1ctx = lbox1c.getContext("2d");
 var airstart=0;//机旁空气启动变量，1为空气启动状态，0为非空气启动状态
 var airstarting=0;//1表示处于空气启动后到转速为0的这一过程中，0表示在空气启动之前或转速为0 后
-var lshutdownLed=document.getElementById('lshutDownLed')
 lbox1ctx.font = '18px Arial';
 lbox1ctx.fillStyle = '#FFFF00';
 lbox1ctx.fillText('AHEAD', 78, 33);
@@ -231,18 +230,26 @@ lhandle2.onclick = function () {
 //锁紧手柄
 var lhandle3 = document.getElementById('lhandle3');
 var lhandle3x = 0; //标识位 0为LOCK 1为UNLOCK
+var x=0;
 lhandle3.onclick = function () {
 	if (lhandle3x % 2 == 0) {
 		this.style.transformOrigin = '31% 31%';
 		this.style.transform = 'rotate(' + 90 + 'deg)';
 		// startMove(this, 'opacity', 0);
-		lhandle3x += 1;
-		x+=1;
+		lhandle3x += 1;console.log('lhandle3x',lhandle3x);
+		
 	} else {
 		this.style.transformOrigin = '31% 31%';
 		this.style.transform = 'rotate(' + 0 + 'deg)';
-		lhandle3x += 1;
-		x-=1;
+		lhandle3x += 1;console.log('lhandle3x',lhandle3x);
+		
+	}
+	x+=1;
+	if(x%2==0){
+		startMove(document.getElementById('wheelswitch'), 'opacity', 100);
+	}
+	if(x%2==1){
+		startMove(document.getElementById('wheelswitch'), 'opacity', 0);
 	}
 
 }
@@ -252,7 +259,7 @@ var lwheel2 = document.getElementById('lwheel2');
 var lwheelx1 = 0;
 var lwheelx2 = 0;
 var lwheelx2x = 0; //表盘刻度变化系数
-var lwheelx1x = 5; //表盘刻度变化系数
+var lwheelx1x = 0; //表盘刻度变化系数
 
 function lprintPancel1(a) {
 	var lw1c = document.getElementById("lwheel1canvas");
@@ -300,6 +307,31 @@ lbuttonStart.onmouseup = function () {
 	console.log('airstop',lrmpx);
 }
 
+//ZM
+
+$('#pstart').on('mousedown',function(){
+	if(value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx%2==1 && lhandle1x % 2 == 1){
+		airstart=1;
+		LED()
+		schematicX = 1;
+		
+		console.log('airstart',lrmp)
+	 }	
+})
+$('#pstart').on('mouseup',function(){
+	airstart=2;
+	console.log('airstop',lrmpx);
+})
+
+$('#pstop').on('mousedown',function(){
+	yd = 0;
+	ydx = 0;
+	rmp = 0;
+	rmpx = 0;
+	brmp = 0;
+	trmp = 0;
+	lrmp = 0;
+})
 lbuttonStop.onmousedown = function () {
 	lbuttonStop.style.backgroundColor = "#B40404";
 	yd = 0;
@@ -325,9 +357,9 @@ lwheel1Right.onmousemove = function () {
 lwheel1Right.onclick = function () {
 	lwheelx1 += 45;
 	lwheel1.style.transform = 'rotate(' + lwheelx1 + 'deg)';
-	lwheelx1x += 1;
-	if (lwheelx1x >= 5) {
-		lwheelx1x = 5;
+	lwheelx1x -= 1;
+	if (lwheelx1x <= 0) {
+		lwheelx1x = 0;
 	}
 	if (lwheelx1x <= 2) {
 		document.getElementById('lhandwheelDis').style.border = '1px solid red'
@@ -345,9 +377,9 @@ lwheel1Right.onclick = function () {
 lwheel1Left.onclick = function () {
 	lwheelx1 -= 45;
 	lwheel1.style.transform = 'rotate(' + lwheelx1 + 'deg)';
-	lwheelx1x -= 1;
-	if (lwheelx1x <= 0) {
-		lwheelx1x = 0;
+	lwheelx1x += 1;
+	if (lwheelx1x >= 5) {
+		lwheelx1x = 5;
 	}
 	if (lwheelx1x <= 2) {
 		document.getElementById('lhandwheelDis').style.border = '1px solid red'
@@ -650,7 +682,6 @@ lemergencyStop.onclick = function () {
 		clearInterval(cancel)
 		lcancelSHD.style.borderColor = "white"
 		if (lcancelSHDx == 0) {
-			lshutdownLed.style.backgroundColor=' #FF0000'
 			yd = 0;
 			ydx = 0;
 			rmp = 0;

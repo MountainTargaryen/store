@@ -187,7 +187,9 @@ $('#localmenu li').on('click',function(){
 
 $('#pstart').on('mousedown',function(){
 	startMove(this, 'opacity', 100);
+
 })
+
 
 $('#pstart').on('mouseup',function(){
 	startMove(this, 'opacity', 0);
@@ -348,126 +350,186 @@ $('#wheelswitch').on('click',function(){
 	x+=1;
 	if(x%2==1){
 		startMove(this, 'opacity', 100);
-		lhandle3x += 1;
+		 lhandle3x += 1;
 		yy+=1;
 	}
+	
 	if(x%2==0){
 		startMove(this, 'opacity', 0);
-		lhandle3x -= 1;
+		lhandle3x += 1;
 		yy-=1;	
 	}
+	if (lhandle3x % 2 == 0) {
+		document.getElementById('lhandle3').style.transformOrigin = '31% 31%';
+		document.getElementById('lhandle3').style.transform = 'rotate(' + 0 + 'deg)';
+	} 
+	if(lhandle3x % 2 == 1) {
+		document.getElementById('lhandle3').style.transformOrigin = '31% 31%';
+		document.getElementById('lhandle3').style.transform = 'rotate(' + 90 + 'deg)';
+	
+	}
 })
+
 
 //油门开关控制油门的逻辑
 var z=0;
 
 var pwheelx1x = 0;
 
-	$('#wheeltouming').on('click',function(){
-		if(yy==1){
-		z+=1;
+$('#wheeltouming').on('click',function(){
+	if(yy==1){
+	z+=1;
+	if(z==1){
+		$('#wheelstart').css('display','block');
+		$('#wheeloil1').css('display','none');
+		$('#wheeloil1_5').css('display','none');
+		$('#wheeloil2').css('display','none');
+		$('#wheeloil3').css('display','none');
+		$('#wheeloil4').css('display','none');
+		
+		
+	}
+	if(z==2){
+		$('#wheelstart').css('display','none');
+		$('#wheeloil1').css('display','block');
+		$('#wheeloil1_5').css('display','none');
+		$('#wheeloil2').css('display','none');
+		$('#wheeloil3').css('display','none');
+		$('#wheeloil4').css('display','none');
+		lrmp = 20;
+		lwheelx2x=5;
+		lprintPancel2(5);
+	}
+	if(z==3){
+		$('#wheelstart').css('display','none');
+		$('#wheeloil1').css('display','none');
+		$('#wheeloil1_5').css('display','block');
+		$('#wheeloil2').css('display','none');
+		$('#wheeloil3').css('display','none');
+		$('#wheeloil4').css('display','none');
+		lrmp = 40;
+		lwheelx2x=7;
+		lprintPancel2(7);
+	}
+	if(z==4){
+		$('#wheelstart').css('display','none');
+		$('#wheeloil1').css('display','none');
+		$('#wheeloil1_5').css('display','none');
+		$('#wheeloil2').css('display','block');
+		$('#wheeloil3').css('display','none');
+		$('#wheeloil4').css('display','none');
+		lrmp = 60;
+		lwheelx2x=8;
+		lprintPancel2(8);
+	}
+	if(z==5){
+		$('#wheelstart').css('display','none');
+		$('#wheeloil1').css('display','none');
+		$('#wheeloil1_5').css('display','none');
+		$('#wheeloil2').css('display','none');
+		$('#wheeloil3').css('display','block');
+		$('#wheeloil4').css('display','none');
+		lrmp = 80;
+		lwheelx2x=9;
+		lprintPancel2(9);
+	}
+	if(z==6){
+		$('#wheelstart').css('display','none');
+		$('#wheeloil1').css('display','none');
+		$('#wheeloil1_5').css('display','none');
+		$('#wheeloil2').css('display','none');
+		$('#wheeloil3').css('display','none');
+		$('#wheeloil4').css('display','block');
+		lrmp = 100;
+		lwheelx2x=11;
+		lprintPancel2(11);
+	}
+	if(z >= 6){
+		z = 6;
+	}
+}
+})
+$('#wheeltoumingleft').on('click',function(){
+	if(yy==1){
+		z-=1;
 		if(z==1){
 			$('#wheelstart').css('display','block');
 			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
 			$('#wheeloil2').css('display','none');
 			$('#wheeloil3').css('display','none');
 			$('#wheeloil4').css('display','none');
-			
 			
 		}
 		if(z==2){
 			$('#wheelstart').css('display','none');
 			$('#wheeloil1').css('display','block');
+			$('#wheeloil1_5').css('display','none');
 			$('#wheeloil2').css('display','none');
 			$('#wheeloil3').css('display','none');
 			$('#wheeloil4').css('display','none');
-			lrmp = 30;
+			lrmp = 20;
+			lwheelx2x=5;
+			lprintPancel2(5);
 		}
 		if(z==3){
 			$('#wheelstart').css('display','none');
 			$('#wheeloil1').css('display','none');
-			$('#wheeloil2').css('display','block');
+			$('#wheeloil1_5').css('display','block');
+			$('#wheeloil2').css('display','none');
 			$('#wheeloil3').css('display','none');
 			$('#wheeloil4').css('display','none');
-			lrmp = 60;
+			lrmp = 40;
+			lwheelx2x=7;
+			lprintPancel2(7);
 		}
 		if(z==4){
 			$('#wheelstart').css('display','none');
 			$('#wheeloil1').css('display','none');
-			$('#wheeloil2').css('display','none');
-			$('#wheeloil3').css('display','block');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','block');
+			$('#wheeloil3').css('display','none');
 			$('#wheeloil4').css('display','none');
-			lrmp = 90;
+			lrmp = 60;
+			lwheelx2x=8;
+			lprintPancel2(8);
 		}
 		if(z==5){
 			$('#wheelstart').css('display','none');
 			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','block');
+			$('#wheeloil4').css('display','none');
+			lrmp = 80;
+			lwheelx2x=9;
+			lprintPancel2(9);
+		}
+		if(z==6){
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
 			$('#wheeloil2').css('display','none');
 			$('#wheeloil3').css('display','none');
 			$('#wheeloil4').css('display','block');
-			lrmp = 120;
+			lrmp = 100;
+			lwheelx2x=11;
+			lprintPancel2(11);
 		}
-		if(z >= 5){
-			z = 5;
+		if(z==0){
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1.5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+		}
+		if(z <= 0){
+			z = 0;
 		}
 	}
-	})
-	$('#wheeltoumingleft').on('click',function(){
-		if(yy==1){
-			z-=1;
-			if(z==1){
-				$('#wheelstart').css('display','block');
-				$('#wheeloil1').css('display','none');
-				$('#wheeloil2').css('display','none');
-				$('#wheeloil3').css('display','none');
-				$('#wheeloil4').css('display','none');
-				
-			}
-			if(z==2){
-				$('#wheelstart').css('display','none');
-				$('#wheeloil1').css('display','block');
-				$('#wheeloil2').css('display','none');
-				$('#wheeloil3').css('display','none');
-				$('#wheeloil4').css('display','none');
-				lrmp = 30;
-			}
-			if(z==3){
-				$('#wheelstart').css('display','none');
-				$('#wheeloil1').css('display','none');
-				$('#wheeloil2').css('display','block');
-				$('#wheeloil3').css('display','none');
-				$('#wheeloil4').css('display','none');
-				lrmp = 60;
-			}
-			if(z==4){
-				$('#wheelstart').css('display','none');
-				$('#wheeloil1').css('display','none');
-				$('#wheeloil2').css('display','none');
-				$('#wheeloil3').css('display','block');
-				$('#wheeloil4').css('display','none');
-				lrmp = 90;
-			}
-			if(z==5){
-				$('#wheelstart').css('display','none');
-				$('#wheeloil1').css('display','none');
-				$('#wheeloil2').css('display','none');
-				$('#wheeloil3').css('display','none');
-				$('#wheeloil4').css('display','block');
-				lrmp = 120;
-			}
-			if(z==0){
-				$('#wheelstart').css('display','none');
-				$('#wheeloil1').css('display','none');
-				$('#wheeloil2').css('display','none');
-				$('#wheeloil3').css('display','none');
-				$('#wheeloil4').css('display','none');
-			}
-			if(z <= 0){
-				z = 0;
-			}
-		}
-			
-	})
+		
+})
 		
 // else{
 // 	$('#wheeltouming').on('click',function(){})
@@ -485,14 +547,14 @@ var pwheelx1x = 0;
 // document.getElementById('tlbridgeControlLed').style.backgroundColor = '#00FF00';
 // document.getElementById('tlemergencyControlLed').style.backgroundColor = '#800000';
 
-var x=0;
+var impactwheelx=0;
 $('#impactwheel').on('click',function(){
-	x+=1;
-	if(x%2==1){
+	impactwheelx+=1;
+	if(impactwheelx%2==1){
 		startMove(this, 'opacity', 100);
 
 	}
-	if(x%2==0){
+	if(impactwheelx%2==0){
 		startMove(this, 'opacity', 0);
 
 	}
@@ -982,6 +1044,14 @@ document.getElementById('conBefore').onclick=function(){//原始状况
 	ttelegraph2lever.style.top = '0px';
 	ttelegraph2watch.innerHTML = 'STOP';
 
+	document.getElementById('lhandwheelDis').style.border = '1px solid red'
+	document.getElementById('lhandwheelCon').style.border = ''
+	impactwheelx=1;
+	x=1;
+	startMove(document.getElementById('impactwheel'), 'opacity', 0);
+	startMove(document.getElementById('wheelswitch'), 'opacity', 0);
+
+
 	lhandle1x = 1;  //机旁页面扳手 指向LOCAL
 	lhandle1.style.transformOrigin = '31% 31%';
 	lhandle1.style.transform = 'rotate(' + 90 + 'deg)';
@@ -1032,7 +1102,6 @@ document.getElementById('conReadyC').onclick=function(){//备车完毕
 	ttelegraph2watch.innerHTML = 'STOP';
 
 	lshutdownLed.style.backgroundColor=' #800000';
-
 	lhandle1x = 0;  //机旁页面扳手 指向LOCAL
 	lhandle1.style.transformOrigin = '31% 31%';
 	lhandle1.style.transform = 'rotate(' + 0 + 'deg)';
