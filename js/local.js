@@ -230,18 +230,26 @@ lhandle2.onclick = function () {
 //锁紧手柄
 var lhandle3 = document.getElementById('lhandle3');
 var lhandle3x = 0; //标识位 0为LOCK 1为UNLOCK
+var x=0;
 lhandle3.onclick = function () {
 	if (lhandle3x % 2 == 0) {
 		this.style.transformOrigin = '31% 31%';
 		this.style.transform = 'rotate(' + 90 + 'deg)';
 		// startMove(this, 'opacity', 0);
-		lhandle3x += 1;
-		x+=1;
+		lhandle3x += 1;console.log('lhandle3x',lhandle3x);
+		
 	} else {
 		this.style.transformOrigin = '31% 31%';
 		this.style.transform = 'rotate(' + 0 + 'deg)';
-		lhandle3x += 1;
-		x-=1;
+		lhandle3x += 1;console.log('lhandle3x',lhandle3x);
+		
+	}
+	x+=1;
+	if(x%2==0){
+		startMove(document.getElementById('wheelswitch'), 'opacity', 100);
+	}
+	if(x%2==1){
+		startMove(document.getElementById('wheelswitch'), 'opacity', 0);
 	}
 
 }
