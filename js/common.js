@@ -205,4 +205,5 @@ function LED()
 	ttled1[5].style.background = ' #99af1c';
 	ttled2[5].style.background = ' #99af1c';
 	lclearSpeedLed();
+	plclearSpeedLed();//ZM
 }

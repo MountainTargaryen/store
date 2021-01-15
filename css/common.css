@@ -19,7 +19,6 @@ body {
 	margin: 0 auto;
 	/*	background-color: darkblue;  */
 	text-align: left;
-	
 }
 
 #header {
@@ -60,6 +59,54 @@ a {
 	cursor: pointer;
 	border-right: 2px solid white;
 }
+
+
+
+
+/* NEW------------------------------- */
+#localmenu {
+	/* width: 60px;
+	height: 30px;
+	background-color: rgb(221, 238, 209); */
+	margin: auto;
+	padding: 0%;
+	position: absolute; display: flex;justify-content: space-between; width: 100%;  top: 0px;background-color: rgb(104, 156, 199);
+}
+
+ul {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	display: inline-block；
+	
+}
+
+#localmenu li {
+	height: 34px;
+	/* border: 1px solid rgb(161, 105, 133); */
+	border-right: 2px solid white;
+	float: left;
+	padding-left: 65px;
+	padding-right: 65px;
+	padding-top: 1px;
+	padding-bottom: 0px;
+	text-align: center;
+	line-height: 30px;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+
+
+#localmenu li:hover{ color: rgb(112, 42, 89); text-decoration: none;background-color: aliceblue;}
+
+/* NEW ------------------------------------- */
+
+
+
+
 
 #content {
 	width: 100%;
