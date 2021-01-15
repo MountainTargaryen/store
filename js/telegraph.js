@@ -318,6 +318,7 @@ temergencyStop.onclick = function () {
 		clearInterval(cancel)
 		tcancelSHD.style.borderColor = "white"
 		if (tcancelSHDx == 0) {
+			lshutdownLed.style.backgroundColor=' #FF0000';
 			yd = 0;
 			ydx = 0;
 			rmp = 0;

@@ -553,18 +553,18 @@
 
 #lhandwheel{
 	position: absolute;
-	left: 880px;
+	left: 864px;
 	top: 370px;
 }
 #lhandwheelDis{
 	position: absolute;
-	left: 1020px;
+	left: 1041px;
 	top: 405px;
 	font-size: x-small;
 }
 #lhandwheelCon{
 	position: absolute;
-	left: 1148px;
+	left: 1162px;
 	top: 405px;
 	font-size: x-small;
 }

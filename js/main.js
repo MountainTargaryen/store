@@ -389,6 +389,8 @@ document.getElementById('conBefore').onclick=function(){//原始状况
 	ttelegraph2lever.style.top = '0px';
 	ttelegraph2watch.innerHTML = 'STOP';
 
+	lshutdownLed.style.backgroundColor=' #800000';
+
 	lhandle1x = 1;  //机旁页面扳手 指向LOCAL
 	lhandle1.style.transformOrigin = '31% 31%';
 	lhandle1.style.transform = 'rotate(' + 90 + 'deg)';
@@ -403,15 +405,16 @@ document.getElementById('conBefore').onclick=function(){//原始状况
 	thandle.style.transform = 'rotate(' + 90 + 'deg)';
 	controlLocation();
     //机旁的手轮
-	lwheelx1x = 0;//
+	lwheelx1x = 5;//
 	lprintPancel1(lwheelx1x);
 	lwheelx2x = 0;//
 	lprintPancel2(lwheelx2x);
 
-	bStandBy.style.backgroundColor='yellow';
-	bStandBy.innerHTML='Stand By';
-	cStandBy.style.backgroundColor='yellow';
-	cStandBy.innerHTML='Stand By';
+	bStandBy.style.backgroundColor='#01D867';
+	bStandBy.innerHTML='FWE';
+	cStandBy.style.backgroundColor='#01D867';
+	cStandBy.innerHTML='FWE';
+
 	yd=0;
 	ydx=0;
 	rmp=0;
@@ -435,6 +438,8 @@ document.getElementById('conReadyC').onclick=function(){//备车完毕
 	ttelegraph2lever.style.top = '0px';
 	ttelegraph2watch.innerHTML = 'STOP';
 
+	lshutdownLed.style.backgroundColor=' #800000';
+
 	lhandle1x = 0;  //机旁页面扳手 指向LOCAL
 	lhandle1.style.transformOrigin = '31% 31%';
 	lhandle1.style.transform = 'rotate(' + 0 + 'deg)';
@@ -449,15 +454,15 @@ document.getElementById('conReadyC').onclick=function(){//备车完毕
 	thandle.style.transform = 'rotate(' + 90 + 'deg)';
 	controlLocation();
     //机旁的手轮
-	lwheelx1x = 0;//
+	lwheelx1x = 5;//
 	lprintPancel1(lwheelx1x);
 	lwheelx2x = 0;//
 	lprintPancel2(lwheelx2x);
 
-	bStandBy.style.backgroundColor='#01D867';
-	bStandBy.innerHTML='FWE';
-	cStandBy.style.backgroundColor='#01D867';
-	cStandBy.innerHTML='FWE';
+	bStandBy.style.backgroundColor='yellow';
+	bStandBy.innerHTML='Stand By';
+	cStandBy.style.backgroundColor='yellow';
+	cStandBy.innerHTML='Stand By';
 	
 	LED()
 	controlLocation();
@@ -498,12 +503,12 @@ document.getElementById('conOnSea').onclick=function(){//航行状态
 	cStandBy.style.backgroundColor='#01D867';
 	cStandBy.innerHTML='At Sea';
 
-	
+	lshutdownLed.style.backgroundColor=' #800000';
 	
 	//rmpx=61;
 	brmp= 80;
 	rmp=55;
 	schematicX=1;
-	lwheelx1x=0;
+	lwheelx1x=5;
 	lprintPancel1(lwheelx1x);
 }

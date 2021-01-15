@@ -58,7 +58,7 @@ function valueCheck() {
 		valueMaintxt.innerHTML="点击关闭主起动阀"
 		sdc2tx.drawImage(picblock2,0,0,91,51,904,68,92,46)
 	}else{
-		valueMaintxt.innerHTML="点击起动主起动阀"
+		valueMaintxt.innerHTML="点击打开主起动阀"
 		sdc2tx.clearRect(904,68,92,46)
 	}
 
@@ -293,7 +293,7 @@ valueMain.onclick=function(){
 		valveMainComfirmTxt.innerHTML="是否关闭主起动阀"
 	}else{
 		valveMainconfirmBox.style.display='block'
-		valveMainComfirmTxt.innerHTML="是否起动主起动阀"
+		valveMainComfirmTxt.innerHTML="是否打开主起动阀"
 	}
 }
 valveMainComfirm.onclick=function(){
@@ -542,7 +542,7 @@ function checkStart() {
 			cState.innerHTML = 'Stopping';
 
 		}
-		if(lwheelx1x<3){
+		if(lwheelx1x>=3){
 			document.getElementById('bEngReady').innerHTML = 'Eng Ready';
 			document.getElementById('bEngReady').style.backgroundColor = '#01D867';
 			document.getElementById('cEngReady').innerHTML = 'Eng Ready';

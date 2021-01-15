@@ -310,6 +310,7 @@ bemergencyStop.onclick = function () {
 		clearInterval(cancel)
 		bcancelSHD.style.borderColor = "white"
 		if (bcancelSHDx == 0) {
+			lshutdownLed.style.backgroundColor=' #FF0000'
 			yd = 0;
 			ydx = 0;
 			rmp = 0;
