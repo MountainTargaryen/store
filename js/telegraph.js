@@ -33,6 +33,8 @@ ttelegraph1lever.onmousedown = function (ev) {
 		}
 
 		if (t >= -200 && t < -180) {
+			telled=0;
+			telLEDclear(briled,telled);
 			ttext1.innerHTML = 'Nav.Full';
 			sdc2tx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 			sdc2tx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
@@ -43,6 +45,8 @@ ttelegraph1lever.onmousedown = function (ev) {
 			//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
 		}
 		if (t >= -180 && t < -140) {
+			telled=1;
+			telLEDclear(briled,telled);
 			ttext1.innerHTML = 'Full';
 			sdc2tx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 			sdc2tx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
@@ -53,6 +57,8 @@ ttelegraph1lever.onmousedown = function (ev) {
 			//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
 		}
 		if (t >= -140 && t < -100) {
+			telled=2;
+			telLEDclear(briled,telled);
 			ttext1.innerHTML = 'Half';
 			sdc2tx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 			sdc2tx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
@@ -63,6 +69,8 @@ ttelegraph1lever.onmousedown = function (ev) {
 			//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
 		}
 		if (t >= -100 && t < -60) {
+			telled=3;
+			telLEDclear(briled,telled);
 			ttext1.innerHTML = 'Slow';
 			sdc2tx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 			sdc2tx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
@@ -73,6 +81,8 @@ ttelegraph1lever.onmousedown = function (ev) {
 			//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门通路，方向车钟start两位三通阀门通路，方向车钟astern两位三通阀门关闭
 		}
 		if (t >= -60 && t < -20) {
+			telled=4;
+			telLEDclear(briled,telled);
 			ttext1.innerHTML = 'Dead Slow';
 			sdc2tx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 			sdc2tx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
@@ -84,6 +94,8 @@ ttelegraph1lever.onmousedown = function (ev) {
 
 		}
 		if (t >= -20 && t < 20) {
+			telled=5;
+			telLEDclear(briled,telled);
 			ttext1.innerHTML = 'Stop';
 
 			sdc2tx.drawImage(picMap, 60, 520, 57, 62, 320, 524, 72, 70); //方向车钟stop位置
@@ -95,6 +107,12 @@ ttelegraph1lever.onmousedown = function (ev) {
 			//方向车钟stop两位三通阀门通路，方向车钟ahead两位三通阀门关闭，方向车钟start两位三通阀门关闭，方向车钟astern两位三通阀门关闭	
 		}
 		if (t >= 20 && t < 60) {
+			telled=6;
+			telLEDclear(briled,locled);
+			ttled1[6].style.background = '#00FF00';
+			ttled2[6].style.background = '#00FF00';
+			btled1[6].style.background = 'red';
+			btled2[6].style.background = 'red';
 			ttext1.innerHTML = 'D.Slow AST';
 			sdc2tx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 			sdc2tx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
@@ -106,6 +124,12 @@ ttelegraph1lever.onmousedown = function (ev) {
 			//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
 		}
 		if (t >= 60 && t < 100) {
+			telled=7;
+			telLEDclear(briled,locled);
+			ttled1[7].style.background = '#00FF00';
+			ttled2[7].style.background = '#00FF00';
+			btled1[7].style.background = 'red';
+			btled2[7].style.background = 'red';
 			ttext1.innerHTML = 'Slow AST';
 			sdc2tx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 			sdc2tx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
@@ -116,6 +140,12 @@ ttelegraph1lever.onmousedown = function (ev) {
 			//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
 		}
 		if (t >= 100 && t < 140) {
+			telled=8;
+			telLEDclear(briled,locled);
+			ttled1[8].style.background = '#00FF00';
+			ttled2[8].style.background = '#00FF00';
+			btled1[8].style.background = 'red';
+			btled2[8].style.background = 'red';
 			ttext1.innerHTML = 'Half AST';
 			sdc2tx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 			sdc2tx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
@@ -126,6 +156,12 @@ ttelegraph1lever.onmousedown = function (ev) {
 			//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
 		}
 		if (t >= 140 && t < 180) {
+			telled=9;
+			telLEDclear(briled,locled);
+			ttled1[9].style.background = '#00FF00';
+			ttled2[9].style.background = '#00FF00';
+			btled1[9].style.background = 'red';
+			btled2[9].style.background = 'red';
 			ttext1.innerHTML = 'Full AST';
 			sdc2tx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 			sdc2tx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
@@ -136,6 +172,12 @@ ttelegraph1lever.onmousedown = function (ev) {
 			//方向车钟stop两位三通阀门关闭，方向车钟ahead两位三通阀门关闭，方向车钟astern两位三通阀门通路，方向车钟start两位三通阀门通路
 		}
 		if (t >= 180 && t < 200) {
+			telled=10;
+			telLEDclear(briled,locled);
+			ttled1[10].style.background = '#00FF00';
+			ttled2[10].style.background = '#00FF00';
+			btled1[10].style.background = 'red';
+			btled2[10].style.background = 'red';
 			ttext1.innerHTML = 'Nav.Full AST';
 			sdc2tx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 			sdc2tx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭

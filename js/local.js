@@ -247,66 +247,70 @@ mouseOnLed();
 var lspeeds = document.getElementById('lbox2box3');
 var lspeedsAll = lspeeds.getElementsByTagName('div');
 var lspeedsLed = lspeeds.getElementsByClassName('lspeedButtonLed');
-var lclearSpeedLed = function () {
-	for (var i = 0; i < lspeedsAll.length; i++) {
-		lspeedsAll[i].style.borderColor = 'white';
-	}
-	for (var i1 = 0; i1 < lspeedsLed.length; i1++) {
-		lspeedsLed[i1].style.backgroundColor = 'white';
-	}
-}
+
 document.getElementById('lnavFull').onclick = function () {
-	lclearSpeedLed();
+	locled=0;
+	lclearSpeedLed(briled,locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lnavFullled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lfull').onclick = function () {
-	lclearSpeedLed();
+	locled=1;
+	lclearSpeedLed(briled,locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lfullled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lhalf').onclick = function () {
-	lclearSpeedLed();
+	locled=2;
+	lclearSpeedLed(briled,locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lhalfled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lslow').onclick = function () {
-	lclearSpeedLed();
+	locled=3;
+	lclearSpeedLed(briled,locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lslowled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('ldeSlow').onclick = function () {
-	lclearSpeedLed();
+	locled=4;
+	lclearSpeedLed(briled,locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('ldeSlowled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lstop').onclick = function () {
-	lclearSpeedLed();
+	locled=5;
+	lclearSpeedLed(briled,locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lstopled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('ldeSlow1').onclick = function () {
-	lclearSpeedLed();
+	locled=6;
+	lclearSpeedLed(briled,locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('ldeSlow1led').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lslow1').onclick = function () {
-	lclearSpeedLed();
+	locled=7;
+	lclearSpeedLed(briled,locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lslow1led').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lhalf1').onclick = function () {
-	lclearSpeedLed();
+	locled=8;
+	lclearSpeedLed(briled,locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lhalf1led').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lfull1').onclick = function () {
-	lclearSpeedLed();
+	locled=9;
+	lclearSpeedLed(briled,locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lfull1led').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lemAst').onclick = function () {
-	lclearSpeedLed();
+	locled=10;
+	lclearSpeedLed(briled,locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lemAstled').style.backgroundColor = '#FFC200';
 }

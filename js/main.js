@@ -422,7 +422,7 @@ document.getElementById('conBefore').onclick=function(){//原始状况
 	brmp=0;
 	trmp=0;
 	lrmp=0;
-	LED()
+//	LED()
 	schematicX=0;
 }
 document.getElementById('conReadyC').onclick=function(){//备车完毕
@@ -464,10 +464,10 @@ document.getElementById('conReadyC').onclick=function(){//备车完毕
 	cStandBy.style.backgroundColor='yellow';
 	cStandBy.innerHTML='Stand By';
 	
-	LED()
+//	LED()
 	controlLocation();
 	schematicX=1;
-	lwheelx1x=0;
+	lwheelx1x=5;
 	lprintPancel1(lwheelx1x);
 
 	yd=0;
@@ -477,7 +477,7 @@ document.getElementById('conReadyC').onclick=function(){//备车完毕
 	brmp=0;
 	trmp=0;
 	lrmp=0;
-	LED()
+//	LED()
 	schematicX=1;
 }
 document.getElementById('conOnSea').onclick=function(){//航行状态
@@ -491,7 +491,7 @@ document.getElementById('conOnSea').onclick=function(){//航行状态
 	//车钟杠杆位置
 	btelegraph1lever.style.top = '-495px';
 	//车令位置
-	LED()
+	//LED()
 	subTelegraph(-30);
 	ttled1[0].style.background = '#00FF00';
 	ttled2[0].style.background = '#00FF00';	

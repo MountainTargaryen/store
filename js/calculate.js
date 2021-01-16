@@ -1,4 +1,4 @@
-var n = 0;     //修改了初始输入值
+var n = 32;     //修改了初始输入值
 var vp = 1.2;
 var zhuansu = 31;
 var zhuansulast = 31;
@@ -117,7 +117,7 @@ function calculate() {
 		if(airstart==1){
 			console.log('当前为空气启动')
 			ydx=30;
-		}else if(airstart==2 && lwheelx1x >= 3){
+		}else if(airstart==2 && lwheelx1x < 3){
 			ydx=lrmp;
 			yd=lrmp;
 		}else{
