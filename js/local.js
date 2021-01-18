@@ -237,20 +237,22 @@ lhandle3.onclick = function () {
 		this.style.transform = 'rotate(' + 90 + 'deg)';
 		// startMove(this, 'opacity', 0);
 		lhandle3x += 1;console.log('lhandle3x',lhandle3x);
-		
+		wx=1;console.log('wx',wx);
+		startMove(document.getElementById('wheelswitch'), 'opacity', 100);
+
 	} else {
 		this.style.transformOrigin = '31% 31%';
 		this.style.transform = 'rotate(' + 0 + 'deg)';
 		lhandle3x += 1;console.log('lhandle3x',lhandle3x);
-		
-	}
-	x+=1;
-	if(x%2==0){
-		startMove(document.getElementById('wheelswitch'), 'opacity', 100);
-	}
-	if(x%2==1){
+		wx=0;console.log('wx',wx);
 		startMove(document.getElementById('wheelswitch'), 'opacity', 0);
+
 	}
+	
+	// if(wx%2==1){
+	// }
+	// if(wx%2==0){
+	// }
 
 }
 //摇柄
@@ -365,6 +367,8 @@ lwheel1Right.onclick = function () {
 		document.getElementById('lhandwheelDis').style.border = '1px solid red'
 		document.getElementById('lhandwheelCon').style.border = ''
 		// startMove($('#impactwheel'), 'opacity', 0);
+		startMove(document.getElementById('impactwheel'), 'opacity', 0);
+		impactwheelx=0;console.log('imx',impactwheelx);
 	} else {
 		document.getElementById('lhandwheelDis').style.border = ''
 		document.getElementById('lhandwheelCon').style.border = '1px solid red'
@@ -385,11 +389,13 @@ lwheel1Left.onclick = function () {
 		document.getElementById('lhandwheelDis').style.border = '1px solid red'
 		// document.getElementById('lhandwheelDis').style.color='yellow'
 		document.getElementById('lhandwheelCon').style.border = ''
-		
+	
 	} else {
 		document.getElementById('lhandwheelDis').style.border = ''
 		document.getElementById('lhandwheelCon').style.border = '1px solid red'
-		// startMove($('#impactwheel'), 'opacity', 100);
+		// startMove($('#impactwheel'), 'opacity', 100);	
+		startMove(document.getElementById('impactwheel'), 'opacity', 100);
+		impactwheelx=0;console.log('imx',impactwheelx);
 	}
 	lprintPancel1(lwheelx1x);
 	console.log('lwheelx1x',lwheelx1x)
@@ -411,6 +417,69 @@ lwheel2Right.onclick = function () {
 		if (lwheelx2x >= 11) {
 			lwheelx2x = 11;
 		}
+		if(lwheelx2x < 4){
+			z=0;
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+		}
+		if(lwheelx2x == 4){
+			z=1;
+			$('#wheelstart').css('display','block');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+		}
+		if(lwheelx2x == 5){
+			z=2;
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','block');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+		}
+		if(lwheelx2x == 7){
+			z=3;
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','block');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+		}
+		if(lwheelx2x == 8){
+			z=4;
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','block');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+		}
+		if(lwheelx2x == 9){
+			z=5;
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','block');
+			$('#wheeloil4').css('display','none');
+		}
+		if(lwheelx2x == 11){
+			z=6;
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','block');
+		}
 		lprintPancel2(lwheelx2x);
 		lrmp += 7.5;
 		lrmp=parseInt(lrmp);		
@@ -426,6 +495,69 @@ lwheel2Left.onclick = function () {
 		lwheelx2x -= 1;
 		if (lwheelx2x <= 0) {
 			lwheelx2x = 0;
+		}
+		if(lwheelx2x < 4){
+			z=0;
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+		}
+		if(lwheelx2x == 4){
+			z=1;
+			$('#wheelstart').css('display','block');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+		}
+		if(lwheelx2x == 5){
+			z=2;
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','block');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+		}
+		if(lwheelx2x == 7){
+			z=3;
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','block');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+		}
+		if(lwheelx2x == 8){
+			z=4;
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','block');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','none');
+		}
+		if(lwheelx2x == 9){
+			z=5;
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','block');
+			$('#wheeloil4').css('display','none');
+		}
+		if(lwheelx2x == 11){
+			z=6;
+			$('#wheelstart').css('display','none');
+			$('#wheeloil1').css('display','none');
+			$('#wheeloil1_5').css('display','none');
+			$('#wheeloil2').css('display','none');
+			$('#wheeloil3').css('display','none');
+			$('#wheeloil4').css('display','block');
 		}
 		lprintPancel2(lwheelx2x);
 		lrmp -= 7.5;
@@ -754,69 +886,69 @@ plcancelSHD.onclick = function () {
 
 
 // ZM panel页面的start和stop 具体给油还没写
-var plbuttonStart = document.getElementById('pstart');
-var plbuttonStop = document.getElementById('pstop');
-plbuttonStart.onmousedown = function () {
-	// lbuttonStart.style.backgroundColor = "green";
-	// lbuttonStop.style.backgroundColor = "grey";
-	 if(value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx%2==1 && lwheelx1x>=3 && lhandle1x % 2 == 1){
-		LED(); //车钟led初始化
-		schematicX = 1;
-		lrmpx=lrmp;
-		lrmp=30;
-		console.log('ok',lrmp);
-	 }	
-}
-plbuttonStart.onmouseup = function () {
-	// lbuttonStart.style.backgroundColor = "grey";
-	lrmp=lrmpx;
-	console.log('lrmp',lrmpx);
-}
+// var plbuttonStart = document.getElementById('pstart');
+// var plbuttonStop = document.getElementById('pstop');
+// plbuttonStart.onmousedown = function () {
+// 	// lbuttonStart.style.backgroundColor = "green";
+// 	// lbuttonStop.style.backgroundColor = "grey";
+// 	 if(value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx%2==1 && lwheelx1x>=3 && lhandle1x % 2 == 1){
+// 		LED(); //车钟led初始化
+// 		schematicX = 1;
+// 		lrmpx=lrmp;
+// 		lrmp=30;
+// 		console.log('ok',lrmp);
+// 	 }	
+// }
+// plbuttonStart.onmouseup = function () {
+// 	// lbuttonStart.style.backgroundColor = "grey";
+// 	lrmp=lrmpx;
+// 	console.log('lrmp',lrmpx);
+// }
 
 plbuttonStop.onclick = function () {
 	// lbuttonStop.style.backgroundColor = "#B40404";
 }
 
-var pimpactwheel = document.getElementById('impactwheel');
-// lwheel1Left.onmousemove = function () {
-// 	this.style.cursor = "url('img/cursorLeft.ico'), auto";
-// }
-// var lwheel1Right = document.getElementById('lwheel1Right');
-// lwheel1Right.onmousemove = function () {
-// 	this.style.cursor = "url('img/cursorRight.ico'), auto";
-// }
-var imx=0;
+// var pimpactwheel = document.getElementById('impactwheel');
+// // lwheel1Left.onmousemove = function () {
+// // 	this.style.cursor = "url('img/cursorLeft.ico'), auto";
+// // }
+// // var lwheel1Right = document.getElementById('lwheel1Right');
+// // lwheel1Right.onmousemove = function () {
+// // 	this.style.cursor = "url('img/cursorRight.ico'), auto";
+// // }
+// var imx=0;
 
-pimpactwheel.onclick = function () {
-		imx+=1;console.log('imx',imx);
-		if(imx%2==1){
-		document.getElementById('lhandwheelDis').style.border = ''
-		document.getElementById('lhandwheelCon').style.border = '1px solid red'
+// pimpactwheel.onclick = function () {
+// 		imx+=1;console.log('imx',imx);
+// 		if(imx%2==1){
+// 		document.getElementById('lhandwheelDis').style.border = ''
+// 		document.getElementById('lhandwheelCon').style.border = '1px solid red'
 		
-		lwheelx1x=5;
-		var lw1c = document.getElementById("lwheel1canvas");
-		var lw1ctx = lw1c.getContext("2d");
-		lw1ctx.clearRect(0, 0, 140, 11);
-		lw1ctx.beginPath();
-		lw1ctx.rect(0, 0, 140, 11);
-		lw1ctx.fillStyle = "red"
-		lw1ctx.fill();
-}
-if(imx%2==0){
-	document.getElementById('lhandwheelDis').style.border = '1px solid red'
-		document.getElementById('lhandwheelCon').style.border = ''
+// 		lwheelx1x=5;
+// 		var lw1c = document.getElementById("lwheel1canvas");
+// 		var lw1ctx = lw1c.getContext("2d");
+// 		lw1ctx.clearRect(0, 0, 140, 11);
+// 		lw1ctx.beginPath();
+// 		lw1ctx.rect(0, 0, 140, 11);
+// 		lw1ctx.fillStyle = "red"
+// 		lw1ctx.fill();
+// }
+// if(imx%2==0){
+// 	document.getElementById('lhandwheelDis').style.border = '1px solid red'
+// 		document.getElementById('lhandwheelCon').style.border = ''
 		
-		lwheelx1x=0;
-		var lw1c = document.getElementById("lwheel1canvas");
-		var lw1ctx = lw1c.getContext("2d");
-		lw1ctx.clearRect(0, 0, 140, 11);
-		lw1ctx.beginPath();
-		lw1ctx.rect(0, 0, 0, 11);
-		lw1ctx.fillStyle = "red"
-		lw1ctx.fill();
-}
+// 		lwheelx1x=0;
+// 		var lw1c = document.getElementById("lwheel1canvas");
+// 		var lw1ctx = lw1c.getContext("2d");
+// 		lw1ctx.clearRect(0, 0, 140, 11);
+// 		lw1ctx.beginPath();
+// 		lw1ctx.rect(0, 0, 0, 11);
+// 		lw1ctx.fillStyle = "red"
+// 		lw1ctx.fill();
+// }
 
-}
+// }
 
 
 
