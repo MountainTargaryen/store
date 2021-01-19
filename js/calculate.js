@@ -1,4 +1,4 @@
-var n = 32;     //修改了初始输入值
+var n = 27;     //修改了初始输入值
 var vp = 1.2;
 var zhuansu = 31;
 var zhuansulast = 31;
@@ -147,19 +147,23 @@ function calculate() {
 	pep = pep + (0.005629 * yd * yd * yd - 1.015 * yd * yd + 36.51 * yd - 533.5);
 
 	rmp = parseInt(n);
-	rmp=rmp-20;
+	rmp=rmp-25;
 	if(rmp<=0){
 		rmp=0;
 	}
 	//yd为实际燃油齿条刻度 ydx为车钟位置 ydp为指针所展现的燃油齿条刻度值
-	//燃油齿条刻度范围0-80
+	//燃油齿条刻度范围0-100
 	ydp=yd;
 	if(ydx==0 ){
+		ydp=0;
+	}
+	if(rmpx<28){
 		ydp=0;
 	}
 	if(yd>=100){
 		ydp=100;
 	}
+	
 }
 
 /*

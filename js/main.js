@@ -384,7 +384,7 @@ document.getElementById('conBefore').onclick=function(){//原始状况
 	valueMainx = 0;
 	condition.style.display='none';
 	// conditionX+=1;
-	btelegraph1lever.style.top = '-330px';
+	btelegraph1lever.style.top = '-335px';
 	ttelegraph1lever.style.top = '0px';
 	ttelegraph2lever.style.top = '0px';
 	ttelegraph2watch.innerHTML = 'STOP';
@@ -424,6 +424,14 @@ document.getElementById('conBefore').onclick=function(){//原始状况
 	lrmp=0;
 //	LED()
 	schematicX=0;
+
+	briled = 5;
+	telled = 5;
+	locled = 5;
+	briLEDclear(briled);
+	telLEDclear(briled, telled);
+	lclearSpeedLed(briled,locled);
+
 }
 document.getElementById('conReadyC').onclick=function(){//备车完毕
 	value16x = 1;
@@ -433,7 +441,7 @@ document.getElementById('conReadyC').onclick=function(){//备车完毕
 	value118x  = 1;
 	valueMainx = 1;
 	condition.style.display='none';
-	btelegraph1lever.style.top = '-330px';
+	btelegraph1lever.style.top = '-335px';
 	ttelegraph1lever.style.top = '0px';
 	ttelegraph2lever.style.top = '0px';
 	ttelegraph2watch.innerHTML = 'STOP';
@@ -479,8 +487,17 @@ document.getElementById('conReadyC').onclick=function(){//备车完毕
 	lrmp=0;
 //	LED()
 	schematicX=1;
+
+	briled = 5;
+	telled = 5;
+	locled = 5;
+	briLEDclear(briled);
+	telLEDclear(briled, telled);
+	lclearSpeedLed(briled,locled);
 }
-document.getElementById('conOnSea').onclick=function(){//航行状态
+
+
+function onSea(){//航行状态
 	value16x = 1;
 	value122x = 1;
 	value3x = 1;
@@ -490,8 +507,7 @@ document.getElementById('conOnSea').onclick=function(){//航行状态
 	condition.style.display='none';
 	//车钟杠杆位置
 	btelegraph1lever.style.top = '-495px';
-	//车令位置
-	//LED()
+
 	subTelegraph(-30);
 	ttled1[0].style.background = '#00FF00';
 	ttled2[0].style.background = '#00FF00';	
@@ -504,11 +520,85 @@ document.getElementById('conOnSea').onclick=function(){//航行状态
 	cStandBy.innerHTML='At Sea';
 
 	lshutdownLed.style.backgroundColor=' #800000';
+	lhandle1x = 0;  //机旁页面扳手 指向remote
+	lhandle1.style.transformOrigin = '31% 31%';
+	lhandle1.style.transform = 'rotate(' + 0 + 'deg)';
+	lhandle2x = 1; //标识位 1为AHEAD 0为ASTERN
+	lhandle2.style.transformOrigin = '31% 31%';
+	lhandle2.style.transform = 'rotate(' + 90 + 'deg)';
+	lhandle3x = 0; //标识位 0为LOCK 1为UNLOCK
+	lhandle3.style.transformOrigin = '31% 31%';
+	lhandle3.style.transform = 'rotate(' + 0 + 'deg)';
+	thandlex = 0;  //集控车钟页面扳手 指向BRIDGE
+	thandle.style.transformOrigin = '31% 31%';
+	thandle.style.transform = 'rotate(' + 90 + 'deg)';
+	controlLocation();
+    //机旁的手轮
+	lwheelx1x = 0;//
+	lprintPancel1(lwheelx1x);
+	lwheelx2x = 0;//
+	lprintPancel2(lwheelx2x);
+	brmp= 90;
 	
-	//rmpx=61;
-	brmp= 80;
-	rmp=55;
+	ydx=90;
 	schematicX=1;
 	lwheelx1x=5;
 	lprintPancel1(lwheelx1x);
 }
+//初始状态即为主机运行
+
+document.getElementById('conOnSea').onclick=function(){
+	value16x = 1;
+	value122x = 1;
+	value3x = 1;
+	value116x  = 1;
+	value118x  = 1;
+	valueMainx = 1;
+	condition.style.display='none';
+	//车钟杠杆位置
+	btelegraph1lever.style.top = '-495px';
+	//车令位置
+	//LED()
+	//briLEDclear()
+
+	subTelegraph(-30);
+	ttled1[0].style.background = '#00FF00';
+	ttled2[0].style.background = '#00FF00';	
+	btled1[0].style.background = '#00FF00';
+	btled2[0].style.background = '#00FF00';
+
+	bStandBy.style.backgroundColor='#01D867';
+	bStandBy.innerHTML='At Sea';
+	cStandBy.style.backgroundColor='#01D867';
+	cStandBy.innerHTML='At Sea';
+
+	lshutdownLed.style.backgroundColor=' #800000';
+
+	lhandle1x = 0;  //机旁页面扳手 指向remote
+	lhandle1.style.transformOrigin = '31% 31%';
+	lhandle1.style.transform = 'rotate(' + 0 + 'deg)';
+	lhandle2x = 1; //标识位 1为AHEAD 0为ASTERN
+	lhandle2.style.transformOrigin = '31% 31%';
+	lhandle2.style.transform = 'rotate(' + 90 + 'deg)';
+	lhandle3x = 0; //标识位 0为LOCK 1为UNLOCK
+	lhandle3.style.transformOrigin = '31% 31%';
+	lhandle3.style.transform = 'rotate(' + 0 + 'deg)';
+	thandlex = 0;  //集控车钟页面扳手 指向BRIDGE
+	thandle.style.transformOrigin = '31% 31%';
+	thandle.style.transform = 'rotate(' + 90 + 'deg)';
+	controlLocation();
+    //机旁的手轮
+	lwheelx1x = 0;//
+	lprintPancel1(lwheelx1x);
+	lwheelx2x = 0;//
+	lprintPancel2(lwheelx2x);
+	
+	
+	//rmpx=61;
+	brmp= 90;
+	ydx=90;
+	schematicX=1;
+	lwheelx1x=5;
+	lprintPancel1(lwheelx1x);
+
+};

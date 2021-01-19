@@ -533,7 +533,7 @@ function checkStart() {
 		}
 
 		if (ydx > 0) {
-			rmpx = rmp*1.9;
+			rmpx = parseInt(rmp*1.4) ;
 			bstate.innerHTML = 'Running';
 			cState.innerHTML = 'Running';
 		} else {

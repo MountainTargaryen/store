@@ -191,6 +191,35 @@ var telled = 5;
 var locled = 5;
 
 //  车钟LED初始化函数,颜色正常
+function lclearSpeedLed(briled,locled) {
+	for (var i = 0; i < 5; i++) {
+		btled1[i].style.background = '#006400';
+		btled2[i].style.background = '#006400';
+	}
+	for (var i = 6; i < 11; i++) {
+		btled1[i].style.background = '#640000';
+		btled2[i].style.background = '#640000';
+	}
+	btled1[5].style.background = ' #99af1c';
+	btled2[5].style.background = ' #99af1c';
+	//驾驶台车钟显示驾驶台的当前车令
+	btled1[briled].style.background = '#00FF00';
+	btled2[briled].style.background = '#00FF00';
+
+	for (var i = 0; i < lspeedsAll.length; i++) {
+		lspeedsAll[i].style.borderColor = 'white';
+	}
+	for (var i1 = 0; i1 < lspeedsLed.length; i1++) {
+		lspeedsLed[i1].style.backgroundColor = 'white';
+	}
+	lspeedsLed[briled].style.backgroundColor = 'red';
+	if (lhandle1x % 2 == 1) {//机旁控制
+		//驾驶台车钟显示集控室的当前车令
+		btled1[locled].style.background = 'red';
+		btled2[locled].style.background = 'red';
+	}
+}
+
 function briLEDclear(briled) {
 	for (var i = 0; i < 5; i++) {
 		ttled1[i].style.background = '#006400';
@@ -260,31 +289,3 @@ function telLEDclear(briled, telled) {
 
 }
 
-var lclearSpeedLed = function (briled,locled) {
-	for (var i = 0; i < 5; i++) {
-		btled1[i].style.background = '#006400';
-		btled2[i].style.background = '#006400';
-	}
-	for (var i = 6; i < 11; i++) {
-		btled1[i].style.background = '#640000';
-		btled2[i].style.background = '#640000';
-	}
-	btled1[5].style.background = ' #99af1c';
-	btled2[5].style.background = ' #99af1c';
-	//驾驶台车钟显示驾驶台的当前车令
-	btled1[briled].style.background = '#00FF00';
-	btled2[briled].style.background = '#00FF00';
-
-	for (var i = 0; i < lspeedsAll.length; i++) {
-		lspeedsAll[i].style.borderColor = 'white';
-	}
-	for (var i1 = 0; i1 < lspeedsLed.length; i1++) {
-		lspeedsLed[i1].style.backgroundColor = 'white';
-	}
-	lspeedsLed[briled].style.backgroundColor = 'red';
-	if (lhandle1x % 2 == 1) {//机旁控制
-		//驾驶台车钟显示集控室的当前车令
-		btled1[locled].style.background = 'red';
-		btled2[locled].style.background = 'red';
-	}
-}

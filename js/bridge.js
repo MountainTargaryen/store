@@ -1,4 +1,4 @@
-var bStandBy=document.getElementById('bStandBy')
+var bStandBy = document.getElementById('bStandBy')
 //*************驾驶台画表盘
 printPanel(250, 280, 150, 130, 'bCanvas');
 printPanel(680, 225, 120, 100, 'bCanvas');
@@ -61,21 +61,34 @@ btelegraph1lever.onmousedown = function (ev) {
 		if (lhandle1x % 2 == 0) {
 			if (thandlex % 2 == 0) {
 				var a = 0; //计算油门速度
-				if (t >= -45 && t < 95) {
-					a = (95 - t) * 100 / 140;
+				if (t >= -45 && t < -25) {
+					a = 100;
+				}
+				if (t >= -25 && t < 5) {
+					a = 90;
+				}
+				if (t >= 5 && t < 35) {
+					a = 80;
+				}
+				if (t >= 35 && t < 65) {
+					a = 70;
+				}
+				if (t >= 65 && t < 95) {
+					a = 60;
 				}
 				if (t > 125 && t > 275) {
 					a = 82 - (t - 125) * 100 / 150;
 					a = -a;
 				}
-
 				brmp = a;
+				// console.log('brmp',brmp)
+
 				subTelegraph(t);
-				
-			}else{
+
+			} else {
 				subTelegraph(t);
 			}
-		}else{
+		} else {
 			subTelegraph(t);
 		}
 
@@ -263,7 +276,7 @@ function engineNotReadyCheck() {
 		bECRengines[0].style.color = 'white';
 		cECRengines[0].style.color = 'white';
 	}
-	if (lwheelx1x > 2){
+	if (lwheelx1x > 2) {
 		bECRengines[3].style.color = 'red';
 		cECRengines[3].style.color = 'red';
 	} else {
@@ -310,7 +323,7 @@ bemergencyStop.onclick = function () {
 		clearInterval(cancel)
 		bcancelSHD.style.borderColor = "white"
 		if (bcancelSHDx == 0) {
-			lshutdownLed.style.backgroundColor=' #FF0000'
+			lshutdownLed.style.backgroundColor = ' #FF0000'
 			yd = 0;
 			ydx = 0;
 			rmp = 0;
@@ -343,13 +356,13 @@ bcpctx.fillText("ECR", 380, 370);
 bcpctx.fillText("ECR Manual Control", 700, 370);
 bcpctx.fillText("Local Manual Control", 560, 450);
 
-function subTelegraph(t){
+function subTelegraph(t) {
 	if (t >= -45 && t < -25) {
 		if (schematicX == 2) {
 			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Nav.Full';
-		briled=0;
+		briled = 0;
 		briLEDclear(briled);
 		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
@@ -364,7 +377,7 @@ function subTelegraph(t){
 			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Full';
-		briled=1;
+		briled = 1;
 		briLEDclear(briled);
 		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
@@ -376,7 +389,7 @@ function subTelegraph(t){
 	}
 	if (t >= 5 && t < 35) {
 		btext1.innerHTML = 'Half';
-		briled=2;
+		briled = 2;
 		briLEDclear(briled);
 		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
@@ -391,7 +404,7 @@ function subTelegraph(t){
 			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Slow';
-		briled=3;
+		briled = 3;
 		briLEDclear(briled);
 		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
@@ -406,7 +419,7 @@ function subTelegraph(t){
 			schematicX = 2; //空气起动
 		}
 		btext1.innerHTML = 'Dead Slow';
-		briled=4;
+		briled = 4;
 		briLEDclear(briled);
 		sdctx.drawImage(picMap, 1, 520, 57, 62, 320, 524, 72, 70); //方向车钟ahead位置
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 749, 726, 10, 20); //方向车钟start阀门通路
@@ -419,7 +432,7 @@ function subTelegraph(t){
 	}
 	if (t >= 95 && t < 125) {
 		btext1.innerHTML = 'Stop';
-		briled=5;
+		briled = 5;
 		briLEDclear(briled);
 		sdctx.drawImage(picMap, 60, 520, 57, 62, 320, 524, 72, 70); //方向车钟stop位置
 		sdctx.drawImage(picMap, 610, 145, 10, 18, 537, 726, 10, 20); //方向车钟stop阀门通路
@@ -434,7 +447,7 @@ function subTelegraph(t){
 			schematicX = 2; //空气起动
 		}
 		btext1.innerHTML = 'D.Slow AST';
-		briled=6;
+		briled = 6;
 		briLEDclear(briled);
 		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
@@ -450,7 +463,7 @@ function subTelegraph(t){
 			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Slow AST';
-		briled=7;
+		briled = 7;
 		briLEDclear(briled);
 		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
@@ -465,7 +478,7 @@ function subTelegraph(t){
 			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Half AST';
-		briled=8;
+		briled = 8;
 		briLEDclear(briled);
 		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
@@ -480,7 +493,7 @@ function subTelegraph(t){
 			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Full AST';
-		briled=9;
+		briled = 9;
 		briLEDclear(briled);
 		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭
@@ -495,7 +508,7 @@ function subTelegraph(t){
 			schematicX = 1; //空气起动结束
 		}
 		btext1.innerHTML = 'Nav.Full AST';
-		briled=10;
+		briled = 10;
 		briLEDclear(briled);
 		sdctx.drawImage(picMap, 119, 520, 57, 62, 320, 524, 72, 70); //方向车钟astern位置
 		sdctx.drawImage(picMap, 600, 145, 9, 18, 749, 726, 10, 20); //方向车钟start阀门关闭

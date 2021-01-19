@@ -27,6 +27,12 @@ function pid() {
 		increment=increment/2
 	}else{
 		increment=increment
+	}
+	if(increment>=20){
+		increment=20
+	}
+	if(increment<=-20){
+		increment=-20
 	}	
 	l_l_error = l_error;
 	l_error = error;

@@ -226,14 +226,14 @@ ttelegraph2lever.onmousedown = function (ev) {
 				//驾驶台控制
 				var a = 0;
 				if (t >= -225 && t < -40) {
-					a = parseInt(20-(t + 40) * 62 / 185);
+					a = parseInt(60-(t + 40) * 40 / 185);
 					ttelegraph2watch.innerHTML = a;
 					speedLevelChange(a);
 					schematicX = 1; //气动逻辑为状态1：气动逻辑完成
 				};
 				if (t >= -40 && t < -20) {
 					ttelegraph2watch.innerHTML = 'START';
-					a=15;
+					a=60;
 					schematicX = 2; //气动逻辑为状态2：开始空气起动
 					sdc2tx.drawImage(picMap, 306, 521, 123, 89, 72, 488, 155, 100); //速度车钟start位置
 				};
@@ -305,10 +305,10 @@ thandle.onclick = function () {
 		document.getElementById("bseqManualbcr").style.backgroundColor = "grey";
 		thandlex += 1;
 		controlLocation();
-		if (document.getElementById('tbridge').style.borderColor != 'green') { //违规操作，没有按照步骤进行请求
-			document.getElementById('bDeadband').style.backgroundColor = 'red'
-			document.getElementById('cDeadband').style.backgroundColor = "red"
-		}
+		// if (document.getElementById('tbridge').style.borderColor != 'green') { //违规操作，没有按照步骤进行请求
+		// 	document.getElementById('bDeadband').style.backgroundColor = 'red'
+		// 	document.getElementById('cDeadband').style.backgroundColor = "red"
+		// }
 	} else { //由驾控台改到集控室
 		this.style.transformOrigin = '31% 31%';
 		this.style.transform = 'rotate(' + 0 + 'deg)';
@@ -316,10 +316,10 @@ thandle.onclick = function () {
 		document.getElementById("bseqBridge").style.backgroundColor = "grey";
 		thandlex += 1;
 
-		if (document.getElementById('tecr').style.borderColor != 'green') { //违规操作，没有按照步骤进行请求
-			document.getElementById('bDeadband').style.backgroundColor = 'red'
-			document.getElementById('cDeadband').style.backgroundColor = "red"
-		}
+		// if (document.getElementById('tecr').style.borderColor != 'green') { //违规操作，没有按照步骤进行请求
+		// 	document.getElementById('bDeadband').style.backgroundColor = 'red'
+		// 	document.getElementById('cDeadband').style.backgroundColor = "red"
+		// }
 		controlLocation();
 	}
 

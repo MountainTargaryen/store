@@ -112,7 +112,7 @@ var options2 = {
 	},
 	yaxis: {
 		min: 0,
-		max: 150,
+		max: 100,
 		tickSize: 5,
 		tickFormatter: function(v, axis) {
 			if(v % 25 == 0) {

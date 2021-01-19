@@ -967,20 +967,20 @@
 	<script type="text/javascript" src="js/jquery.flot.symbol.js"></script>
 	<script type="text/javascript" src="js/calculate.js"></script>
 	<script type="text/javascript" src="js/schematicDiagram.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/bridge.js"></script>
 	<script type="text/javascript" src="js/controlRoom.js"></script>
 	<!-- <script type="text/javascript" src="js/controlPanel.js"></script> -->
 	<script type="text/javascript" src="js/telegraph.js"></script>
 	<script type="text/javascript" src="js/local.js"></script>
 	<script type="text/javascript" src="js/pid.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 	<!--隐藏3D部分动态模型-->
 	<!-- <script type="text/javascript" src="js/threeD.js"></script> -->
 	<script type="text/javascript" src="js/diagram.js"></script>
 	<script>
 		window.onload = function () {
 	
-			rmp = 0;
+			//rmp = 0;
 			GetData1();
 			GetData2();
 			dataset1 = [{
@@ -997,6 +997,8 @@
 			$.plot($("#flot-placeholder2"), dataset2, options2);
 	
 			controlLocation(); //检验当前操作位置并改变辅车钟显示
+
+			onSea();
 			function update() {
 	
 				checkStart(); //检验是否准备就绪，备车完毕
@@ -1033,7 +1035,7 @@
 				innerChange(parseInt(ydp), '', 'bActuatorPosFeedback');
 				innerChange(parseInt(ydp), '', 'cActuatorPosFeedback');
 
-				console.log('yd:',yd,"----------rpm",rmp)
+				console.log('yd:',yd,"----------rpm",rmp,"---------ydx",ydx)
 
 				setTimeout(update, 2000);
 			}
