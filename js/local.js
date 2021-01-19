@@ -1,9 +1,10 @@
 var lrmp = 0; //机旁控制转速
-var lrmpx=0;//暂存机旁控制转速
+var lrmpx = 0; //暂存机旁控制转速
 var lbox1c = document.getElementById('lbox1canvas');
 var lbox1ctx = lbox1c.getContext("2d");
-var airstart=0;//机旁空气启动变量，1为空气启动状态，0为非空气启动状态
-var airstarting=0;//1表示处于空气启动后到转速为0的这一过程中，0表示在空气启动之前或转速为0 后
+var airstart = 0; //机旁空气启动变量，1为空气启动状态，0为非空气启动状态
+var airstarting = 0; //1表示处于空气启动后到转速为0的这一过程中，0表示在空气启动之前或转速为0 后
+var lshutdownLed = document.getElementById('lshutDownLed')
 lbox1ctx.font = '18px Arial';
 lbox1ctx.fillStyle = '#FFFF00';
 lbox1ctx.fillText('AHEAD', 78, 33);
@@ -166,7 +167,10 @@ tlbox1ctx.fillText('LAMP', 158, 183);
 tlbox1ctx.fillText('TEST', 158, 195);
 
 
-document.getElementById('lhandwheelDis').style.border = '1px solid red'
+document.getElementById('lhandwheelCon').style.border = '1px solid red'
+
+
+
 
 
 //扳手转动
@@ -186,7 +190,6 @@ lhandle1.onclick = function () {
 	}
 
 }
-//ZM：ahead联动
 
 var lhandle2 = document.getElementById('lhandle2');
 var lhandle2x = 1; //标识位 1为AHEAD 0为ASTERN
@@ -221,7 +224,6 @@ lhandle2.onclick = function () {
 		document.getElementById('glasternLed').style.backgroundColor = '#FF0000';
 		document.getElementById('tlaheadLed').style.backgroundColor = '#085A13';
 		document.getElementById('tlasternLed').style.backgroundColor = '#FF0000';
-
 		lhandle2x += 1;
 	}
 
@@ -230,29 +232,26 @@ lhandle2.onclick = function () {
 //锁紧手柄
 var lhandle3 = document.getElementById('lhandle3');
 var lhandle3x = 0; //标识位 0为LOCK 1为UNLOCK
-var x=0;
+var x = 0;
 lhandle3.onclick = function () {
 	if (lhandle3x % 2 == 0) {
 		this.style.transformOrigin = '31% 31%';
 		this.style.transform = 'rotate(' + 90 + 'deg)';
+		lhandle3x += 1;
 		// startMove(this, 'opacity', 0);
-		lhandle3x += 1;console.log('lhandle3x',lhandle3x);
-		wx=1;console.log('wx',wx);
+		console.log('lhandle3x', lhandle3x);
+		wx = 1;
+		console.log('wx', wx);
 		startMove(document.getElementById('wheelswitch'), 'opacity', 100);
-
 	} else {
 		this.style.transformOrigin = '31% 31%';
 		this.style.transform = 'rotate(' + 0 + 'deg)';
-		lhandle3x += 1;console.log('lhandle3x',lhandle3x);
-		wx=0;console.log('wx',wx);
+		lhandle3x += 1;
+		console.log('lhandle3x', lhandle3x);
+		wx = 0;
+		console.log('wx', wx);
 		startMove(document.getElementById('wheelswitch'), 'opacity', 0);
-
 	}
-	
-	// if(wx%2==1){
-	// }
-	// if(wx%2==0){
-	// }
 
 }
 //摇柄
@@ -261,7 +260,7 @@ var lwheel2 = document.getElementById('lwheel2');
 var lwheelx1 = 0;
 var lwheelx2 = 0;
 var lwheelx2x = 0; //表盘刻度变化系数
-var lwheelx1x = 0; //表盘刻度变化系数
+var lwheelx1x = 5; //表盘刻度变化系数
 
 function lprintPancel1(a) {
 	var lw1c = document.getElementById("lwheel1canvas");
@@ -281,9 +280,9 @@ function lprintPancel2(a) {
 	lw2ctx.beginPath();
 	lw2ctx.rect(58, 197 - 15 * a, 22, 15 * a);
 	lw2ctx.fillStyle = "red"
-	lw2ctx.fill();	
-	lw2ctx.moveTo(59,145);
-	lw2ctx.lineTo(82,145);
+	lw2ctx.fill();
+	lw2ctx.moveTo(59, 145);
+	lw2ctx.lineTo(82, 145);
 	lw2ctx.strokeStyle = "blue";
 	lw2ctx.stroke();
 }
@@ -293,39 +292,36 @@ var lbuttonStart = document.getElementById('lbuttonStart');
 var lbuttonStop = document.getElementById('lbuttonStop');
 lbuttonStart.onmousedown = function () {
 	lbuttonStart.style.backgroundColor = "green";
-	// lbuttonStop.style.backgroundColor = "grey";
-	 if(value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx%2==1 && lhandle1x % 2 == 1){
-		airstart=1;
+	if (value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx % 2 == 1 && lhandle1x % 2 == 1) {
+		airstart = 1;
 		LED()
 		schematicX = 1;
-		
-		console.log('airstart',lrmp)
-	 }	
+		console.log('airstart', lrmp)
+	}
 }
 lbuttonStart.onmouseup = function () {
 	lbuttonStart.style.backgroundColor = "grey";
-	// lrmp=lrmpx;
-	airstart=2;
-	console.log('airstop',lrmpx);
+	airstart = 2;
+	console.log('airstop', lrmpx);
 }
 
-//ZM
-
-$('#pstart').on('mousedown',function(){
-	if(value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx%2==1 && lhandle1x % 2 == 1){
-		airstart=1;
-		LED()
+$('#pstart').on('mousedown', function () {
+	startMove(this, 'opacity', 100);
+	if (value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx % 2 == 1 && lhandle1x % 2 == 1) {
+		airstart = 1;
+		//LED()
 		schematicX = 1;
-		
-		console.log('airstart',lrmp)
-	 }	
+
+		console.log('airstart', lrmp)
+	}
 })
-$('#pstart').on('mouseup',function(){
-	airstart=2;
-	console.log('airstop',lrmpx);
+$('#pstart').on('mouseup', function () {
+	startMove(this, 'opacity', 0);
+	airstart = 2;
+	console.log('airstop', lrmpx);
 })
 
-$('#pstop').on('mousedown',function(){
+$('#pstop').on('mousedown', function () {
 	yd = 0;
 	ydx = 0;
 	rmp = 0;
@@ -359,46 +355,44 @@ lwheel1Right.onmousemove = function () {
 lwheel1Right.onclick = function () {
 	lwheelx1 += 45;
 	lwheel1.style.transform = 'rotate(' + lwheelx1 + 'deg)';
-	lwheelx1x -= 1;
-	if (lwheelx1x <= 0) {
-		lwheelx1x = 0;
-	}
-	if (lwheelx1x <= 2) {
-		document.getElementById('lhandwheelDis').style.border = '1px solid red'
-		document.getElementById('lhandwheelCon').style.border = ''
-		// startMove($('#impactwheel'), 'opacity', 0);
-		startMove(document.getElementById('impactwheel'), 'opacity', 0);
-		impactwheelx=0;console.log('imx',impactwheelx);
-	} else {
-		document.getElementById('lhandwheelDis').style.border = ''
-		document.getElementById('lhandwheelCon').style.border = '1px solid red'
-		// startMove($('#impactwheel'), 'opacity', 100);
-	}
-
-	lprintPancel1(lwheelx1x);
-	console.log('lwheelx1x',lwheelx1x)
-}
-lwheel1Left.onclick = function () {
-	lwheelx1 -= 45;
-	lwheel1.style.transform = 'rotate(' + lwheelx1 + 'deg)';
 	lwheelx1x += 1;
 	if (lwheelx1x >= 5) {
 		lwheelx1x = 5;
 	}
 	if (lwheelx1x <= 2) {
 		document.getElementById('lhandwheelDis').style.border = '1px solid red'
-		// document.getElementById('lhandwheelDis').style.color='yellow'
 		document.getElementById('lhandwheelCon').style.border = ''
-	
+		startMove(document.getElementById('impactwheel'), 'opacity', 0);
+		impactwheelx = 0;
+		console.log('imx', impactwheelx);
 	} else {
 		document.getElementById('lhandwheelDis').style.border = ''
 		document.getElementById('lhandwheelCon').style.border = '1px solid red'
-		// startMove($('#impactwheel'), 'opacity', 100);	
+	}
+
+	lprintPancel1(lwheelx1x);
+	console.log('lwheelx1x', lwheelx1x)
+}
+lwheel1Left.onclick = function () {
+	lwheelx1 -= 45;
+	lwheel1.style.transform = 'rotate(' + lwheelx1 + 'deg)';
+	lwheelx1x -= 1;
+	if (lwheelx1x <= 0) {
+		lwheelx1x = 0;
+	}
+	if (lwheelx1x <= 2) {
+		document.getElementById('lhandwheelDis').style.border = '1px solid red'
+		// document.getElementById('lhandwheelDis').style.color='yellow'
+		document.getElementById('lhandwheelCon').style.border = ''
+	} else {
+		document.getElementById('lhandwheelDis').style.border = ''
+		document.getElementById('lhandwheelCon').style.border = '1px solid red'
 		startMove(document.getElementById('impactwheel'), 'opacity', 100);
-		impactwheelx=0;console.log('imx',impactwheelx);
+		impactwheelx = 0;
+		console.log('imx', impactwheelx);
 	}
 	lprintPancel1(lwheelx1x);
-	console.log('lwheelx1x',lwheelx1x)
+	console.log('lwheelx1x', lwheelx1x)
 }
 
 var lwheel2Left = document.getElementById('lwheel2Left');
@@ -410,158 +404,158 @@ lwheel2Right.onmousemove = function () {
 	this.style.cursor = "url('img/cursorRight.ico'), auto";
 }
 lwheel2Right.onclick = function () {
-	if (lhandle3x%2== 1) {
+	if (lhandle3x % 2 == 1) {
 		lwheelx2 += 45;
 		lwheel2.style.transform = 'rotate(' + lwheelx2 + 'deg)';
 		lwheelx2x += 1;
 		if (lwheelx2x >= 11) {
 			lwheelx2x = 11;
 		}
-		if(lwheelx2x < 4){
-			z=0;
-			$('#wheelstart').css('display','none');
-			$('#wheeloil1').css('display','none');
-			$('#wheeloil1_5').css('display','none');
-			$('#wheeloil2').css('display','none');
-			$('#wheeloil3').css('display','none');
-			$('#wheeloil4').css('display','none');
+		if (lwheelx2x < 4) {
+			z = 0;
+			$('#wheelstart').css('display', 'none');
+			$('#wheeloil1').css('display', 'none');
+			$('#wheeloil1_5').css('display', 'none');
+			$('#wheeloil2').css('display', 'none');
+			$('#wheeloil3').css('display', 'none');
+			$('#wheeloil4').css('display', 'none');
 		}
-		if(lwheelx2x == 4){
-			z=1;
-			$('#wheelstart').css('display','block');
-			$('#wheeloil1').css('display','none');
-			$('#wheeloil1_5').css('display','none');
-			$('#wheeloil2').css('display','none');
-			$('#wheeloil3').css('display','none');
-			$('#wheeloil4').css('display','none');
+		if (lwheelx2x == 4) {
+			z = 1;
+			$('#wheelstart').css('display', 'block');
+			$('#wheeloil1').css('display', 'none');
+			$('#wheeloil1_5').css('display', 'none');
+			$('#wheeloil2').css('display', 'none');
+			$('#wheeloil3').css('display', 'none');
+			$('#wheeloil4').css('display', 'none');
 		}
-		if(lwheelx2x == 5){
-			z=2;
-			$('#wheelstart').css('display','none');
-			$('#wheeloil1').css('display','block');
-			$('#wheeloil1_5').css('display','none');
-			$('#wheeloil2').css('display','none');
-			$('#wheeloil3').css('display','none');
-			$('#wheeloil4').css('display','none');
+		if (lwheelx2x == 5) {
+			z = 2;
+			$('#wheelstart').css('display', 'none');
+			$('#wheeloil1').css('display', 'block');
+			$('#wheeloil1_5').css('display', 'none');
+			$('#wheeloil2').css('display', 'none');
+			$('#wheeloil3').css('display', 'none');
+			$('#wheeloil4').css('display', 'none');
 		}
-		if(lwheelx2x == 7){
-			z=3;
-			$('#wheelstart').css('display','none');
-			$('#wheeloil1').css('display','none');
-			$('#wheeloil1_5').css('display','block');
-			$('#wheeloil2').css('display','none');
-			$('#wheeloil3').css('display','none');
-			$('#wheeloil4').css('display','none');
+		if (lwheelx2x == 7) {
+			z = 3;
+			$('#wheelstart').css('display', 'none');
+			$('#wheeloil1').css('display', 'none');
+			$('#wheeloil1_5').css('display', 'block');
+			$('#wheeloil2').css('display', 'none');
+			$('#wheeloil3').css('display', 'none');
+			$('#wheeloil4').css('display', 'none');
 		}
-		if(lwheelx2x == 8){
-			z=4;
-			$('#wheelstart').css('display','none');
-			$('#wheeloil1').css('display','none');
-			$('#wheeloil1_5').css('display','none');
-			$('#wheeloil2').css('display','block');
-			$('#wheeloil3').css('display','none');
-			$('#wheeloil4').css('display','none');
+		if (lwheelx2x == 8) {
+			z = 4;
+			$('#wheelstart').css('display', 'none');
+			$('#wheeloil1').css('display', 'none');
+			$('#wheeloil1_5').css('display', 'none');
+			$('#wheeloil2').css('display', 'block');
+			$('#wheeloil3').css('display', 'none');
+			$('#wheeloil4').css('display', 'none');
 		}
-		if(lwheelx2x == 9){
-			z=5;
-			$('#wheelstart').css('display','none');
-			$('#wheeloil1').css('display','none');
-			$('#wheeloil1_5').css('display','none');
-			$('#wheeloil2').css('display','none');
-			$('#wheeloil3').css('display','block');
-			$('#wheeloil4').css('display','none');
+		if (lwheelx2x == 9) {
+			z = 5;
+			$('#wheelstart').css('display', 'none');
+			$('#wheeloil1').css('display', 'none');
+			$('#wheeloil1_5').css('display', 'none');
+			$('#wheeloil2').css('display', 'none');
+			$('#wheeloil3').css('display', 'block');
+			$('#wheeloil4').css('display', 'none');
 		}
-		if(lwheelx2x == 11){
-			z=6;
-			$('#wheelstart').css('display','none');
-			$('#wheeloil1').css('display','none');
-			$('#wheeloil1_5').css('display','none');
-			$('#wheeloil2').css('display','none');
-			$('#wheeloil3').css('display','none');
-			$('#wheeloil4').css('display','block');
+		if (lwheelx2x == 11) {
+			z = 6;
+			$('#wheelstart').css('display', 'none');
+			$('#wheeloil1').css('display', 'none');
+			$('#wheeloil1_5').css('display', 'none');
+			$('#wheeloil2').css('display', 'none');
+			$('#wheeloil3').css('display', 'none');
+			$('#wheeloil4').css('display', 'block');
 		}
 		lprintPancel2(lwheelx2x);
 		lrmp += 7.5;
-		lrmp=parseInt(lrmp);		
+		lrmp = parseInt(lrmp);
 		if (lrmp >= 110) {
 			lrmp = 110;
 		}
 	}
 }
 lwheel2Left.onclick = function () {
-	if (lhandle3x%2== 1) {
+	if (lhandle3x % 2 == 1) {
 		lwheelx2 -= 45;
 		lwheel2.style.transform = 'rotate(' + lwheelx2 + 'deg)';
 		lwheelx2x -= 1;
 		if (lwheelx2x <= 0) {
 			lwheelx2x = 0;
 		}
-		if(lwheelx2x < 4){
-			z=0;
-			$('#wheelstart').css('display','none');
-			$('#wheeloil1').css('display','none');
-			$('#wheeloil1_5').css('display','none');
-			$('#wheeloil2').css('display','none');
-			$('#wheeloil3').css('display','none');
-			$('#wheeloil4').css('display','none');
+		if (lwheelx2x < 4) {
+			z = 0;
+			$('#wheelstart').css('display', 'none');
+			$('#wheeloil1').css('display', 'none');
+			$('#wheeloil1_5').css('display', 'none');
+			$('#wheeloil2').css('display', 'none');
+			$('#wheeloil3').css('display', 'none');
+			$('#wheeloil4').css('display', 'none');
 		}
-		if(lwheelx2x == 4){
-			z=1;
-			$('#wheelstart').css('display','block');
-			$('#wheeloil1').css('display','none');
-			$('#wheeloil1_5').css('display','none');
-			$('#wheeloil2').css('display','none');
-			$('#wheeloil3').css('display','none');
-			$('#wheeloil4').css('display','none');
+		if (lwheelx2x == 4) {
+			z = 1;
+			$('#wheelstart').css('display', 'block');
+			$('#wheeloil1').css('display', 'none');
+			$('#wheeloil1_5').css('display', 'none');
+			$('#wheeloil2').css('display', 'none');
+			$('#wheeloil3').css('display', 'none');
+			$('#wheeloil4').css('display', 'none');
 		}
-		if(lwheelx2x == 5){
-			z=2;
-			$('#wheelstart').css('display','none');
-			$('#wheeloil1').css('display','block');
-			$('#wheeloil1_5').css('display','none');
-			$('#wheeloil2').css('display','none');
-			$('#wheeloil3').css('display','none');
-			$('#wheeloil4').css('display','none');
+		if (lwheelx2x == 5) {
+			z = 2;
+			$('#wheelstart').css('display', 'none');
+			$('#wheeloil1').css('display', 'block');
+			$('#wheeloil1_5').css('display', 'none');
+			$('#wheeloil2').css('display', 'none');
+			$('#wheeloil3').css('display', 'none');
+			$('#wheeloil4').css('display', 'none');
 		}
-		if(lwheelx2x == 7){
-			z=3;
-			$('#wheelstart').css('display','none');
-			$('#wheeloil1').css('display','none');
-			$('#wheeloil1_5').css('display','block');
-			$('#wheeloil2').css('display','none');
-			$('#wheeloil3').css('display','none');
-			$('#wheeloil4').css('display','none');
+		if (lwheelx2x == 7) {
+			z = 3;
+			$('#wheelstart').css('display', 'none');
+			$('#wheeloil1').css('display', 'none');
+			$('#wheeloil1_5').css('display', 'block');
+			$('#wheeloil2').css('display', 'none');
+			$('#wheeloil3').css('display', 'none');
+			$('#wheeloil4').css('display', 'none');
 		}
-		if(lwheelx2x == 8){
-			z=4;
-			$('#wheelstart').css('display','none');
-			$('#wheeloil1').css('display','none');
-			$('#wheeloil1_5').css('display','none');
-			$('#wheeloil2').css('display','block');
-			$('#wheeloil3').css('display','none');
-			$('#wheeloil4').css('display','none');
+		if (lwheelx2x == 8) {
+			z = 4;
+			$('#wheelstart').css('display', 'none');
+			$('#wheeloil1').css('display', 'none');
+			$('#wheeloil1_5').css('display', 'none');
+			$('#wheeloil2').css('display', 'block');
+			$('#wheeloil3').css('display', 'none');
+			$('#wheeloil4').css('display', 'none');
 		}
-		if(lwheelx2x == 9){
-			z=5;
-			$('#wheelstart').css('display','none');
-			$('#wheeloil1').css('display','none');
-			$('#wheeloil1_5').css('display','none');
-			$('#wheeloil2').css('display','none');
-			$('#wheeloil3').css('display','block');
-			$('#wheeloil4').css('display','none');
+		if (lwheelx2x == 9) {
+			z = 5;
+			$('#wheelstart').css('display', 'none');
+			$('#wheeloil1').css('display', 'none');
+			$('#wheeloil1_5').css('display', 'none');
+			$('#wheeloil2').css('display', 'none');
+			$('#wheeloil3').css('display', 'block');
+			$('#wheeloil4').css('display', 'none');
 		}
-		if(lwheelx2x == 11){
-			z=6;
-			$('#wheelstart').css('display','none');
-			$('#wheeloil1').css('display','none');
-			$('#wheeloil1_5').css('display','none');
-			$('#wheeloil2').css('display','none');
-			$('#wheeloil3').css('display','none');
-			$('#wheeloil4').css('display','block');
+		if (lwheelx2x == 11) {
+			z = 6;
+			$('#wheelstart').css('display', 'none');
+			$('#wheeloil1').css('display', 'none');
+			$('#wheeloil1_5').css('display', 'none');
+			$('#wheeloil2').css('display', 'none');
+			$('#wheeloil3').css('display', 'none');
+			$('#wheeloil4').css('display', 'block');
 		}
 		lprintPancel2(lwheelx2x);
 		lrmp -= 7.5;
-		lrmp=parseInt(lrmp);
+		lrmp = parseInt(lrmp);
 		if (lrmp <= 0) {
 			lrmp = 0;
 		}
@@ -599,7 +593,7 @@ var plclearSpeedLed = function () {
 	for (var i = 0; i < plspeedsAll.length; i++) {
 		plspeedsAll[i].style.borderColor = 'white';
 	}
-	for (var i1 = 0; i1 <plspeedsLed.length; i1++) {
+	for (var i1 = 0; i1 < plspeedsLed.length; i1++) {
 		plspeedsLed[i1].style.backgroundColor = 'white';
 	}
 }
@@ -607,56 +601,62 @@ var plclearSpeedLed = function () {
 document.getElementById('plstopled').style.backgroundColor = '#FFC200';
 
 document.getElementById('lnavFull').onclick = function () {
-	lclearSpeedLed();
+	locled = 0;
+	lclearSpeedLed(briled, locled);
 	plclearSpeedLed();
-	this.style.borderColor = '#FFC200';
 	document.getElementById('plnavFullled').style.backgroundColor = '#FFC200';
 	document.getElementById('plnavFull').style.borderColor = '#FFC200';
 	document.getElementById('lnavFullled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('plnavFull').onclick = function () {
 	plclearSpeedLed();
-	lclearSpeedLed();
+	locled = 0;
+	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lnavFullled').style.backgroundColor = '#FFC200';
 	document.getElementById('lnavFull').style.borderColor = '#FFC200';
 	document.getElementById('plnavFullled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lfull').onclick = function () {
-	lclearSpeedLed();
+	locled = 1;
+	lclearSpeedLed(briled, locled);
 	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
 	document.getElementById('plfull').style.borderColor = '#FFC200';
 	document.getElementById('plfullled').style.backgroundColor = '#FFC200';
+
 	document.getElementById('lfullled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('plfull').onclick = function () {
 	plclearSpeedLed();
-	lclearSpeedLed();
+	locled = 1;
+	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('plfullled').style.backgroundColor = '#FFC200';
 	document.getElementById('lfull').style.borderColor = '#FFC200';
 	document.getElementById('lfullled').style.backgroundColor = '#FFC200';
-
 }
 document.getElementById('lhalf').onclick = function () {
-	lclearSpeedLed();
+	locled = 2;
 	plclearSpeedLed();
+	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('plhalf').style.borderColor = '#FFC200';
 	document.getElementById('plhalfled').style.backgroundColor = '#FFC200';
 	document.getElementById('lhalfled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('plhalf').onclick = function () {
+	locled = 2;
 	plclearSpeedLed();
-	lclearSpeedLed();
+	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lhalfled').style.backgroundColor = '#FFC200';
 	document.getElementById('lhalf').style.borderColor = '#FFC200';
 	document.getElementById('plhalfled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lslow').onclick = function () {
-	lclearSpeedLed();
+	locled = 3;
+	lclearSpeedLed(briled, locled);
 	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
 	document.getElementById('plslow').style.borderColor = '#FFC200';
@@ -665,14 +665,16 @@ document.getElementById('lslow').onclick = function () {
 }
 document.getElementById('plslow').onclick = function () {
 	plclearSpeedLed();
-	lclearSpeedLed();
+	locled = 3;
+	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('plslowled').style.backgroundColor = '#FFC200';
 	document.getElementById('lslow').style.borderColor = '#FFC200';
 	document.getElementById('lslowled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('ldeSlow').onclick = function () {
-	lclearSpeedLed();
+	locled = 4;
+	lclearSpeedLed(briled, locled);
 	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
 	document.getElementById('pldeSlowled').style.backgroundColor = '#FFC200';
@@ -681,14 +683,16 @@ document.getElementById('ldeSlow').onclick = function () {
 }
 document.getElementById('pldeSlow').onclick = function () {
 	plclearSpeedLed();
-	lclearSpeedLed();
+	locled = 4;
+	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('ldeSlowled').style.backgroundColor = '#FFC200';
 	document.getElementById('ldeSlow').style.borderColor = '#FFC200';
 	document.getElementById('pldeSlowled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lstop').onclick = function () {
-	lclearSpeedLed();
+	locled = 5;
+	lclearSpeedLed(briled, locled);
 	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
 	document.getElementById('plstop').style.borderColor = '#FFC200';
@@ -697,14 +701,16 @@ document.getElementById('lstop').onclick = function () {
 }
 document.getElementById('plstop').onclick = function () {
 	plclearSpeedLed();
-	lclearSpeedLed();
+	locled = 5;
+	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lstop').style.borderColor = '#FFC200';
 	document.getElementById('lstopled').style.backgroundColor = '#FFC200';
 	document.getElementById('plstopled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('ldeSlow1').onclick = function () {
-	lclearSpeedLed();
+	locled = 6;
+	lclearSpeedLed(briled, locled);
 	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
 	document.getElementById('pldeSlow1').style.borderColor = '#FFC200';
@@ -713,14 +719,16 @@ document.getElementById('ldeSlow1').onclick = function () {
 }
 document.getElementById('pldeSlow1').onclick = function () {
 	plclearSpeedLed();
-	lclearSpeedLed();
+	locled = 6;
+	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('ldeSlow1').style.borderColor = '#FFC200';
 	document.getElementById('ldeSlow1led').style.backgroundColor = '#FFC200';
 	document.getElementById('pldeSlow1led').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lslow1').onclick = function () {
-	lclearSpeedLed();
+	locled = 7;
+	lclearSpeedLed(briled, locled);
 	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
 	document.getElementById('plslow1').style.borderColor = '#FFC200';
@@ -729,14 +737,16 @@ document.getElementById('lslow1').onclick = function () {
 }
 document.getElementById('plslow1').onclick = function () {
 	plclearSpeedLed();
-	lclearSpeedLed();
+	locled = 7;
+	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lslow1').style.borderColor = '#FFC200';
 	document.getElementById('lslow1led').style.backgroundColor = '#FFC200';
 	document.getElementById('plslow1led').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lhalf1').onclick = function () {
-	lclearSpeedLed();
+	locled = 8;
+	lclearSpeedLed(briled, locled);
 	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
 	document.getElementById('plhalf1').style.borderColor = '#FFC200';
@@ -745,14 +755,16 @@ document.getElementById('lhalf1').onclick = function () {
 }
 document.getElementById('plhalf1').onclick = function () {
 	plclearSpeedLed();
-	lclearSpeedLed();
+	locled = 8;
+	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lhalf1').style.borderColor = '#FFC200';
 	document.getElementById('lhalf1led').style.backgroundColor = '#FFC200';
 	document.getElementById('plhalf1led').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lfull1').onclick = function () {
-	lclearSpeedLed();
+	locled = 9;
+	lclearSpeedLed(briled, locled);
 	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
 	document.getElementById('plfull1').style.borderColor = '#FFC200';
@@ -761,14 +773,16 @@ document.getElementById('lfull1').onclick = function () {
 }
 document.getElementById('plfull1').onclick = function () {
 	plclearSpeedLed();
-	lclearSpeedLed();
+	locled = 9;
+	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lfull1').style.borderColor = '#FFC200';
 	document.getElementById('lfull1led').style.backgroundColor = '#FFC200';
 	document.getElementById('plfull1led').style.backgroundColor = '#FFC200';
 }
 document.getElementById('lemAst').onclick = function () {
-	lclearSpeedLed();
+	locled = 10;
+	lclearSpeedLed(briled, locled);
 	plclearSpeedLed();
 	this.style.borderColor = '#FFC200';
 	document.getElementById('plemAst').style.borderColor = '#FFC200';
@@ -777,7 +791,8 @@ document.getElementById('lemAst').onclick = function () {
 }
 document.getElementById('plemAst').onclick = function () {
 	plclearSpeedLed();
-	lclearSpeedLed();
+	locled = 10;
+	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lemAst').style.borderColor = '#FFC200';
 	document.getElementById('lemAstled').style.backgroundColor = '#FFC200';
@@ -814,6 +829,7 @@ lemergencyStop.onclick = function () {
 		clearInterval(cancel)
 		lcancelSHD.style.borderColor = "white"
 		if (lcancelSHDx == 0) {
+			lshutdownLed.style.backgroundColor = ' #FF0000'
 			yd = 0;
 			ydx = 0;
 			rmp = 0;
@@ -905,9 +921,9 @@ plcancelSHD.onclick = function () {
 // 	console.log('lrmp',lrmpx);
 // }
 
-plbuttonStop.onclick = function () {
-	// lbuttonStop.style.backgroundColor = "#B40404";
-}
+// plbuttonStop.onclick = function () {
+// 	// lbuttonStop.style.backgroundColor = "#B40404";
+// }
 
 // var pimpactwheel = document.getElementById('impactwheel');
 // // lwheel1Left.onmousemove = function () {
@@ -924,7 +940,7 @@ plbuttonStop.onclick = function () {
 // 		if(imx%2==1){
 // 		document.getElementById('lhandwheelDis').style.border = ''
 // 		document.getElementById('lhandwheelCon').style.border = '1px solid red'
-		
+
 // 		lwheelx1x=5;
 // 		var lw1c = document.getElementById("lwheel1canvas");
 // 		var lw1ctx = lw1c.getContext("2d");
@@ -937,7 +953,7 @@ plbuttonStop.onclick = function () {
 // if(imx%2==0){
 // 	document.getElementById('lhandwheelDis').style.border = '1px solid red'
 // 		document.getElementById('lhandwheelCon').style.border = ''
-		
+
 // 		lwheelx1x=0;
 // 		var lw1c = document.getElementById("lwheel1canvas");
 // 		var lw1ctx = lw1c.getContext("2d");
@@ -949,9 +965,3 @@ plbuttonStop.onclick = function () {
 // }
 
 // }
-
-
-
-
-
-

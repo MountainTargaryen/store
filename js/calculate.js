@@ -1,4 +1,4 @@
-var n = 0;     //修改了初始输入值
+var n = 27;     //修改了初始输入值
 var vp = 1.2;
 var zhuansu = 31;
 var zhuansulast = 31;
@@ -30,8 +30,45 @@ var rmpMinli=20;//最低转速限制
 var loadProgramMax=80;//负荷限制上限
 var loadProgramMin=60;//负荷限制下限
 
+function renew(){
+n = 27;     //修改了初始输入值
+vp = 1.2;
+zhuansu = 31;
+zhuansulast = 31;
+nlast = 32;
+owf = 0; //柴油机的输出指示总功率
+owflast = 0; //上个采样周期的柴油机的输出指示总功率
+dowf = 0; //延时后的计算指示功率
+dowflast = 0; //上次采样周期延时后的计算指示功率
+pep = 100000; //排气管压力
+niujuk = 0;
+Mengine = 0;
+d1 = -0.005629;
+d2 = 1.015;
+d3 = -36.51;
+d4 = 533.5;
+ResShip = 0;
+shaftFriction = 0
+taod = 0;
+taoe = 0;
+dt = 0.2;
+index = 0;
+yd = 0;
+ydx = 0; //pid中代替yd
+ydp=0;//表盘指针所需展现出来的燃油齿条刻度值
+
+rmpMaxli=120;//最大转速手动限制
+rmpMinli=20;//最低转速限制
+
+loadProgramMax=80;//负荷限制上限
+loadProgramMin=60;//负荷限制下限
+}
+
 function calculate() {
 	//循环体内
+	if(yd==0){
+		renew()
+	}
 	var Tprop = 0.00013 * (vp * vp * 84.64 + 6884536 * n * n); //有效推力
 	var Mprop = 0.0001 * (vp * vp * 778.688 + 63337731 * n * n); //负载转矩
 
@@ -117,18 +154,21 @@ function calculate() {
 		if(airstart==1){
 			console.log('当前为空气启动')
 			ydx=30;
-		}else if(airstart==2 && lwheelx1x >= 3){
+		}else if(airstart==2 && lwheelx1x < 3){
 			ydx=lrmp;
 			yd=lrmp;
 		}else{
 			ydx = 0;
 		}
-		// ydx = lrmp;
 	}
 
-
-		index = yd / 150;
-
+	//模拟空气启动
+	// if(yd >= 10) {
+	// 	index = yd / 150;
+	// } else {
+	// 	index = 0;
+	// }
+	index = yd / 150;
 
 	aita = 0.526 * (1 - Math.exp(-14 * n / zhuansu)); //空气燃油质量比
 	owf = 1190 * aita * index * zhuansu;
@@ -144,19 +184,23 @@ function calculate() {
 	pep = pep + (0.005629 * yd * yd * yd - 1.015 * yd * yd + 36.51 * yd - 533.5);
 
 	rmp = parseInt(n);
-	rmp=rmp-20;
+	rmp=rmp-25;
 	if(rmp<=0){
 		rmp=0;
 	}
 	//yd为实际燃油齿条刻度 ydx为车钟位置 ydp为指针所展现的燃油齿条刻度值
-	//燃油齿条刻度范围0-80
+	//燃油齿条刻度范围0-100
 	ydp=yd;
 	if(ydx==0 ){
+		ydp=0;
+	}
+	if(rmpx<28){
 		ydp=0;
 	}
 	if(yd>=100){
 		ydp=100;
 	}
+	
 }
 
 /*

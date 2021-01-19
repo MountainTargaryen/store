@@ -19,7 +19,7 @@ body {
 	margin: 0 auto;
 	/*	background-color: darkblue;  */
 	text-align: left;
-	;
+	
 }
 
 #header {
@@ -61,9 +61,6 @@ a {
 	border-right: 2px solid white;
 }
 
-
-
-
 /* NEW------------------------------- */
 #localmenu {
 	/* width: 60px;
@@ -104,10 +101,6 @@ ul {
 #localmenu li:hover{ color: rgb(112, 42, 89); text-decoration: none;background-color: aliceblue;}
 
 /* NEW ------------------------------------- */
-
-
-
-
 
 #content {
 	width: 100%;

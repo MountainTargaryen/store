@@ -58,7 +58,7 @@ function valueCheck() {
 		valueMaintxt.innerHTML="点击关闭主起动阀"
 		sdc2tx.drawImage(picblock2,0,0,91,51,904,68,92,46)
 	}else{
-		valueMaintxt.innerHTML="点击起动主起动阀"
+		valueMaintxt.innerHTML="点击打开主起动阀"
 		sdc2tx.clearRect(904,68,92,46)
 	}
 
@@ -145,8 +145,6 @@ function valueCheck() {
 		sdc2tx.drawImage(picMap, 587, 53, 2, 20, 556, 398, 227, 4); //黑线
 		sdc2tx.drawImage(picMap, 587, 53, 2, 20, 779, 400, 4, 270); //黑线
 		sdc2tx.drawImage(picMap, 587, 53, 2, 20, 779, 668, 12, 3); //黑线
-	
-
 	}
 	if (value118x % 2 == 1) {
 		value118txt.innerHTML = "点击关闭空气分配器控制阀";
@@ -295,7 +293,7 @@ valueMain.onclick=function(){
 		valveMainComfirmTxt.innerHTML="是否关闭主起动阀"
 	}else{
 		valveMainconfirmBox.style.display='block'
-		valveMainComfirmTxt.innerHTML="是否起动主起动阀"
+		valveMainComfirmTxt.innerHTML="是否打开主起动阀"
 	}
 }
 valveMainComfirm.onclick=function(){
@@ -529,14 +527,6 @@ function qidongbian() {
 function checkStart() {
 	//起动条件完成   0为关闭状态1位起动状态
 	if (value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && value118x % 2 == 1&& valueMainx%2==1) {
-		document.getElementById('bEngReady').innerHTML = 'Eng Ready';
-		document.getElementById('bEngReady').style.backgroundColor = '#01D867';
-		document.getElementById('cEngReady').innerHTML = 'Eng Ready';
-		document.getElementById('cEngReady').style.backgroundColor = '#01D867';
-		document.getElementById('bSystemReady').innerHTML = 'System Ready';
-		document.getElementById('bSystemReady').style.backgroundColor = '#01D867';
-		document.getElementById('cSystemReady').innerHTML = 'System Ready';
-		document.getElementById('cSystemReady').style.backgroundColor = '#01D867';
 		pointerRotate(31, 'bStartAirPressPointer');
 		document.getElementById('bStartAirPress').innerHTML = '27 bar';
 		pointerRotate(31, 'cStartAirPressPointer');
@@ -554,7 +544,7 @@ function checkStart() {
 		}
 
 		if (ydx > 0) {
-			rmpx = rmp;
+			rmpx = parseInt(rmp*1.4) ;
 			bstate.innerHTML = 'Running';
 			cState.innerHTML = 'Running';
 		} else {
@@ -562,6 +552,16 @@ function checkStart() {
 			bstate.innerHTML = 'Stopping';
 			cState.innerHTML = 'Stopping';
 
+		}
+		if(lwheelx1x>=3){
+			document.getElementById('bEngReady').innerHTML = 'Eng Ready';
+			document.getElementById('bEngReady').style.backgroundColor = '#01D867';
+			document.getElementById('cEngReady').innerHTML = 'Eng Ready';
+			document.getElementById('cEngReady').style.backgroundColor = '#01D867';
+			document.getElementById('bSystemReady').innerHTML = 'System Ready';
+			document.getElementById('bSystemReady').style.backgroundColor = '#01D867';
+			document.getElementById('cSystemReady').innerHTML = 'System Ready';
+			document.getElementById('cSystemReady').style.backgroundColor = '#01D867';
 		}
 	} else {
 		document.getElementById('bEngReady').innerHTML = 'Eng N. Ready';
@@ -584,12 +584,11 @@ function checkStart() {
 	}
 }
 
-
-function controlLocation() {          //ZM：机旁所有box1来判断控制位
+function controlLocation() {
 	if (lhandle1x % 2 == 0) {
 		if (thandlex % 2 == 0) {
 			//驾驶台控制
-		document.getElementById('pswitch4').style.display = 'none';
+			document.getElementById('pswitch4').style.display = 'none';
 			$('#touming4').on('click',function(){    //把事件放在函数里面！！！！
 				$('#pswitch4').css('display','none');
 				document.getElementById('glbridgeControlLed').style.backgroundColor = '#00FF00';
@@ -623,6 +622,8 @@ function controlLocation() {          //ZM：机旁所有box1来判断控制位
 
 
 			})
+
+
 
 			document.getElementById('tbridgeLed').style.backgroundColor = '#FFC200';
 			document.getElementById('ttecrLed').style.backgroundColor = 'white';
@@ -660,12 +661,12 @@ function controlLocation() {          //ZM：机旁所有box1来判断控制位
 			document.getElementById('plbridgeControlLed').style.backgroundColor = '#00FF00';
 			document.getElementById('olbridgeControlLed').style.backgroundColor = '#00FF00';
 			document.getElementById('tlbridgeControlLed').style.backgroundColor = '#00FF00';
+			
 			document.getElementById('lcontrolRoomControlLed').style.backgroundColor = ' #085A13';
 			document.getElementById('plcontrolRoomControlLed').style.backgroundColor = ' #085A13';
 			document.getElementById('olcontrolRoomControlLed').style.backgroundColor = ' #085A13';
 			document.getElementById('glcontrolRoomControlLed').style.backgroundColor = ' #085A13';
 			document.getElementById('tlcontrolRoomControlLed').style.backgroundColor = ' #085A13';
-
 			document.getElementById('lemergencyControlLed').style.backgroundColor = '#800000';
 			document.getElementById('glemergencyControlLed').style.backgroundColor = '#800000';
 			document.getElementById('olemergencyControlLed').style.backgroundColor = '#800000';
@@ -673,9 +674,7 @@ function controlLocation() {          //ZM：机旁所有box1来判断控制位
 			document.getElementById('tlemergencyControlLed').style.backgroundColor = '#800000';
 			document.getElementById('plbcr').style.borderColor = '#FFC200';
 
-
-		}
-		 else {
+		} else {
 			//集控室控制
 			document.getElementById('pswitch4').style.display = 'none';
 			$('#touming4').on('click',function(){
@@ -702,12 +701,6 @@ function controlLocation() {          //ZM：机旁所有box1来判断控制位
 				document.getElementById('lbridgeControlLed').style.backgroundColor = '#085A13';
 
 			})
-
-
-
-
-
-
 			document.getElementById('tbridgeLed').style.backgroundColor = 'white';
 			document.getElementById('ttecrLed').style.backgroundColor = '#FFC200';
 			document.getElementById('tlocalLed').style.backgroundColor = 'white';
@@ -750,44 +743,10 @@ function controlLocation() {          //ZM：机旁所有box1来判断控制位
 			document.getElementById('glcontrolRoomControlLed').style.backgroundColor = ' #00FF00';
 			document.getElementById('tlcontrolRoomControlLed').style.backgroundColor = ' #00FF00';
 			document.getElementById('lemergencyControlLed').style.backgroundColor = '#800000';
-
-			// document.getElementById('plcontrolRoomControlLed').style.backgroundColor = ' #00FF00';
-			// document.getElementById('olcontrolRoomControlLed').style.backgroundColor = ' #00FF00';
-			// document.getElementById('glcontrolRoomControlLed').style.backgroundColor = ' #00FF00';
-			// document.getElementById('tlcontrolRoomControlLed').style.backgroundColor = ' #00FF00';
-			// document.getElementById('plbridgeControlLed').style.backgroundColor = '#085A13';
-			// document.getElementById('olbridgeControlLed').style.backgroundColor = '#085A13';
-			// document.getElementById('glbridgeControlLed').style.backgroundColor = '#085A13';
-			// document.getElementById('tlbridgeControlLed').style.backgroundColor = '#085A13';
-			// document.getElementById('plemergencyControlLed').style.backgroundColor = '#800000';
-			// document.getElementById('olemergencyControlLed').style.backgroundColor = '#800000';
-			// document.getElementById('glemergencyControlLed').style.backgroundColor = '#800000';
-			// document.getElementById('tlemergencyControlLed').style.backgroundColor = '#800000';
-	// 		if(y%2==1){
-	// 			$('#touming3').on('click',function(){
-	// 				document.getElementById('plcontrolRoomControlLed').style.backgroundColor = ' #085A13';
-	// 				document.getElementById('olcontrolRoomControlLed').style.backgroundColor = ' #085A13';
-	// 				document.getElementById('glcontrolRoomControlLed').style.backgroundColor = ' #085A13';
-	// 				document.getElementById('tlcontrolRoomControlLed').style.backgroundColor = ' #085A13';
-	// 				document.getElementById('lcontrolRoomControlLed').style.backgroundColor =' #085A13';
-	// 				document.getElementById('lemergencyControlLed').style.backgroundColor = '#FF0000';
-	// 				document.getElementById('plbcr').style.borderColor = 'white';
-	// 				document.getElementById('plecr').style.borderColor =  'white';
-	// 				document.getElementById('plloc').style.borderColor ='#FFC200';
-	// 				document.getElementById('lbcr').style.borderColor = 'white';
-	// 				document.getElementById('lecr').style.borderColor =  'white';
-	// 				document.getElementById('lloc').style.borderColor ='#FFC200';
-					
-	// 			})
-	// }
 		}
 	} else {
 		//机旁控制
-// $('#touming3').on('click',function(){
-// 	document.getElementById('lemergencyControlLed').style.backgroundColor = '#FF0000';
-
-// })
-document.getElementById('pswitch4').style.display = 'block';
+		document.getElementById('pswitch4').style.display = 'block';
 		document.getElementById('tbridgeLed').style.backgroundColor = 'white';
 		document.getElementById('ttecrLed').style.backgroundColor = 'white';
 		document.getElementById('tlocalLed').style.backgroundColor = '#FFC200';
@@ -835,11 +794,6 @@ document.getElementById('pswitch4').style.display = 'block';
 		document.getElementById('olcontrolRoomControlLed').style.backgroundColor = ' #085A13';
 		document.getElementById('glcontrolRoomControlLed').style.backgroundColor = ' #085A13';
 		document.getElementById('tlcontrolRoomControlLed').style.backgroundColor = ' #085A13';
-
-
-
-	
-
 	}
 }
 

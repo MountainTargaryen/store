@@ -132,7 +132,6 @@
 	left: 5px;
 }
 
-
 /* box1副本 */
 #plbox1 {
 	width: 280px;
@@ -660,9 +659,6 @@
     width: 20px;
     height: 30px;
 }
-
-
-
 #lbox2 {
 	width: 342px;
 	height: 733px;
@@ -854,7 +850,6 @@
 	font-size: 15px;
 	text-align: center;
 }
-
 
 /* panel页面的副本 */
 
@@ -1132,20 +1127,19 @@
 	top: 22px;
 	cursor: pointer;
 }
-/* ZM box3宽度 left */
+
 #lhandleBox3{
 	position: absolute;
-	left: 862px;
+	left: 870px;
 	top: 640px;
 	border:3px solid white;
-	width: 168px;
+	width: 160px;
 	height: 140px;
 	background-color:black;
 	border-radius: 15px;
 	color: white;
 	padding: 5px;
 	z-index: 1;
-	font-size: 18px;
 }
 
 #lbuttonStartBox {
@@ -1299,18 +1293,18 @@
 
 #lhandwheel{
 	position: absolute;
-	left: 880px;
+	left: 864px;
 	top: 370px;
 }
 #lhandwheelDis{
 	position: absolute;
-	left: 1020px;
+	left: 1041px;
 	top: 405px;
 	font-size: x-small;
 }
 #lhandwheelCon{
 	position: absolute;
-	left: 1148px;
+	left: 1162px;
 	top: 405px;
 	font-size: x-small;
 }
