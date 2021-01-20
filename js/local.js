@@ -294,7 +294,7 @@ lbuttonStart.onmousedown = function () {
 	lbuttonStart.style.backgroundColor = "green";
 	if (value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx % 2 == 1 && lhandle1x % 2 == 1) {
 		airstart = 1;
-		LED()
+		// LED()
 		schematicX = 1;
 		console.log('airstart', lrmp)
 	}
@@ -312,13 +312,13 @@ $('#pstart').on('mousedown', function () {
 		//LED()
 		schematicX = 1;
 
-		console.log('airstart', lrmp)
+		// console.log('airstart', lrmp)
 	}
 })
 $('#pstart').on('mouseup', function () {
 	startMove(this, 'opacity', 0);
-	airstart = 2;
-	console.log('airstop', lrmpx);
+	airstart = 2;console.log('airstart',airstart);console.log('ydx',ydx);
+	// console.log('airstop', lrmpx);
 })
 
 $('#pstop').on('mousedown', function () {

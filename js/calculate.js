@@ -147,10 +147,7 @@ function calculate() {
 		}
 	} else {
 		//机旁控制，没有调速器
-		if(airstart==2 && ydx==0){
-			airstart=3
-		}
-		console.log('当前为机旁控制，airstart为：',airstart)
+
 		if(airstart==1){
 			console.log('当前为空气启动')
 			ydx=30;
@@ -159,7 +156,11 @@ function calculate() {
 			yd=lrmp;
 		}else{
 			ydx = 0;
+		}		
+		if(airstart==2 && ydx==0){
+			airstart=3
 		}
+		console.log('当前为机旁控制，airstart为：',airstart);
 	}
 
 	//模拟空气启动
