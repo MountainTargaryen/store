@@ -134,12 +134,12 @@
 
 /* box1副本 */
 #plbox1 {
-	width: 280px;
-	height: 400px;
+	width: 408px;
+	height: 550px;
 	background-color: #C4C2C2;
 	position: absolute;
-	top: 136px;
-	left: 121px;
+	top: 107px;
+	left: 95px;
 	border-radius: 25px;
 	border: 2px solid white;
 	float: left;
@@ -147,9 +147,9 @@
 }
 
 #plbox1box {
-	width: 260px;
-	height: 385px;
-	position: absolute;top: -5px;left: 8px;
+	width: 370px;
+	height: 510px;
+	position: absolute;top: 6px;left: 17px;
 	margin: 9px auto;
 	background-color: black;
 	border-radius: 12px;
@@ -159,25 +159,24 @@
 
 #plpancel1 {
 	position: absolute;
-	left: 75px;
-	top: 20px;
-	width: 100px;
-	height: 100px;
+	left: 120px;
+	top: 30px;
+
 }
 
 #plpointer {
-	height: 45px;
+	height: 60px;
     position: relative;
-    top: -240px;
-    left: 93px;
+    top: -379px;
+    left: 139px;
 }
 
 #plbox1Ledbox {
-	width: 180px;
-	height: 100px;
+	width: 350px;
+	height: 200px;
 	/*border: 1px solid red;*/
 	position: relative;
-	top: 50px;
+	top: 170px;
 }
 
 #plaheadLed,
@@ -188,16 +187,13 @@
 #plcontrolRoomControlLed,
 #plauxBlowerRunningLed,
 #plemergencyControlLed {
-	width: 15px;
-	height: 15px;
-	border: 2px solid white;
-	margin-left: 30px;
-	margin-right: 45px;
-	margin-bottom: 26px;
-	float: left;
-	position: relative;
-	top: 90px;
-	left: 10px;
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    margin-left: 40px;
+    margin-right: 90px;
+    margin-bottom: 22px;
+    float: left;
 }
 
 #plaheadLed {
@@ -225,52 +221,50 @@
 
 #plbuttonCancelShutDown {
 	border-radius: 130px;
-    width: 40px;
-    height: 40px;
-    border: white 5px solid;
-    margin: 30px auto;
-    background-color: #800000;
-    cursor: pointer;
-    position: relative;			
-    top: 190px;
-    left: -44px;
+	width: 65px;
+	height: 65px;
+	border: white 5px solid;
+	margin: 30px auto;
+	background-color: #800000;
+	cursor: pointer;
+	position: relative;
+	top: 180px;
+	left: -70px;
 }
 
 #plbuttonLampTest {
-    border-radius: 130px;
-    width: 40px;
-    height: 40px;
-    border: white 5px solid;
-    margin: 30px auto;
-    background-color: grey;
-    cursor: pointer;
-    position: relative;
-    top: 120px;
-    left: 30px;
+	border-radius: 130px;
+	width: 65px;
+	height: 65px;
+	border: white 5px solid;
+	margin: 30px auto;
+	background-color: grey;
+	cursor: pointer;
+	position: relative;
+	top: 85px;
+	left: 50px;
 }
 
 #plbox1canvas {
 	/*border: 1px solid red;*/
 	position: absolute;
-    top: 120px;
-    left: -12px;
+    top: 152px;
+    /* left: -12px; */
 }
 
 #pllogo {
-    position: relative;
-    top: 57px;
+	position: relative;
+    top: 10px;
     left: 5px;
-    width: 20px;
-    height: 30px;
 }
 /* box1副本gov */
 #glbox1 {
-	width: 280px;
-	height: 400px;
+	width: 408px;
+	height: 550px;
 	background-color: #C4C2C2;
 	position: absolute;
-	top: 136px;
-	left: 121px;
+	top: 107px;
+	left: 95px;
 	border-radius: 25px;
 	border: 2px solid white;
 	float: left;
@@ -278,9 +272,9 @@
 }
 
 #glbox1box {
-	width: 260px;
-	height: 385px;
-	position: absolute;top: -5px;left: 8px;
+	width: 370px;
+	height: 510px;
+	position: absolute;top: 6px;left: 17px;
 	margin: 9px auto;
 	background-color: black;
 	border-radius: 12px;
@@ -290,25 +284,24 @@
 
 #glpancel1 {
 	position: absolute;
-	left: 75px;
-	top: 20px;
-	width: 100px;
-	height: 100px;
+	left: 120px;
+	top: 30px;
+
 }
 
 #glpointer {
-	height: 45px;
+	height: 60px;
     position: relative;
-    top: -240px;
-    left: 93px;
+    top: -379px;
+    left: 139px;
 }
 
 #glbox1Ledbox {
-	width: 180px;
-	height: 100px;
+	width: 350px;
+	height: 200px;
 	/*border: 1px solid red;*/
 	position: relative;
-	top: 50px;
+	top: 170px;
 }
 
 #glaheadLed,
@@ -319,16 +312,13 @@
 #glcontrolRoomControlLed,
 #glauxBlowerRunningLed,
 #glemergencyControlLed {
-	width: 15px;
-	height: 15px;
-	border: 2px solid white;
-	margin-left: 30px;
-	margin-right: 45px;
-	margin-bottom: 26px;
-	float: left;
-	position: relative;
-	top: 90px;
-	left: 10px;
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    margin-left: 40px;
+    margin-right: 90px;
+    margin-bottom: 22px;
+    float: left;
 }
 
 #glaheadLed {
@@ -356,54 +346,52 @@
 
 #glbuttonCancelShutDown {
 	border-radius: 130px;
-    width: 40px;
-    height: 40px;
-    border: white 5px solid;
-    margin: 30px auto;
-    background-color: #800000;
-    cursor: pointer;
-    position: relative;			
-    top: 190px;
-    left: -44px;
+	width: 65px;
+	height: 65px;
+	border: white 5px solid;
+	margin: 30px auto;
+	background-color: #800000;
+	cursor: pointer;
+	position: relative;
+	top: 180px;
+	left: -70px;
 }
 
 #glbuttonLampTest {
-    border-radius: 130px;
-    width: 40px;
-    height: 40px;
-    border: white 5px solid;
-    margin: 30px auto;
-    background-color: grey;
-    cursor: pointer;
-    position: relative;
-    top: 120px;
-    left: 30px;
+	border-radius: 130px;
+	width: 65px;
+	height: 65px;
+	border: white 5px solid;
+	margin: 30px auto;
+	background-color: grey;
+	cursor: pointer;
+	position: relative;
+	top: 85px;
+	left: 50px;
 }
 
 #glbox1canvas {
 	/*border: 1px solid red;*/
 	position: absolute;
-    top: 120px;
-    left: -12px;
+    top: 152px;
+    /* left: -12px; */
 }
 
 #gllogo {
-    position: relative;
-    top: 57px;
+	position: relative;
+    top: 10px;
     left: 5px;
-    width: 20px;
-    height: 30px;
 }
 
 
 /* opwheel的box1副本 */
 #olbox1 {
-	width: 280px;
-	height: 400px;
+	width: 408px;
+	height: 550px;
 	background-color: #C4C2C2;
 	position: absolute;
-	top: 136px;
-	left: 121px;
+	top: 107px;
+	left: 95px;
 	border-radius: 25px;
 	border: 2px solid white;
 	float: left;
@@ -411,9 +399,9 @@
 }
 
 #olbox1box {
-	width: 260px;
-	height: 385px;
-	position: absolute;top: -5px;left: 8px;
+	width: 370px;
+	height: 510px;
+	position: absolute;top: 6px;left: 17px;
 	margin: 9px auto;
 	background-color: black;
 	border-radius: 12px;
@@ -423,25 +411,24 @@
 
 #olpancel1 {
 	position: absolute;
-	left: 75px;
-	top: 20px;
-	width: 100px;
-	height: 100px;
+	left: 120px;
+	top: 30px;
+
 }
 
 #olpointer {
-	height: 45px;
+	height: 60px;
     position: relative;
-    top: -240px;
-    left: 93px;
+    top: -379px;
+    left: 139px;
 }
 
 #olbox1Ledbox {
-	width: 180px;
-	height: 100px;
+	width: 350px;
+	height: 200px;
 	/*border: 1px solid red;*/
 	position: relative;
-	top: 50px;
+	top: 170px;
 }
 
 #olaheadLed,
@@ -452,16 +439,13 @@
 #olcontrolRoomControlLed,
 #olauxBlowerRunningLed,
 #olemergencyControlLed {
-	width: 15px;
-	height: 15px;
-	border: 2px solid white;
-	margin-left: 30px;
-	margin-right: 45px;
-	margin-bottom: 26px;
-	float: left;
-	position: relative;
-	top: 90px;
-	left: 10px;
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    margin-left: 40px;
+    margin-right: 90px;
+    margin-bottom: 22px;
+    float: left;
 }
 
 #olaheadLed {
@@ -489,53 +473,51 @@
 
 #olbuttonCancelShutDown {
 	border-radius: 130px;
-    width: 40px;
-    height: 40px;
-    border: white 5px solid;
-    margin: 30px auto;
-    background-color: #800000;
-    cursor: pointer;
-    position: relative;			
-    top: 190px;
-    left: -44px;
+	width: 65px;
+	height: 65px;
+	border: white 5px solid;
+	margin: 30px auto;
+	background-color: #800000;
+	cursor: pointer;
+	position: relative;
+	top: 180px;
+	left: -70px;
 }
 
 #olbuttonLampTest {
-    border-radius: 130px;
-    width: 40px;
-    height: 40px;
-    border: white 5px solid;
-    margin: 30px auto;
-    background-color: grey;
-    cursor: pointer;
-    position: relative;
-    top: 120px;
-    left: 30px;
+	border-radius: 130px;
+	width: 65px;
+	height: 65px;
+	border: white 5px solid;
+	margin: 30px auto;
+	background-color: grey;
+	cursor: pointer;
+	position: relative;
+	top: 85px;
+	left: 50px;
 }
 
 #olbox1canvas {
 	/*border: 1px solid red;*/
 	position: absolute;
-    top: 120px;
-    left: -12px;
+    top: 152px;
+    /* left: -12px; */
 }
 
 #ollogo {
-    position: relative;
-    top: 57px;
+	position: relative;
+    top: 10px;
     left: 5px;
-    width: 20px;
-    height: 30px;
 }
 
 /* tele的box1副本 */
 #tlbox1 {
-	width: 280px;
-	height: 400px;
+	width: 408px;
+	height: 550px;
 	background-color: #C4C2C2;
 	position: absolute;
-	top: 136px;
-	left: 121px;
+	top: 107px;
+	left: 95px;
 	border-radius: 25px;
 	border: 2px solid white;
 	float: left;
@@ -543,9 +525,9 @@
 }
 
 #tlbox1box {
-	width: 260px;
-	height: 385px;
-	position: absolute;top: -5px;left: 8px;
+	width: 370px;
+	height: 510px;
+	position: absolute;top: 6px;left: 17px;
 	margin: 9px auto;
 	background-color: black;
 	border-radius: 12px;
@@ -555,25 +537,24 @@
 
 #tlpancel1 {
 	position: absolute;
-	left: 75px;
-	top: 20px;
-	width: 100px;
-	height: 100px;
+	left: 120px;
+	top: 30px;
+
 }
 
 #tlpointer {
-	height: 45px;
+	height: 60px;
     position: relative;
-    top: -240px;
-    left: 93px;
+    top: -379px;
+    left: 139px;
 }
 
 #tlbox1Ledbox {
-	width: 180px;
-	height: 100px;
+	width: 350px;
+	height: 200px;
 	/*border: 1px solid red;*/
 	position: relative;
-	top: 50px;
+	top: 170px;
 }
 
 #tlaheadLed,
@@ -584,16 +565,13 @@
 #tlcontrolRoomControlLed,
 #tlauxBlowerRunningLed,
 #tlemergencyControlLed {
-	width: 15px;
-	height: 15px;
-	border: 2px solid white;
-	margin-left: 30px;
-	margin-right: 45px;
-	margin-bottom: 26px;
-	float: left;
-	position: relative;
-	top: 90px;
-	left: 10px;
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    margin-left: 40px;
+    margin-right: 90px;
+    margin-bottom: 22px;
+    float: left;
 }
 
 #tlaheadLed {
@@ -621,44 +599,45 @@
 
 #tlbuttonCancelShutDown {
 	border-radius: 130px;
-    width: 40px;
-    height: 40px;
-    border: white 5px solid;
-    margin: 30px auto;
-    background-color: #800000;
-    cursor: pointer;
-    position: relative;			
-    top: 190px;
-    left: -44px;
+	width: 65px;
+	height: 65px;
+	border: white 5px solid;
+	margin: 30px auto;
+	background-color: #800000;
+	cursor: pointer;
+	position: relative;
+	top: 180px;
+	left: -70px;
 }
 
 #tlbuttonLampTest {
-    border-radius: 130px;
-    width: 40px;
-    height: 40px;
-    border: white 5px solid;
-    margin: 30px auto;
-    background-color: grey;
-    cursor: pointer;
-    position: relative;
-    top: 120px;
-    left: 30px;
+	border-radius: 130px;
+	width: 65px;
+	height: 65px;
+	border: white 5px solid;
+	margin: 30px auto;
+	background-color: grey;
+	cursor: pointer;
+	position: relative;
+	top: 85px;
+	left: 50px;
 }
 
 #tlbox1canvas {
 	/*border: 1px solid red;*/
 	position: absolute;
-    top: 120px;
-    left: -12px;
+    top: 152px;
+    /* left: -12px; */
 }
 
 #tllogo {
-    position: relative;
-    top: 57px;
+	position: relative;
+    top: 10px;
     left: 5px;
-    width: 20px;
-    height: 30px;
 }
+
+
+
 #lbox2 {
 	width: 342px;
 	height: 733px;

@@ -34,137 +34,117 @@ lbox1ctx.fillText('TEST', 219, 240);
 // canvas副本
 var plbox1c = document.getElementById('plbox1canvas');
 var plbox1ctx = plbox1c.getContext("2d");
-plbox1ctx.font = '15px Arial';
+plbox1ctx.font = '18px Arial';
 plbox1ctx.fillStyle = '#FFFF00';
-plbox1ctx.fillText('AHEAD', 70, 33);
-plbox1ctx.fillText('ASTERN', 165, 33);
-plbox1ctx.font = '10px Arial';
-plbox1ctx.fillText('SHUT DOWN', 70, 72);
+plbox1ctx.fillText('AHEAD', 78, 33);
+plbox1ctx.fillText('ASTERN', 235, 33);
+plbox1ctx.fillText('SHUT DOWN', 78, 82);
 plbox1ctx.beginPath();
-plbox1ctx.font = '9px Arial';
+plbox1ctx.font = '14px Arial';
 plbox1ctx.fillStyle = '#FFFF00';
-plbox1ctx.fillText('TURNING GEAR', 68, 110);
-plbox1ctx.fillText('ENGAGED', 78, 120);
-plbox1ctx.font = '12px Arial';
-plbox1ctx.fillText('BRIDGE', 165, 72);
-plbox1ctx.fillText('CONTROL', 165, 87);
-plbox1ctx.fillText('CONTROL ROOM', 165, 110);
-plbox1ctx.fillText('CONTROL', 165, 125);
-plbox1ctx.fillText('EMERGENCY', 165, 148);
-plbox1ctx.fillText('CONTROL', 165, 163);
-plbox1ctx.font = '9px Arial';
-plbox1ctx.fillText('AUX BLOWER', 70, 150);
-plbox1ctx.fillText('RUNNING', 80, 163);
-
-
+plbox1ctx.fillText('TURNING GEAR', 80, 120);
+plbox1ctx.fillText('ENGAGED', 80, 135);
+plbox1ctx.fillText('BRIDGE', 235, 72);
+plbox1ctx.fillText('CONTROL', 235, 87);
+plbox1ctx.fillText('AUX BLOWER', 80, 168);
+plbox1ctx.fillText('RUNNING', 80, 183);
+plbox1ctx.fillText('CONTROL ROOM', 235, 120);
+plbox1ctx.fillText('CONTROL', 235, 135);
+plbox1ctx.fillText('EMERGENCY', 235, 168);
+plbox1ctx.fillText('CONTROL', 235, 183);
 plbox1ctx.beginPath();
-plbox1ctx.font = '10px Arial';
+plbox1ctx.font = '13px Arial';
 plbox1ctx.fillStyle = '#FFFFFF';
-plbox1ctx.fillText('CANCEL', 72, 183);
-plbox1ctx.fillText('SHUT DOWN', 62, 195);
-plbox1ctx.fillText('LAMP', 158, 183);
-plbox1ctx.fillText('TEST', 158, 195);
+plbox1ctx.fillText('CANCEL', 91, 225);
+plbox1ctx.fillText('SHUT DOWN', 77, 240);
+plbox1ctx.fillText('LAMP', 219, 225);
+plbox1ctx.fillText('TEST', 219, 240);
 
 
 var glbox1c = document.getElementById('glbox1canvas');
 var glbox1ctx = glbox1c.getContext("2d");
-glbox1ctx.font = '15px Arial';
+glbox1ctx.font = '18px Arial';
 glbox1ctx.fillStyle = '#FFFF00';
-glbox1ctx.fillText('AHEAD', 70, 33);
-glbox1ctx.fillText('ASTERN', 165, 33);
-glbox1ctx.font = '10px Arial';
-glbox1ctx.fillText('SHUT DOWN', 70, 72);
+glbox1ctx.fillText('AHEAD', 78, 33);
+glbox1ctx.fillText('ASTERN', 235, 33);
+glbox1ctx.fillText('SHUT DOWN', 78, 82);
 glbox1ctx.beginPath();
-glbox1ctx.font = '9px Arial';
+glbox1ctx.font = '14px Arial';
 glbox1ctx.fillStyle = '#FFFF00';
-glbox1ctx.fillText('TURNING GEAR', 68, 110);
-glbox1ctx.fillText('ENGAGED', 78, 120);
-glbox1ctx.font = '12px Arial';
-glbox1ctx.fillText('BRIDGE', 165, 72);
-glbox1ctx.fillText('CONTROL', 165, 87);
-glbox1ctx.fillText('CONTROL ROOM', 165, 110);
-glbox1ctx.fillText('CONTROL', 165, 125);
-glbox1ctx.fillText('EMERGENCY', 165, 148);
-glbox1ctx.fillText('CONTROL', 165, 163);
-glbox1ctx.font = '9px Arial';
-glbox1ctx.fillText('AUX BLOWER', 70, 150);
-glbox1ctx.fillText('RUNNING', 80, 163);
-
-
+glbox1ctx.fillText('TURNING GEAR', 80, 120);
+glbox1ctx.fillText('ENGAGED', 80, 135);
+glbox1ctx.fillText('BRIDGE', 235, 72);
+glbox1ctx.fillText('CONTROL', 235, 87);
+glbox1ctx.fillText('AUX BLOWER', 80, 168);
+glbox1ctx.fillText('RUNNING', 80, 183);
+glbox1ctx.fillText('CONTROL ROOM', 235, 120);
+glbox1ctx.fillText('CONTROL', 235, 135);
+glbox1ctx.fillText('EMERGENCY', 235, 168);
+glbox1ctx.fillText('CONTROL', 235, 183);
 glbox1ctx.beginPath();
-glbox1ctx.font = '10px Arial';
+glbox1ctx.font = '13px Arial';
 glbox1ctx.fillStyle = '#FFFFFF';
-glbox1ctx.fillText('CANCEL', 72, 183);
-glbox1ctx.fillText('SHUT DOWN', 62, 195);
-glbox1ctx.fillText('LAMP', 158, 183);
-glbox1ctx.fillText('TEST', 158, 195);
+glbox1ctx.fillText('CANCEL', 91, 225);
+glbox1ctx.fillText('SHUT DOWN', 77, 240);
+glbox1ctx.fillText('LAMP', 219, 225);
+glbox1ctx.fillText('TEST', 219, 240);
 
 
 var olbox1c = document.getElementById('olbox1canvas');
 var olbox1ctx = olbox1c.getContext("2d");
-olbox1ctx.font = '15px Arial';
+olbox1ctx.font = '18px Arial';
 olbox1ctx.fillStyle = '#FFFF00';
-olbox1ctx.fillText('AHEAD', 70, 33);
-olbox1ctx.fillText('ASTERN', 165, 33);
-olbox1ctx.font = '10px Arial';
-olbox1ctx.fillText('SHUT DOWN', 70, 72);
+olbox1ctx.fillText('AHEAD', 78, 33);
+olbox1ctx.fillText('ASTERN', 235, 33);
+olbox1ctx.fillText('SHUT DOWN', 78, 82);
 olbox1ctx.beginPath();
-olbox1ctx.font = '9px Arial';
+olbox1ctx.font = '14px Arial';
 olbox1ctx.fillStyle = '#FFFF00';
-olbox1ctx.fillText('TURNING GEAR', 68, 110);
-olbox1ctx.fillText('ENGAGED', 78, 120);
-olbox1ctx.font = '12px Arial';
-olbox1ctx.fillText('BRIDGE', 165, 72);
-olbox1ctx.fillText('CONTROL', 165, 87);
-olbox1ctx.fillText('CONTROL ROOM', 165, 110);
-olbox1ctx.fillText('CONTROL', 165, 125);
-olbox1ctx.fillText('EMERGENCY', 165, 148);
-olbox1ctx.fillText('CONTROL', 165, 163);
-olbox1ctx.font = '9px Arial';
-olbox1ctx.fillText('AUX BLOWER', 70, 150);
-olbox1ctx.fillText('RUNNING', 80, 163);
-
-
+olbox1ctx.fillText('TURNING GEAR', 80, 120);
+olbox1ctx.fillText('ENGAGED', 80, 135);
+olbox1ctx.fillText('BRIDGE', 235, 72);
+olbox1ctx.fillText('CONTROL', 235, 87);
+olbox1ctx.fillText('AUX BLOWER', 80, 168);
+olbox1ctx.fillText('RUNNING', 80, 183);
+olbox1ctx.fillText('CONTROL ROOM', 235, 120);
+olbox1ctx.fillText('CONTROL', 235, 135);
+olbox1ctx.fillText('EMERGENCY', 235, 168);
+olbox1ctx.fillText('CONTROL', 235, 183);
 olbox1ctx.beginPath();
-olbox1ctx.font = '10px Arial';
+olbox1ctx.font = '13px Arial';
 olbox1ctx.fillStyle = '#FFFFFF';
-olbox1ctx.fillText('CANCEL', 72, 183);
-olbox1ctx.fillText('SHUT DOWN', 62, 195);
-olbox1ctx.fillText('LAMP', 158, 183);
-olbox1ctx.fillText('TEST', 158, 195);
+olbox1ctx.fillText('CANCEL', 91, 225);
+olbox1ctx.fillText('SHUT DOWN', 77, 240);
+olbox1ctx.fillText('LAMP', 219, 225);
+olbox1ctx.fillText('TEST', 219, 240);
 
 var tlbox1c = document.getElementById('tlbox1canvas');
 var tlbox1ctx = tlbox1c.getContext("2d");
-tlbox1ctx.font = '15px Arial';
+tlbox1ctx.font = '18px Arial';
 tlbox1ctx.fillStyle = '#FFFF00';
-tlbox1ctx.fillText('AHEAD', 70, 33);
-tlbox1ctx.fillText('ASTERN', 165, 33);
-tlbox1ctx.font = '10px Arial';
-tlbox1ctx.fillText('SHUT DOWN', 70, 72);
+tlbox1ctx.fillText('AHEAD', 78, 33);
+tlbox1ctx.fillText('ASTERN', 235, 33);
+tlbox1ctx.fillText('SHUT DOWN', 78, 82);
 tlbox1ctx.beginPath();
-tlbox1ctx.font = '9px Arial';
+tlbox1ctx.font = '14px Arial';
 tlbox1ctx.fillStyle = '#FFFF00';
-tlbox1ctx.fillText('TURNING GEAR', 68, 110);
-tlbox1ctx.fillText('ENGAGED', 78, 120);
-tlbox1ctx.font = '12px Arial';
-tlbox1ctx.fillText('BRIDGE', 165, 72);
-tlbox1ctx.fillText('CONTROL', 165, 87);
-tlbox1ctx.fillText('CONTROL ROOM', 165, 110);
-tlbox1ctx.fillText('CONTROL', 165, 125);
-tlbox1ctx.fillText('EMERGENCY', 165, 148);
-tlbox1ctx.fillText('CONTROL', 165, 163);
-tlbox1ctx.font = '9px Arial';
-tlbox1ctx.fillText('AUX BLOWER', 70, 150);
-tlbox1ctx.fillText('RUNNING', 80, 163);
-
-
+tlbox1ctx.fillText('TURNING GEAR', 80, 120);
+tlbox1ctx.fillText('ENGAGED', 80, 135);
+tlbox1ctx.fillText('BRIDGE', 235, 72);
+tlbox1ctx.fillText('CONTROL', 235, 87);
+tlbox1ctx.fillText('AUX BLOWER', 80, 168);
+tlbox1ctx.fillText('RUNNING', 80, 183);
+tlbox1ctx.fillText('CONTROL ROOM', 235, 120);
+tlbox1ctx.fillText('CONTROL', 235, 135);
+tlbox1ctx.fillText('EMERGENCY', 235, 168);
+tlbox1ctx.fillText('CONTROL', 235, 183);
 tlbox1ctx.beginPath();
-tlbox1ctx.font = '10px Arial';
+tlbox1ctx.font = '13px Arial';
 tlbox1ctx.fillStyle = '#FFFFFF';
-tlbox1ctx.fillText('CANCEL', 72, 183);
-tlbox1ctx.fillText('SHUT DOWN', 62, 195);
-tlbox1ctx.fillText('LAMP', 158, 183);
-tlbox1ctx.fillText('TEST', 158, 195);
+tlbox1ctx.fillText('CANCEL', 91, 225);
+tlbox1ctx.fillText('SHUT DOWN', 77, 240);
+tlbox1ctx.fillText('LAMP', 219, 225);
+tlbox1ctx.fillText('TEST', 219, 240);
 
 
 document.getElementById('lhandwheelCon').style.border = '1px solid red'
@@ -241,6 +221,7 @@ lhandle3.onclick = function () {
 		// startMove(this, 'opacity', 0);
 		console.log('lhandle3x', lhandle3x);
 		wx = 1;
+		yy = 1;
 		console.log('wx', wx);
 		startMove(document.getElementById('wheelswitch'), 'opacity', 100);
 	} else {
@@ -290,25 +271,64 @@ lprintPancel2(lwheelx2x);
 
 var lbuttonStart = document.getElementById('lbuttonStart');
 var lbuttonStop = document.getElementById('lbuttonStop');
+
+// var timeStart,timeEnd,time;//申明全局变量
+            
+// function getTimeNow()//获取此刻时间
+// {
+// 	var now=new Date();
+// 	return now.getTime();
+// }
+// function holdDown()//鼠标按下时触发
+// {
+// 	timeStart=getTimeNow();//获取鼠标按下时的时间
+// 	time=setInterval(function()//setInterval会每100毫秒执行一次
+// 	{
+// 		timeEnd=getTimeNow();//也就是每100毫秒获取一次时间
+// 		if(timeEnd-timeStart>10000)//如果此时检测到的时间与第一次获取的时间差有1000毫秒
+// 		{
+// 			clearInterval(time);//便不再继续重复此函数 （clearInterval取消周期性执行）
+// 　　　       alert("空气起动成功！！！");//并弹出代码
+// 			lbuttonStart.style.backgroundColor = "grey";
+
+// 		}
+// 	},10);
+// }
+// function holdUp()
+// {
+// 	clearInterval(time);//如果按下时间不到1000毫秒便弹起，
+// }
 lbuttonStart.onmousedown = function () {
 	lbuttonStart.style.backgroundColor = "green";
+	
 	if (value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx % 2 == 1 && lhandle1x % 2 == 1) {
-		airstart = 1;
-		// LED()
-		schematicX = 1;
-		console.log('airstart', lrmp)
+			airstart = 2;
+		 // LED()
+		 schematicX = 1;
 	}
+		console.log('airstart', lrmp)
+	
 }
 lbuttonStart.onmouseup = function () {
 	lbuttonStart.style.backgroundColor = "grey";
-	airstart = 2;
+	if(rmp < 15){
+		alert("空气起动失败！");
+		airstart = 1;
+		yd=0;
+	}
+	else{
+		alert("空气起动成功！");
+		airstart = 2;
+	}
+	// airstart = 2;
+	
 	console.log('airstop', lrmpx);
 }
 
 $('#pstart').on('mousedown', function () {
 	startMove(this, 'opacity', 100);
 	if (value16x % 2 == 1 && value3x % 2 == 1 && value122x % 2 == 1 && value116x % 2 == 1 && valueMainx % 2 == 1 && lhandle1x % 2 == 1) {
-		airstart = 1;
+		airstart = 2;
 		//LED()
 		schematicX = 1;
 
@@ -317,7 +337,16 @@ $('#pstart').on('mousedown', function () {
 })
 $('#pstart').on('mouseup', function () {
 	startMove(this, 'opacity', 0);
-	airstart = 2;console.log('airstart',airstart);console.log('ydx',ydx);
+	if(rmp < 15){
+		alert("空气起动失败！");
+		airstart = 1;
+		yd=0;
+	}
+	else{
+		alert("空气起动成功！");
+		airstart = 2;
+	}
+	console.log('airstart',airstart);console.log('ydx',ydx);
 	// console.log('airstop', lrmpx);
 })
 
@@ -355,19 +384,21 @@ lwheel1Right.onmousemove = function () {
 lwheel1Right.onclick = function () {
 	lwheelx1 += 45;
 	lwheel1.style.transform = 'rotate(' + lwheelx1 + 'deg)';
-	lwheelx1x += 1;
-	if (lwheelx1x >= 5) {
-		lwheelx1x = 5;
+	lwheelx1x -= 1;
+	if (lwheelx1x <= 0) {
+		lwheelx1x = 0;
 	}
 	if (lwheelx1x <= 2) {
 		document.getElementById('lhandwheelDis').style.border = '1px solid red'
 		document.getElementById('lhandwheelCon').style.border = ''
-		startMove(document.getElementById('impactwheel'), 'opacity', 0);
-		impactwheelx = 0;
+		startMove(document.getElementById('impactwheel'), 'opacity', 100);
+		impactwheelx = 1;
 		console.log('imx', impactwheelx);
 	} else {
 		document.getElementById('lhandwheelDis').style.border = ''
 		document.getElementById('lhandwheelCon').style.border = '1px solid red'
+		startMove(document.getElementById('impactwheel'), 'opacity', 0);
+		impactwheelx = 0;
 	}
 
 	lprintPancel1(lwheelx1x);
@@ -376,18 +407,20 @@ lwheel1Right.onclick = function () {
 lwheel1Left.onclick = function () {
 	lwheelx1 -= 45;
 	lwheel1.style.transform = 'rotate(' + lwheelx1 + 'deg)';
-	lwheelx1x -= 1;
-	if (lwheelx1x <= 0) {
-		lwheelx1x = 0;
+	lwheelx1x += 1;
+	if (lwheelx1x >= 5) {
+		lwheelx1x = 5;
 	}
 	if (lwheelx1x <= 2) {
 		document.getElementById('lhandwheelDis').style.border = '1px solid red'
 		// document.getElementById('lhandwheelDis').style.color='yellow'
 		document.getElementById('lhandwheelCon').style.border = ''
+		startMove(document.getElementById('impactwheel'), 'opacity', 1);
+		impactwheelx = 1;
 	} else {
 		document.getElementById('lhandwheelDis').style.border = ''
 		document.getElementById('lhandwheelCon').style.border = '1px solid red'
-		startMove(document.getElementById('impactwheel'), 'opacity', 100);
+		startMove(document.getElementById('impactwheel'), 'opacity', 0);
 		impactwheelx = 0;
 		console.log('imx', impactwheelx);
 	}
@@ -428,6 +461,14 @@ lwheel2Right.onclick = function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'block');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'none');
 		}
 		if (lwheelx2x == 5) {
 			z = 2;
@@ -437,6 +478,14 @@ lwheel2Right.onclick = function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'block');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'none');
 		}
 		if (lwheelx2x == 7) {
 			z = 3;
@@ -446,6 +495,14 @@ lwheel2Right.onclick = function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'block');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'none');
 		}
 		if (lwheelx2x == 8) {
 			z = 4;
@@ -455,6 +512,14 @@ lwheel2Right.onclick = function () {
 			$('#wheeloil2').css('display', 'block');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'block');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'none');
 		}
 		if (lwheelx2x == 9) {
 			z = 5;
@@ -464,6 +529,14 @@ lwheel2Right.onclick = function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'block');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'block');
+			$('#panel_5').css('display', 'none');
 		}
 		if (lwheelx2x == 11) {
 			z = 6;
@@ -473,6 +546,16 @@ lwheel2Right.onclick = function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'block');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'block');
+
+
 		}
 		lprintPancel2(lwheelx2x);
 		lrmp += 7.5;
@@ -578,32 +661,61 @@ mouseOnLed();
 var lspeeds = document.getElementById('lbox2box3');
 var lspeedsAll = lspeeds.getElementsByTagName('div');
 var lspeedsLed = lspeeds.getElementsByClassName('lspeedButtonLed');
-var lclearSpeedLed = function () {
-	for (var i = 0; i < lspeedsAll.length; i++) {
-		lspeedsAll[i].style.borderColor = 'white';
-	}
-	for (var i1 = 0; i1 < lspeedsLed.length; i1++) {
-		lspeedsLed[i1].style.backgroundColor = 'white';
-	}
-}
+// var lclearSpeedLed = function () {
+// 	for (var i = 0; i < lspeedsAll.length; i++) {
+// 		lspeedsAll[i].style.borderColor = 'white';
+// 	}
+// 	for (var i1 = 0; i1 < lspeedsLed.length; i1++) {
+// 		lspeedsLed[i1].style.backgroundColor = 'white';
+// 	}
+// }
 var plspeeds = document.getElementById('plbox2box3');
 var plspeedsAll = plspeeds.getElementsByTagName('div');
 var plspeedsLed = plspeeds.getElementsByClassName('plspeedButtonLed');
-var plclearSpeedLed = function () {
-	for (var i = 0; i < plspeedsAll.length; i++) {
+// var plclearSpeedLed = function () {
+// 	for (var i = 0; i < plspeedsAll.length; i++) {
+// 		plspeedsAll[i].style.borderColor = 'white';
+// 	}
+// 	for (var i1 = 0; i1 < plspeedsLed.length; i1++) {
+// 		plspeedsLed[i1].style.backgroundColor = 'white';
+// 	}
+// }
+function plclearSpeedLed(briled,locled) {
+	for (var i = 0; i < 5; i++) {
+		btled1[i].style.background = '#006400';
+		btled2[i].style.background = '#006400';
+	}
+	for (var i = 6; i < 11; i++) {
+		btled1[i].style.background = '#640000';
+		btled2[i].style.background = '#640000';
+	}
+	btled1[5].style.background = ' #99af1c';
+	btled2[5].style.background = ' #99af1c';
+	//驾驶台车钟显示驾驶台的当前车令
+	btled1[briled].style.background = '#00FF00';
+	btled2[briled].style.background = '#00FF00';
+
+	for (var i = 0; i < lspeedsAll.length; i++) {
 		plspeedsAll[i].style.borderColor = 'white';
 	}
-	for (var i1 = 0; i1 < plspeedsLed.length; i1++) {
+	for (var i1 = 0; i1 < lspeedsLed.length; i1++) {
 		plspeedsLed[i1].style.backgroundColor = 'white';
 	}
+	plspeedsLed[briled].style.backgroundColor = 'red';
+	if (lhandle1x % 2 == 1) {//机旁控制
+		//驾驶台车钟显示集控室的当前车令
+		btled1[locled].style.background = 'red';
+		btled2[locled].style.background = 'red';
+	}
 }
+
 // ZM复制车钟的点击事件
 document.getElementById('plstopled').style.backgroundColor = '#FFC200';
 
 document.getElementById('lnavFull').onclick = function () {
 	locled = 0;
 	lclearSpeedLed(briled, locled);
-	plclearSpeedLed();
+	plclearSpeedLed(briled, locled);
 	document.getElementById('plnavFullled').style.backgroundColor = '#FFC200';
 	document.getElementById('plnavFull').style.borderColor = '#FFC200';
 	document.getElementById('lnavFullled').style.backgroundColor = '#FFC200';
@@ -612,6 +724,7 @@ document.getElementById('plnavFull').onclick = function () {
 	plclearSpeedLed();
 	locled = 0;
 	lclearSpeedLed(briled, locled);
+	plclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lnavFullled').style.backgroundColor = '#FFC200';
 	document.getElementById('lnavFull').style.borderColor = '#FFC200';
@@ -620,7 +733,7 @@ document.getElementById('plnavFull').onclick = function () {
 document.getElementById('lfull').onclick = function () {
 	locled = 1;
 	lclearSpeedLed(briled, locled);
-	plclearSpeedLed();
+	plclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('plfull').style.borderColor = '#FFC200';
 	document.getElementById('plfullled').style.backgroundColor = '#FFC200';
@@ -628,7 +741,7 @@ document.getElementById('lfull').onclick = function () {
 	document.getElementById('lfullled').style.backgroundColor = '#FFC200';
 }
 document.getElementById('plfull').onclick = function () {
-	plclearSpeedLed();
+	plclearSpeedLed(briled, locled);
 	locled = 1;
 	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
@@ -638,7 +751,7 @@ document.getElementById('plfull').onclick = function () {
 }
 document.getElementById('lhalf').onclick = function () {
 	locled = 2;
-	plclearSpeedLed();
+	plclearSpeedLed(briled, locled);
 	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('plhalf').style.borderColor = '#FFC200';
@@ -647,7 +760,7 @@ document.getElementById('lhalf').onclick = function () {
 }
 document.getElementById('plhalf').onclick = function () {
 	locled = 2;
-	plclearSpeedLed();
+	plclearSpeedLed(briled, locled);
 	lclearSpeedLed(briled, locled);
 	this.style.borderColor = '#FFC200';
 	document.getElementById('lhalfled').style.backgroundColor = '#FFC200';

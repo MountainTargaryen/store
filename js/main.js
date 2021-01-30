@@ -351,7 +351,7 @@ document.getElementById('wheelswitch').onclick = function () {
 
 	if (wx % 2 == 0) {
 		startMove(this, 'opacity', 0);
-		lhandle3x = wx - 1;
+		lhandle3x = wx - 2;
 		console.log('lhandle3x', lhandle3x);
 		document.getElementById('lhandle3').style.transformOrigin = '31% 31%';
 		document.getElementById('lhandle3').style.transform = 'rotate(' + 0 + 'deg)';
@@ -406,52 +406,52 @@ document.getElementById('impactwheel').onclick = function () {
 		lw1ctx.fill();
 	}
 }
-lwheel1Right.onclick = function () {
-	lwheelx1 += 45;
-	lwheel1.style.transform = 'rotate(' + lwheelx1 + 'deg)';
-	lwheelx1x -= 1;
-	if (lwheelx1x <= 0) {
-		lwheelx1x = 0;
-	}
-	if (lwheelx1x <= 2) {
-		document.getElementById('lhandwheelDis').style.border = '1px solid red'
-		document.getElementById('lhandwheelCon').style.border = ''
-		// startMove($('#impactwheel'), 'opacity', 0);
-		startMove(document.getElementById('impactwheel'), 'opacity', 0);
-		impactwheelx = 0;
-		console.log('imx', impactwheelx);
-	} else {
-		document.getElementById('lhandwheelDis').style.border = ''
-		document.getElementById('lhandwheelCon').style.border = '1px solid red'
-		// startMove($('#impactwheel'), 'opacity', 100);
-	}
+// lwheel1Right.onclick = function () {
+// 	lwheelx1 += 45;
+// 	lwheel1.style.transform = 'rotate(' + lwheelx1 + 'deg)';
+// 	lwheelx1x -= 1;
+// 	if (lwheelx1x <= 0) {
+// 		lwheelx1x = 0;
+// 	}
+// 	if (lwheelx1x <= 2) {
+// 		document.getElementById('lhandwheelDis').style.border = '1px solid red'
+// 		document.getElementById('lhandwheelCon').style.border = ''
+// 		// startMove($('#impactwheel'), 'opacity', 0);
+// 		startMove(document.getElementById('impactwheel'), 'opacity', 0);
+// 		impactwheelx = 0;
+// 		console.log('imx', impactwheelx);
+// 	} else {
+// 		document.getElementById('lhandwheelDis').style.border = ''
+// 		document.getElementById('lhandwheelCon').style.border = '1px solid red'
+// 		// startMove($('#impactwheel'), 'opacity', 100);
+// 	}
 
-	lprintPancel1(lwheelx1x);
-	console.log('lwheelx1x', lwheelx1x)
-}
-lwheel1Left.onclick = function () {
-	lwheelx1 -= 45;
-	lwheel1.style.transform = 'rotate(' + lwheelx1 + 'deg)';
-	lwheelx1x += 1;
-	if (lwheelx1x >= 5) {
-		lwheelx1x = 5;
-	}
-	if (lwheelx1x <= 2) {
-		document.getElementById('lhandwheelDis').style.border = '1px solid red'
-		// document.getElementById('lhandwheelDis').style.color='yellow'
-		document.getElementById('lhandwheelCon').style.border = ''
+// 	lprintPancel1(lwheelx1x);
+// 	console.log('lwheelx1x', lwheelx1x)
+// }
+// lwheel1Left.onclick = function () {
+// 	lwheelx1 -= 45;
+// 	lwheel1.style.transform = 'rotate(' + lwheelx1 + 'deg)';
+// 	lwheelx1x += 1;
+// 	if (lwheelx1x >= 5) {
+// 		lwheelx1x = 5;
+// 	}
+// 	if (lwheelx1x <= 2) {
+// 		document.getElementById('lhandwheelDis').style.border = '1px solid red'
+// 		// document.getElementById('lhandwheelDis').style.color='yellow'
+// 		document.getElementById('lhandwheelCon').style.border = ''
 
-	} else {
-		document.getElementById('lhandwheelDis').style.border = ''
-		document.getElementById('lhandwheelCon').style.border = '1px solid red'
-		// startMove($('#impactwheel'), 'opacity', 100);	
-		startMove(document.getElementById('impactwheel'), 'opacity', 100);
-		impactwheelx = 0;
-		console.log('imx', impactwheelx);
-	}
-	lprintPancel1(lwheelx1x);
-	console.log('lwheelx1x', lwheelx1x)
-}
+// 	} else {
+// 		document.getElementById('lhandwheelDis').style.border = ''
+// 		document.getElementById('lhandwheelCon').style.border = '1px solid red'
+// 		// startMove($('#impactwheel'), 'opacity', 100);	
+// 		startMove(document.getElementById('impactwheel'), 'opacity', 100);
+// 		impactwheelx = 0;
+// 		console.log('imx', impactwheelx);
+// 	}
+// 	lprintPancel1(lwheelx1x);
+// 	console.log('lwheelx1x', lwheelx1x)
+// }
 
 document.getElementById('conBefore').onclick = function () { //原始状况
 	wx = 0;
@@ -547,6 +547,14 @@ $('#wheeltouming').on('click', function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'block');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'none');
 			lrmp = 30;
 			lwheelx2x = 4;
 			lprintPancel2(4);
@@ -559,6 +567,14 @@ $('#wheeltouming').on('click', function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'block');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'none');
 			lrmp = 50;
 			lwheelx2x = 5;
 			lprintPancel2(5);
@@ -570,6 +586,14 @@ $('#wheeltouming').on('click', function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'block');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'none');
 			lrmp = 60;
 			lwheelx2x = 7;
 			lprintPancel2(7);
@@ -581,6 +605,14 @@ $('#wheeltouming').on('click', function () {
 			$('#wheeloil2').css('display', 'block');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'block');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'none');
 			lrmp = 70;
 			lwheelx2x = 8;
 			lprintPancel2(8);
@@ -592,6 +624,14 @@ $('#wheeltouming').on('click', function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'block');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'block');
+			$('#panel_5').css('display', 'none');
 			lrmp = 80;
 			lwheelx2x = 9;
 			lprintPancel2(9);
@@ -603,6 +643,14 @@ $('#wheeltouming').on('click', function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'block');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'block');
 			lrmp = 90;
 			lwheelx2x = 11;
 			lprintPancel2(11);
@@ -622,6 +670,14 @@ $('#wheeltoumingleft').on('click', function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'block');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'none');
 			lrmp = 30;
 			lwheelx2x = 4;
 			lprintPancel2(4);
@@ -633,6 +689,14 @@ $('#wheeltoumingleft').on('click', function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'block');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'none');
 			lrmp = 50;
 			lwheelx2x = 5;
 			lprintPancel2(5);
@@ -644,6 +708,14 @@ $('#wheeltoumingleft').on('click', function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'block');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'none');
 			lrmp = 60;
 			lwheelx2x = 7;
 			lprintPancel2(7);
@@ -655,6 +727,14 @@ $('#wheeltoumingleft').on('click', function () {
 			$('#wheeloil2').css('display', 'block');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'block');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'none');
 			lrmp = 70;
 			lwheelx2x = 8;
 			lprintPancel2(8);
@@ -666,6 +746,14 @@ $('#wheeltoumingleft').on('click', function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'block');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'block');
+			$('#panel_5').css('display', 'none');
 			lrmp = 80;
 			lwheelx2x = 9;
 			lprintPancel2(9);
@@ -677,6 +765,14 @@ $('#wheeltoumingleft').on('click', function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'block');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'none');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'block');
 			lrmp = 90;
 			lwheelx2x = 11;
 			lprintPancel2(11);
@@ -688,6 +784,14 @@ $('#wheeltoumingleft').on('click', function () {
 			$('#wheeloil2').css('display', 'none');
 			$('#wheeloil3').css('display', 'none');
 			$('#wheeloil4').css('display', 'none');
+
+			$('#panel_s').css('display', 'none');
+			$('#panel').css('display', 'block');
+			$('#panel_1').css('display', 'none');
+			$('#panel_2').css('display', 'none');
+			$('#panel_3').css('display', 'none');
+			$('#panel_4').css('display', 'none');
+			$('#panel_5').css('display', 'none');
 		}
 		if (z <= 0) {
 			z = 0;

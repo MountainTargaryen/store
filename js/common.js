@@ -237,6 +237,7 @@ function briLEDclear(briled) {
 	btled2[5].style.background = ' #99af1c';
 
 	lclearSpeedLed(briled,telled)
+	plclearSpeedLed(briled, locled)
 	//驾驶台车钟显示驾驶台的当前车令
 	btled1[briled].style.background = '#00FF00';
 	btled2[briled].style.background = '#00FF00';
