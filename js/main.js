@@ -454,7 +454,7 @@ document.getElementById('impactwheel').onclick = function () {
 // }
 
 document.getElementById('conBefore').onclick = function () { //原始状况
-	wx = 0;
+	wx = 0;ydx=0;
 	console.log('wx', wx);
 	impactwheelx = 0;
 	console.log('imx', impactwheelx);

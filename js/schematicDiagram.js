@@ -532,6 +532,7 @@ function checkStart() {
 		pointerRotate(31, 'cStartAirPressPointer');
 		document.getElementById('cStartAirPress').innerHTML = '27 bar';
 
+
 		if(schematicX==0){
 			schematicX=1
 		}

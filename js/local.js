@@ -312,12 +312,12 @@ lbuttonStart.onmousedown = function () {
 lbuttonStart.onmouseup = function () {
 	lbuttonStart.style.backgroundColor = "grey";
 	if(rmp < 15){
-		alert("空气起动失败！");
+		// alert("空气起动失败！");
 		airstart = 1;
 		yd=0;
 	}
 	else{
-		alert("空气起动成功！");
+		// alert("空气起动成功！");
 		airstart = 2;
 	}
 	// airstart = 2;
@@ -338,12 +338,12 @@ $('#pstart').on('mousedown', function () {
 $('#pstart').on('mouseup', function () {
 	startMove(this, 'opacity', 0);
 	if(rmp < 15){
-		alert("空气起动失败！");
+		// alert("空气起动失败！");
 		airstart = 1;
 		yd=0;
 	}
 	else{
-		alert("空气起动成功！");
+		// alert("空气起动成功！");
 		airstart = 2;
 	}
 	console.log('airstart',airstart);console.log('ydx',ydx);

@@ -35,6 +35,12 @@ function pid() {
 		increment=-20
 	}	
 	l_l_error = l_error;
-	l_error = error;
+	l_error = error;	
+
 	yd = ydx+increment;
+	//油门限制
+	if(yd>ydlim){
+		yd=ydlim;
+	}
+
 }

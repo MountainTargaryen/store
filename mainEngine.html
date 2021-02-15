@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="css/schematicDiagram.css" type="text/css" />
 	<link rel="stylesheet" href="css/diagram.css" type="text/css" />
 	<link rel="stylesheet" href="css/governor.css" type="text/css" />
+	<link rel="stylesheet" href="css/regulator.css" type="text/css" />
+
 </head>
 
 
@@ -1203,6 +1205,13 @@
 			<!--            调速器                 -->
 			<div id="governor">
 				<img src="img/government.png" height="100%" width="100%">
+				<img src="reg/reg_up1.png" id="up1" >
+				<img src="reg/reg_down1.png" id="down1" >
+				<img src="reg/reg_up2.png" id="up2" >
+				<img src="reg/reg_down2.png" id="down2" >
+				<div id="reg_num"></div>
+				<div id="reg_value"></div>
+
 			</div>
 
 			<!--          工况                     -->
@@ -1231,6 +1240,8 @@
 	<script type="text/javascript" src="js/local.js"></script>
 	<script type="text/javascript" src="js/pid.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/regulator.js"></script>
+
 	<!--隐藏3D部分动态模型-->
 	<!-- <script type="text/javascript" src="js/threeD.js"></script> -->
 	<script type="text/javascript" src="js/diagram.js"></script>
@@ -1279,6 +1290,7 @@
 					document.getElementById('threeDgif').src="img/gif-3.gif"
 				}
 				document.getElementById('threeSpeed').innerHTML= parseInt( rmpx)
+
 				//集控室杠杆随着集控室车钟的变化而变化
 				bpointerLever1( ydx ,ydp, 'cCanvas1');
 				//集控室和驾控台表盘指针及示数随着集控室车钟的变化而变化

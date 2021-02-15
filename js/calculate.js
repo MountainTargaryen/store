@@ -189,6 +189,10 @@ function calculate() {
 	if(rmp<=0){
 		rmp=0;
 	}
+	//转速限制
+	if(rmpx>=rmpxlim){
+		rmpx=rmpxlim;
+	}
 	//yd为实际燃油齿条刻度 ydx为车钟位置 ydp为指针所展现的燃油齿条刻度值
 	//燃油齿条刻度范围0-100
 	ydp=yd;
