@@ -1346,6 +1346,23 @@ document.getElementById('conReadyC').onclick = function () { //备车完毕
 
 	lshutdownLed.style.backgroundColor = ' #800000';
 
+	z = 0;
+	$('#wheelstart').css('display', 'none');
+	$('#wheeloil1').css('display', 'none');
+	$('#wheeloil1_5').css('display', 'none');
+	$('#wheeloil2').css('display', 'none');
+	$('#wheeloil3').css('display', 'none');
+	$('#wheeloil4').css('display', 'none');
+
+	lhandle3x=0;
+	wx=0;
+	yy=0;
+	startMove(document.getElementById('wheelswitch'), 'opacity', 0);
+
+	impactwheelx=0;
+	startMove(document.getElementById('impactwheel'), 'opacity', 0);
+
+
 	lhandle1x = 0; //机旁页面扳手 指向LOCAL
 	lhandle1.style.transformOrigin = '31% 31%';
 	lhandle1.style.transform = 'rotate(' + 0 + 'deg)';
